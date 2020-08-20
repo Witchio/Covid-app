@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'MITCHIO',
-                'email' => 'MUST BE UNIQUE',
+                'email' => 'webermitchio@hotmail.com',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
             ],
