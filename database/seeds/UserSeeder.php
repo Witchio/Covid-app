@@ -44,12 +44,12 @@ class UserSeeder extends Seeder
                 'password_hashed' => 12345678,
                 'role' => 'admin',
             ],
-            /* [
+            [
                 'name' => 'MITCHIO',
                 'email' => 'MUST BE UNIQUE',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
-            ], */
+            ],
             [
                 'name' => 'luchi',
                 'email' => 'luchi@luchi.com',
