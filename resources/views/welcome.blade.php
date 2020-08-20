@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
+    @include('feed::links')
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -85,11 +86,7 @@
 </ul>
 
 
-    <!--Write your names here !!!!!-->
-    <h1>Mitchio</h1>
-    <a href="https://www.youtube.com/watch?v=BBJa32lCaaY">
-        <p>Joanna's favorite music</p>
-    </a>
+
 
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
@@ -107,9 +104,7 @@
         @endif
 
         <div class="content">
-            <div class="title m-b-md">
-            lɘvɒɿɒ⅃
-            </div>
+            <div class="title m-b-md">lɘvɒɿɒ⅃</div>
 
             <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
@@ -118,9 +113,9 @@
                 <a href="https://blog.laravel.com">Blog</a>
                 <a href="https://nova.laravel.com">Nova</a>
                 <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>                
-                <br><a href="https://yousucksir.com/">Does Withcio Suck?</a>
+                <a href="https://vapor.laravel.com">Vapor</a>              
             </div>
+        <div class="xml"></div><rssapp-list id="Y74AKXIUbHu2XXbr"></rssapp-list><script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
         </div>
     </div>
 </body>
