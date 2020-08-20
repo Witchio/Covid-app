@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>lɘvɒɿɒ⅃</title>
+    <title>Laravel</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -71,16 +71,16 @@
 <!--Beautifull navbar (or not)!-->
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link active" href="#">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Stats</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Posts</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
+    <a class="nav-link" href="#">About Us</a>
   </li>
 </ul>
 
@@ -108,7 +108,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+            lɘvɒɿɒ⅃
             </div>
 
             <div class="links">
