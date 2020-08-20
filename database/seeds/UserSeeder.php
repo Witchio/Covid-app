@@ -44,24 +44,24 @@ class UserSeeder extends Seeder
                 'password_hashed' => 12345678,
                 'role' => 'admin',
             ],
-            /* [
+            [
                 'name' => 'MITCHIO',
-                'email' => 'MUST BE UNIQUE',
+                'email' => 'webermitchio@hotmail.com',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
-            ], */
-            /* [
-                'name' => 'LUCHI',
-                'email' => 'MUST BE UNIQUE',
+            ],
+            [
+                'name' => 'luchi',
+                'email' => 'luchi@luchi.com',
+                'password_hashed' => '$2y$10$zQ3p2LzBqDFHyk4NbgiLHuf3xv3c57Qp38wygDF/uRf5pb2RhiNCO',
+                'role' => 'admin',
+            ],
+            [
+                'name' => 'Edu',
+                'email' => 'edu@edu.com',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
-            ], */
-            /* [
-                'name' => 'EDUARDO',
-                'email' => 'MUST BE UNIQUE',
-                'password_hashed' => 12345678,
-                'role' => 'admin',
-            ], */
+            ],
         );
 
         // insert seeds
