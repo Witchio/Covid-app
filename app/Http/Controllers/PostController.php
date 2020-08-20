@@ -1,4 +1,6 @@
 <?php
+// php artisan make:controller --resource PostController
+// https://laravel.com/docs/7.x/controllers
 
 namespace App\Http\Controllers;
 
