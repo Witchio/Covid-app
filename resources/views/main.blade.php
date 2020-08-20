@@ -1,4 +1,4 @@
-<!-- @extends from template-->
+<!-- extends from template-->
 <section>
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
