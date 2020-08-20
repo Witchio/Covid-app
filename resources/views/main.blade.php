@@ -43,5 +43,5 @@
 <!--Scripts-->
 <!--<script src="{{ URL::asset('resources/js/charts/homeChart.js')}}"></script>-->
 <!--<script type="text/javascript" src="{{ URL::asset('final_project/resources/js/charts/continent.js') }}"></script>-->
-<script src="js/charts/homeChart.js"></script>
-<script src="js/charts/continent.js"></script>
+<script src="charts/homeChart.js"></script>
+<script src="charts/continent.js"></script>
