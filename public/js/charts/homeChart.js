@@ -1,18 +1,18 @@
-const xlabels = [];
+const xlabels1 = [];
 chartIt();
 async function chartIt() {
-    await getData();
+    await getData1();
     console.log(xlabels);
     let dates = [];
     let newCases = [];
-    xlabels.forEach(data => {
+    xlabels1.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels.forEach(data => {
+    xlabels1.forEach(data => {
         newCases.push(data[1]);
     });
-    var ctx = document.getElementById('chart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var ctx1 = document.getElementById('chart').getContext('2d');
+    var myChart1 = new Chart(ctx1, {
         type: 'line',
         data: {
             labels: dates,
@@ -34,6 +34,11 @@ async function chartIt() {
 
             label: {
                 fontColor: 'green',
+            },
+            plugins: {
+                datalabels: {
+                    display: false
+                }
             }
 
         }
@@ -41,7 +46,7 @@ async function chartIt() {
 
 }
 
-async function getData() {
+async function getData1() {
     const response1 = await fetch('https://api.covid19api.com/total/dayone/country/luxembourg/status/confirmed');
     const data1 = await response1.json();
 
@@ -49,7 +54,7 @@ async function getData() {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels.push([date[0], cases]);
+        xlabels1.push([date[0], cases]);
 
     });
 }

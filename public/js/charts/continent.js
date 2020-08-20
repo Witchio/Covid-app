@@ -12,7 +12,7 @@ async function chartIt() {
         cases.push(data[1]);
     });
 
-    var ctx = document.getElementById('chart').getContext('2d');
+    var ctx = document.getElementById('continent').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
