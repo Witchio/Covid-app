@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -16,6 +17,17 @@ class PostController extends Controller
     public function index()
     {
         //
+    }
+
+    public function main()
+    {
+        //
+        // $books = DB::select('SELECT * FROM posts');
+        $posts = Post::orderBy('user_id', 'desc')
+            ->limit(2)
+            ->get();
+        dd($posts);
+        return view('main', ['posts' => $posts]);
     }
 
     /**
