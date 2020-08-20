@@ -69,8 +69,8 @@
 <body>
     <!--Write your names here !!!!!-->
     <h1>Mitchio</h1>
-    <a href="https://www.youtube.com/watch?v=BBJa32lCaaY">
-        <p>Joanna's favorite music</p>
+    <a href="/chart">
+        <p>What are thoooooose</p>
     </a>
 
     <div class="flex-center position-ref full-height">
