@@ -17,7 +17,17 @@
 
 
     <div id="posts">
-        <!-- im guessing it will be a loop to create articles of top posts -->
+        <!-- displays top posts -->
+        <h2>Trending Community Posts</h2>
+        @foreach($posts as $post)
+        <p>Title : {{ $post->title }}</p>
+        <p>Image : {{ $post->image }}</p>
+        <p>Content : {{ $post->content }}</p>
+        <p>Likes : {{ $post->likes }}</p>
+        <p>Comments : {{ $post->comments }}</p>
+        <a href="/posts/{{$post->id}}">Read hole Post</a><br>
+        <hr>
+        @endforeach
     </div>
 
 </section>
