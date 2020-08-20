@@ -96,7 +96,7 @@
                 <a href="https://forge.laravel.com">Forge</a>
                 <a href="https://vapor.laravel.com">Vapor</a>
                 <a href="https://github.com/laravel/laravel">GitHub</a>
-                <a href="https://yousucksir.com/">Does Withcio Suck?</a>
+                <br><a href="https://yousucksir.com/">Does Withcio Suck?</a>
             </div>
         </div>
     </div>
