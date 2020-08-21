@@ -6,17 +6,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use App\User;
+use Illuminate\Support\Facades\DB;
+
 
 class PostController extends Controller
 {
-    public function test()
-    {
-        /* $post = Post::find(1);
-        dd($post->users); */
-        $user = User::find(1);
-        dd($user->posts->count());
-    }
     /**
      * Display a listing of the resource.
      *
@@ -24,20 +18,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        //* Using the Eloquent model
+        //todo maybe order posts by newest post, so new content would display first -luchi
         $posts = Post::all();
         return view('posts', ['posts' => $posts]);
     }
 
     public function main()
     {
-        // ORDERBY WITH INNER JOIN
-        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id 
-        $posts = Post::withCount('users') //withCount counts the number of User OBJECTS associated to the Post (aka LIKES)
-            ->orderBy('users_count', 'desc')
-            ->limit(3)
+        // NEED TO DO WITH INNER JOIN
+        $posts = Post::orderBy('user_id', 'desc')
+            ->limit(2)
             ->get();
-
+        // dd($posts);
         return view('main', ['posts' => $posts]);
     }
 
@@ -61,6 +53,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //* stores what the user did in add-post in the db
+        DB::insert('insert into posts (title, content, image) values (?, ?)', [$request->title, $request->content]);
+        return 'Book "' . $request->title . '" inserted into db';
     }
 
     /**

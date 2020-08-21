@@ -5,7 +5,7 @@
 
 <!-- when clicked goes to PostController create() -->
 <button id="create">Create post</button>
-<a href="/posts/create">create link</a>
+<a href="{{ route('post.create') }}">create link</a>
 
 
 <!-- Looop to display posts, getting the data from PostController-->
