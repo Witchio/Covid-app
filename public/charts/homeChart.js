@@ -2,7 +2,6 @@ const xlabels1 = [];
 chartIt();
 async function chartIt() {
     await getData1();
-    console.log(xlabels);
     let dates = [];
     let newCases = [];
     xlabels1.forEach(data => {
@@ -12,6 +11,7 @@ async function chartIt() {
         newCases.push(data[1]);
     });
     var ctx1 = document.getElementById('chart').getContext('2d');
+    Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
         type: 'line',
         data: {
@@ -21,9 +21,10 @@ async function chartIt() {
                 label: 'Total Cases Luxemburg',
                 //Css
                 //Fill the graph or not
-                fill: false,
+                fill: true,
                 //Color of the line
                 borderColor: 'rgba(255, 99, 132, 0.7)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 //Border of the line
                 borderWidth: 1,
                 //Border of the data point

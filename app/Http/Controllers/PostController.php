@@ -37,7 +37,6 @@ class PostController extends Controller
             ->orderBy('users_count', 'desc')
             ->limit(3)
             ->get();
-
         return view('main', ['posts' => $posts]);
     }
 

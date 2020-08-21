@@ -15,14 +15,18 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', 'PostController@main');
-Route::get('/posts', 'PostController@index');
-Route::get('/test', 'PostController@test'); // jo keep
+//Route::get('/posts', 'PostController@index')->name('posts');
+//Route::get('/test', 'PostController@test'); // jo keep
+//DONT DELETE, IMPORTANT ROUTE. For adding comment
+Route::post('/posts/edit/{id}', 'CommentController@store');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts/{id}', 'PostController@show');
 
-// UPDATE books jo
+// UPDATE posts jo
 Route::get('/post/update/{editPostId}', 'PostController@edit');
 Route::put('/post/update/{editPostId}', 'PostController@update');
+
+Route::get('/posts', 'PostController@index')->name('postpage');
