@@ -81,7 +81,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        // pull existing data fr DB
+        $post = Post::where('id', $id)->get();
+        return view('edit-post', ['post' => $post[0]]);
     }
 
     /**
@@ -93,7 +95,16 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Update the post in the DB
+        $post = Post::find($id);
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+
+        $post->save();
+
+        $newPost = Post::find($id);
+        return view('post', ['post' => $newPost]);
     }
 
     /**

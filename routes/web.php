@@ -26,3 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts/{id}', 'PostController@show');
 
 //Route::get('/posts', 'PostController@index')->name('postpage');
+
+// UPDATE posts jo
+Route::get('/post/update/{editPostId}', 'PostController@edit');
+Route::put('/post/update/{editPostId}', 'PostController@update');
