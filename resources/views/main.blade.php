@@ -2,9 +2,10 @@
 <section>
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
-        <article>
+        <!--To reshaphe charts modify the canvas and the container both or won't work-->
+        <article style="max-height:1000px;max-width:1000px">
 
-            <canvas id="chart" width="20" height="20"></canvas>
+            <canvas id="chart" style="max-height:1000px;max-width:1000px"></canvas>
             <!-- chart 1  -->
         </article>
 
@@ -25,7 +26,12 @@
         <img src="{{ asset("images/$post->image")}}" alt="">
         <p>Content : {{ $post->content }}</p>
         <p>Likes : </p>
-        <p>Comments : </p>
+        <p>Comments :</p>
+        <ul>
+            @foreach($post->comments as $comment)
+            <li>{{$comment->comment}}</li>
+            @endforeach
+        </ul>
         <a href="/posts/{{$post->id}}">Read hole Post</a><br>
         <hr>
         @endforeach
@@ -42,7 +48,5 @@
 <!--Label Plugin-->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
 <!--Scripts-->
-<!--<script src="{{ URL::asset('resources/js/charts/homeChart.js')}}"></script>-->
-<!--<script type="text/javascript" src="{{ URL::asset('final_project/resources/js/charts/continent.js') }}"></script>-->
 <script src="charts/homeChart.js"></script>
 <script src="charts/continent.js"></script>
