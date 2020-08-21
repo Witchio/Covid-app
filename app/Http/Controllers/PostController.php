@@ -53,11 +53,20 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //* stores what the user did in add-post in the db
+        //dd($request->image);
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
-        //$post->image = 'jhashgashdasgh';
         $post->user_id = Auth::user()->id; //only a logged in user can post
+
+        //* Validating and storing image
+        /* $request->validate([
+            'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+        ]); */
+        $imageName = time() . '.' . $request->image->extension();
+        $post->image = $imageName;
+        $request->image->move(public_path() . '/images', $imageName);
+
         $post->save();
         return redirect('/posts');
     }
