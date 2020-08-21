@@ -23,12 +23,11 @@ class PostController extends Controller
 
     public function main()
     {
-        //
-        // $books = DB::select('SELECT * FROM posts');
+        // NEED TO DO WITH INNER JOIN
         $posts = Post::orderBy('user_id', 'desc')
             ->limit(2)
             ->get();
-        dd($posts);
+        // dd($posts);
         return view('main', ['posts' => $posts]);
     }
 
