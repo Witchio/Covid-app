@@ -20,33 +20,35 @@ class PostSeeder extends Seeder
                 'content' => 'Lorem Ipsum is FAKE TEXT! An extremely credible 
                 source has called my office and told me that Lorem Ipsums 
                 birth certificate is a fraud. Lorem Ipsum is unattractive, both inside and out.',
+                'image' => 'Post1.jpg',
                 'user_id' => 1,
-                'liked_status' => 0,
-                'reported_status' => 0,
             ],
             [
                 'title' => 'Second Post',
                 'content' => 'Youre telling the enemy exactly what youre going to do. 
                 No wonder youve been fighting Lorem Ipsum your entire adult life.',
+                'image' => 'Post2.jpg',
                 'user_id' => 2,
-                'liked_status' => 0,
-                'reported_status' => 0,
             ],
             [
                 'title' => 'Third Post',
                 'content' => 'An extremely credible source has called my office 
                 and told me that Lorem Ipsums birth certificate is a fraud. 
                 Lorem Ipsum is unattractive, both inside and out.',
+                'image' => 'Post2.jpg',
                 'user_id' => 3,
-                'liked_status' => 0,
-                'reported_status' => 0,
             ],
             [
                 'title' => 'Fourth Post',
                 'content' => 'Youve been fighting Lorem Ipsum your entire adult life.',
+                'image' => 'Post3.jpg',
                 'user_id' => 4,
-                'liked_status' => 0,
-                'reported_status' => 0,
+            ],
+            [
+                'title' => 'Fifth Post',
+                'content' => 'Lorem Ipsum is unattractive, both inside and out.',
+                'image' => 'Post1.jpg',
+                'user_id' => 5,
             ],
         );
 
@@ -55,9 +57,8 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'title' => $value['title'],
                 'content' => $value['content'],
+                'image' => $value['image'],
                 'user_id' => $value['user_id'],
-                'liked_status' => $value['liked_status'],
-                'reported_status' => $value['reported_status'],
             ]);
         }
     }

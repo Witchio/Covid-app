@@ -21,10 +21,11 @@
         <h2>Trending Community Posts</h2>
         @foreach($posts as $post)
         <p>Title : {{ $post->title }}</p>
-        <p>Image : {{ $post->image }}</p>
+        <p>Image : </p>
+        <img src="{{ asset("images/$post->image")}}" alt="">
         <p>Content : {{ $post->content }}</p>
-        <p>Likes : {{ $post->likes }}</p>
-        <p>Comments : {{ $post->comments }}</p>
+        <p>Likes : </p>
+        <p>Comments : </p>
         <a href="/posts/{{$post->id}}">Read hole Post</a><br>
         <hr>
         @endforeach

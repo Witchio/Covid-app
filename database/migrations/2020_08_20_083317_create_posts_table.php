@@ -21,10 +21,6 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->string('image');
             $table->unsignedBigInteger('user_id');
-            // add or subtract one depending on the button toggle
-            $table->integer('likes')->nullable();
-            $table->integer('comments')->nullable();
-            $table->integer('reports')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

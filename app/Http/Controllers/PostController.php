@@ -16,17 +16,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //* Using the Eloquent model
+        $posts = Post::all();
+        return view('posts', ['posts' => $posts]);
     }
 
     public function main()
     {
-        //
-        // $books = DB::select('SELECT * FROM posts');
+        // NEED TO DO WITH INNER JOIN
         $posts = Post::orderBy('user_id', 'desc')
             ->limit(2)
             ->get();
-        dd($posts);
+        // dd($posts);
         return view('main', ['posts' => $posts]);
     }
 
@@ -59,7 +60,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::where('id', $id)->get();
+        return view('post', ['post' => $post[0]]);
     }
 
     /**
