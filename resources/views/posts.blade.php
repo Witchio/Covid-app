@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 <!-- Looop to display posts -->
-
+@section('content')
 <h1>Posts</h1>
 @foreach($posts as $post)
 <article>
@@ -14,3 +14,4 @@
     <p>comments</p> <!-- TODO join table query -->
     @endforeach
 </article>
+@endsection
