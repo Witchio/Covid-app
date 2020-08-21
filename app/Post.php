@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    //
+    // SOFT DELETES for admin records
     use SoftDeletes;
+
+    // define RELATIONSHIP manytomany -> USERs (jo)
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'likes');
+    }
 }

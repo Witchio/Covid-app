@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // define RELATIONSHIP manytomany -> POSTs (jo)
+    public function posts()
+    {
+        return $this->belongsToMany('App\Post', 'likes');
+    }
 }

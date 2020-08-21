@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@main');
 Route::get('/posts', 'PostController@index');
+Route::get('/test', 'PostController@test'); // jo keep
