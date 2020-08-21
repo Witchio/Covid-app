@@ -56,12 +56,12 @@ class UserSeeder extends Seeder
                 'password_hashed' => '$2y$10$zQ3p2LzBqDFHyk4NbgiLHuf3xv3c57Qp38wygDF/uRf5pb2RhiNCO',
                 'role' => 'admin',
             ],
-            [
+           /* [
                 'name' => 'Edu',
                 'email' => 'edu@edu.com',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
-            ],
+            ],*/
         );
 
         // insert seeds
@@ -69,7 +69,7 @@ class UserSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $value['name'],
                 'email' => $value['email'],
-                'password_hashed' => $value['password_hashed'],
+                'password' => $value['password_hashed'],
                 'role' => $value['role'],
             ]);
         }

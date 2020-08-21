@@ -19,13 +19,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->string('image');
             $table->unsignedBigInteger('user_id');
-            // add or subtract one depending on the button toggle
-            $table->integer('likes')->nullable();
-            $table->boolean('liked_status');
-            $table->integer('reports')->nullable();
-            $table->boolean('reported_status');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
         });
