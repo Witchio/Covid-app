@@ -38,7 +38,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        //* redirects to a form  where user can create post
+        return view('add-post');
     }
 
     /**
@@ -49,7 +50,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //* stores what the user did in add-post in the db
     }
 
     /**
@@ -72,7 +73,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::where('id', $id)->get();
+        return view('update-post', ['post' => $post[0]]);
     }
 
     /**
@@ -95,6 +97,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = Post::where('id', $id)->delete();
     }
 }

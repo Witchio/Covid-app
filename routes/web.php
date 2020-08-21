@@ -14,10 +14,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+//* home route (landing page)
+
 Route::get('/', 'PostController@main');
+
+//* post routes
 Route::get('/posts', 'PostController@index');
+Route::get('/posts/{id}', 'PostController@show');
+/* When using the url posts/create it creates an issue with posts/{id}, since it think create should be an id.
+To fix this i changed the url to post/create.
+Another 'fix' would have also been to move the route for posts/create above the posts/id* - Luchi */
+Route::get('/post/create', 'PostController@create')->name('post.create');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/posts/{id}', 'PostController@show');

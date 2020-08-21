@@ -1,5 +1,7 @@
 <!-- extend from tempate -->
 
+
+<!-- individual post depending on id -->
 <h2>{{ $post->title }}</h2>
 <img src="" alt="">
 <img src="{{asset("images/$post->image")}}" alt="post image">
