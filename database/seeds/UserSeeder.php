@@ -69,7 +69,7 @@ class UserSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $value['name'],
                 'email' => $value['email'],
-                'password_hashed' => $value['password_hashed'],
+                'password' => $value['password_hashed'],
                 'role' => $value['role'],
             ]);
         }
