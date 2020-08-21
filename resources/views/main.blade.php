@@ -26,11 +26,12 @@
         <img src="{{ asset("images/$post->image")}}" alt="">
         <p>Content : {{ $post->content }}</p>
         <p>Likes : </p>
-        <p>Comments : {{ $post->comments }}</p>
-        @foreach($post->comments as $comment)
-        {{$comment->content}}
-
-        @endofreach
+        <p>Comments :</p>
+        <ul>
+            @foreach($post->comments as $comment)
+            <li>{{$comment->comment}}</li>
+            @endforeach
+        </ul>
         <a href="/posts/{{$post->id}}">Read hole Post</a><br>
         <hr>
         @endforeach
