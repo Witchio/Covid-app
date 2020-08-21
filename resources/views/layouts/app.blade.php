@@ -40,7 +40,7 @@
                             <a class="nav-link" href="#">{{ __('Stats') }}</a>
                         </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('Posts') }}</a>
+                            <a class="nav-link" href="{{ route('posts') }}">{{ __('Posts') }}</a>
                         </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('About Us') }}</a>

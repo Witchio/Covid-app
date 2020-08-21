@@ -1,4 +1,5 @@
 <!-- extends from template -->
+@extends('layouts.app')
 
 <!-- Looop to display posts -->
 

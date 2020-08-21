@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', 'PostController@main');
-Route::get('/posts', 'PostController@index');
+Route::get('/posts', 'PostController@index')->name('posts');
 Route::get('/test', 'PostController@test'); // jo keep
 
 Auth::routes();
