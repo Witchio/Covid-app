@@ -1,8 +1,8 @@
 <!-- extends from template -->
-<!--@extends('layouts.app')-->
+@extends('layouts.app')
 
 <!-- Looop to display posts -->
-<!--@section('content')-->
+@section('content')
 <h1>Posts</h1>
 @foreach($posts as $post)
 <article>
