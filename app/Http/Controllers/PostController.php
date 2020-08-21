@@ -60,9 +60,9 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id; //only a logged in user can post
 
         //* Validating and storing image
-        /* $request->validate([
+        $request->validate([
             'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
-        ]); */
+        ]);
         $imageName = time() . '.' . $request->image->extension();
         $post->image = $imageName;
         $request->image->move(public_path() . '/images', $imageName);
