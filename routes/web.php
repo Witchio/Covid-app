@@ -26,6 +26,7 @@ To fix this i changed the url to post/create.
 Another 'fix' would have also been to move the route for posts/create above the posts/id* - Luchi */
 Route::get('/post/create', 'PostController@create')->name('post.create');
 
+Route::get('/test', 'PostController@test'); // jo keep
 
 Auth::routes();
 
