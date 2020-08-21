@@ -19,4 +19,9 @@
     <li>{{$comment->comment}}</li>
     @endforeach
 </ul>
+<form action="/posts/edit/{{ $post->id}}" method="post">
+    @csrf
+    <input type="text" name="comment">
+    <input type="submit" value="Comment">
+</form>
 @endforeach
