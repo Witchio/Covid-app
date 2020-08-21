@@ -14,7 +14,7 @@
     <h2>{{ $post->title }}</h2>
     <img src="{{asset("images/$post->image")}}" alt="post image">
     <p>{{ @substr($post->content,0,100 ) }} ...</p>
-    <a href="./{{$post->id}}">See more</a>
+    <a href="/posts/{{$post->id}}">See more</a>
     <p>likes</p> <!-- TODO join table query -->
     <p>comments</p> <!-- TODO join table query -->
     @endforeach

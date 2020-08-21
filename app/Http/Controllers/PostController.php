@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostController extends Controller
@@ -53,8 +53,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //* stores what the user did in add-post in the db
-        DB::insert('insert into posts (title, content, image) values (?, ?)', [$request->title, $request->content]);
-        return 'Book "' . $request->title . '" inserted into db';
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->content;
+        //$post->image = 'jhashgashdasgh';
+        $post->user_id = Auth::user()->id; //only a logged in user can post
+        $post->save();
+        return redirect('/posts');
     }
 
     /**
