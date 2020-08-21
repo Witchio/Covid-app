@@ -13,6 +13,7 @@ class Post extends Model
     use SoftDeletes;
 
     // define RELATIONSHIP manytomany -> USERs (jo)
+    // second argument in belongsToMany() is the name of the intermediary table
     public function users()
     {
         return $this->belongsToMany('App\User', 'likes');

@@ -38,6 +38,7 @@ class User extends Authenticatable
     ];
 
     // define RELATIONSHIP manytomany -> POSTs (jo)
+    // second argument in belongsToMany() is the name of the intermediary table
     public function posts()
     {
         return $this->belongsToMany('App\Post', 'likes');
