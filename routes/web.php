@@ -22,3 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts/{id}', 'PostController@show');
+
+// UPDATE books jo
+Route::get('/post/update/{editPostId}', 'PostController@edit');
+Route::put('/post/update/{editPostId}', 'PostController@update');
