@@ -27,7 +27,6 @@ class PostController extends Controller
         $posts = Post::orderBy('user_id', 'desc')
             ->limit(2)
             ->get();
-        // dd($posts);
         return view('main', ['posts' => $posts]);
     }
 

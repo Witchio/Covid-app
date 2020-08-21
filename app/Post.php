@@ -11,4 +11,9 @@ class Post extends Model
 {
     //
     use SoftDeletes;
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

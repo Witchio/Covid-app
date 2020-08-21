@@ -2,9 +2,10 @@
 <section>
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
-        <article>
+        <!--To reshaphe charts modify the canvas and the container both or won't work-->
+        <article style="max-height:1000px;max-width:1000px">
 
-            <canvas id="chart" width="20" height="20"></canvas>
+            <canvas id="chart" style="max-height:1000px;max-width:1000px"></canvas>
             <!-- chart 1  -->
         </article>
 
@@ -25,7 +26,11 @@
         <img src="{{ asset("images/$post->image")}}" alt="">
         <p>Content : {{ $post->content }}</p>
         <p>Likes : </p>
-        <p>Comments : </p>
+        <p>Comments : {{ $post->comments }}</p>
+        @foreach($post->comments as $comment)
+        {{$comment->content}}
+
+        @endofreach
         <a href="/posts/{{$post->id}}">Read hole Post</a><br>
         <hr>
         @endforeach
