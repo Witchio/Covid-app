@@ -36,10 +36,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" href="{{ route('main') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('Stats') }}</a>
+                            <a class="nav-link" href="{{ route('stats')}}">{{ __('Stats') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts') }}">{{ __('Posts') }}</a>
