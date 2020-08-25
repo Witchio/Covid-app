@@ -16,12 +16,7 @@ class PostController extends Controller
      * TRYING TO MAKE A CONFLICT
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //todo maybe order posts by newest post, so new content would display first -luchi
-        $posts = Post::all();
-        return view('posts', ['posts' => $posts]);
-    }
+
 
     public function main()
     {
