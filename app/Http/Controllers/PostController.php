@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller
@@ -219,10 +220,30 @@ class PostController extends Controller
     // LIKE a post (toggle)
     public function likePost($id)
     {
-        //
+        // declare variables
         $user = User::find(Auth::user()->id);
         $post = Post::find($id);
-        //$user->posts[] = $post;
-        $user->posts()->save($post);
+
+        // query if the USER already LIKED this post
+        /* $liked = DB::table('likes')
+            ->where([
+                ['post_id', '=', $post],
+                ['user_id', '=', $user],
+            ])->exists(); */
+        // Retrieve all posts that have at least one user...
+        $liked = $post->has('users');
+
+        dd($liked);
+
+        if ($liked) {
+            // REMOVE a record fr the LIKES table
+            // DB::delete('DELETE from books WHERE id = ?', [$id]);
+            // $liked->delete();
+            $user->posts()->detach($post);
+        } else {
+            // ADD a record to the LIKES table
+            //$user->posts[] = $post;
+            $user->posts()->save($post);
+        }
     }
 }
