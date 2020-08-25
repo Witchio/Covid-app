@@ -134,7 +134,8 @@ class PostController extends Controller
         $post = Post::where('id', $id)
             ->withCount('usersReports') //name of the function on Post model
             ->get();
-        dd($post->original['users_reports_count']);
+        //dd($post[0]->users_reports_count);
+        $post[0]->dd($post[0]->usersReports);
     }
     public function test()
     {
@@ -155,6 +156,7 @@ class PostController extends Controller
     {
         $result = Post::where('id', $id)->delete();
     }
+
 
     //* if the admin of the user want to permanent delete a post
     /**

@@ -16,11 +16,12 @@
 <article>
 
     <h2>{{ $post->title }}</h2>
+    @if($post->image)
     <img src="{{asset("images/$post->image")}}" alt="post image">
+    @endif
     <p>{{ @substr($post->content,0,100 ) }} ...</p>
     <a href="/posts/{{$post->id}}">See more</a>
     <p>likes</p> <!-- TODO join table query -->
-    <p>comments</p> <!-- TODO join table query -->
 </article>
 <p>Comments :</p>
 <ul>
@@ -49,6 +50,11 @@
 
 <!-- My script -->
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $("#create").click(function() {
         $.ajax({
             type: 'get',
@@ -56,9 +62,4 @@
             //url: "./create",
         });
     })
-    /* $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    }); */
 </script>
