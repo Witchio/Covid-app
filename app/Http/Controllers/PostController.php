@@ -21,6 +21,12 @@ class PostController extends Controller
     {
         //todo maybe order posts by newest post, so new content would display first -luchi
         $posts = Post::all();
+
+        foreach ($posts as $key => $post) {
+            $likes = $post->users->count();
+        }
+        dd($posts);
+
         return view('posts', ['posts' => $posts]);
     }
 
