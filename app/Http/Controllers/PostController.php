@@ -85,6 +85,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::where('id', $id)->get();
+        $user = Auth::user();
+        //todo check if user already reported 
+        /* $post compare to $user->postsReports[] */
         return view('post', ['post' => $post[0]]);
     }
 
@@ -139,8 +142,10 @@ class PostController extends Controller
         //dd($post[0]->usersReports()); //this gives an array with info about the reports table
 
         //$user = Auth::user(); //works but method is underlined as an error
-        $post = Post::find($id);
+
         $user = User::find(Auth::user()->id);
+        $post = Post::find(3);
+        $user->postsReports[] = $post;
         $user->postsReports()->save($post);
     }
 
