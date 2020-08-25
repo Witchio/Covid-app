@@ -6,11 +6,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Illuminate\Support\Facades\Auth;
-
+use App\User;
 
 class PostController extends Controller
 {
+    public function test()
+    {
+        /* $post = Post::find(1);
+        dd($post->users); */
+        $user = User::find(1);
+        dd($user->posts->count());
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +24,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //todo maybe order posts by newest post, so new content would display first -luchi
+        //* Using the Eloquent model
         $posts = Post::all();
         return view('posts', ['posts' => $posts]);
     }
@@ -41,8 +47,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //* redirects to a form  where user can create post
-        return view('add-post');
+        //
     }
 
     /**
@@ -53,23 +58,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //* stores what the user did in add-post in the db
-        //dd($request->image);
-        $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->user_id = Auth::user()->id; //only a logged in user can post
-
-        //* Validating and storing image
-        $request->validate([
-            'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
-        ]);
-        $imageName = time() . '.' . $request->image->extension();
-        $post->image = $imageName;
-        $request->image->move(public_path() . '/images', $imageName);
-
-        $post->save();
-        return redirect('/posts');
+        //
     }
 
     /**
@@ -150,6 +139,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = Post::where('id', $id)->delete();
+        //
     }
 }
