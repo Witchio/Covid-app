@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }}<br>
+                    {{ __('Redirecting...') }}
+                    <?php header('Refresh: 3; url="profile"')
                 </div>
             </div>
         </div>
