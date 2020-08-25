@@ -7,6 +7,7 @@
 <h3>Hellooo <a> {{ Auth::user()->name }}</a></h3>
 <p>Please update some additional info from you</p>
 
+<!-- Profile forms --> 
 <div class="profileForm">
     <form action="#" method="POST">
         <input type="text" name="firstName" placeholder="First Name">
