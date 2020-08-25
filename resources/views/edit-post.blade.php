@@ -1,6 +1,8 @@
 <!-- extend from tempate -->
 
+@extends('layouts.app')
 <!-- section('content') -->
+@section('content')
 <form action="" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -16,3 +18,5 @@
     <input type="submit" value="Post Update">
 </form>
 <!-- endsection -->
+
+@endsection

@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+//! Main page
 Route::get('/', 'PostController@main');
+
+
+//!Posts pages
 
 //* Posts routes
 //Display all the posts
@@ -50,10 +54,14 @@ Route::get('/post/update/{editPostId}', 'PostController@edit');
 Route::put('/post/update/{editPostId}', 'PostController@update');
 //roller@show');
 
-//* Routes for Admin Dashboard
+//! Admin Dashboard
+//* Users admin Dashboard
 Route::get('/admin/users', 'HomeController@showUser');
 Route::post('admin/userRole/{id}', 'HomeController@edit');
 Route::post('/admin/delete/{id}', 'HomeController@destroy');
-//Show soft deleted posts
+
+//* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted');
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
+
+//! Profile dashboard

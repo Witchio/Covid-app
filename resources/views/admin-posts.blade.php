@@ -1,3 +1,9 @@
+<!-- extend from tempate -->
+
+@extends('layouts.app')
+<!-- section('content') -->
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,3 +69,7 @@
 </body>
 
 </html>
+
+<!-- endsection -->
+
+@endsection
