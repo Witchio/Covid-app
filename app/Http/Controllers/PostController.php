@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * TRYING TO MAKE A CONFLICT
      * @return \Illuminate\Http\Response
      */
     public function index()
