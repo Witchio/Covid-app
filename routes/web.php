@@ -57,4 +57,4 @@ Route::post('admin/userRole/{id}', 'HomeController@edit');
 Route::post('/admin/delete/{id}', 'HomeController@destroy');
 //Show soft deleted posts
 Route::get('/admin/posts', 'PostController@showSoftDeleted');
-Route::post('/admin/posts/delete/{id}', 'PostController@destroy');
+Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
