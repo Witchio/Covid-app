@@ -65,3 +65,9 @@ Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts'
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
 
 //! Profile dashboard
+
+//! Stats page
+
+Route::get('statistics', function () {
+    return view('statistics');
+})->name('stats');
