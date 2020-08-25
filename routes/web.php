@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
-//* home route (landing page)
-//Display top 3 posts
 Route::get('/', 'PostController@main');
 
 //* Posts routes
@@ -45,6 +40,10 @@ Route::get('/test', 'PostController@test'); // jo keep
 //Route to add comment
 Route::post('/posts/edit/{id}', 'CommentController@store');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/posts/{id}', 'PostController@show');
 
 // UPDATE posts jo
 Route::get('/post/update/{editPostId}', 'PostController@edit');
