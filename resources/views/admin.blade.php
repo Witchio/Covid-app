@@ -29,7 +29,17 @@
 
                 <td>{{$user->email}} </td>
 
-                <td>{{$user->role}} </td>
+                <td>
+                    <form method="post" action="admin/userRole/{{$user->id}}">
+                        @csrf
+                        <select name="role" value="role">
+                            <option selected disabled>{{ucfirst($user->role)}}</option>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <input type="submit" value="Change role">
+                    </form>
+                </td>
 
 
             </tr>

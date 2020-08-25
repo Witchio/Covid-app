@@ -27,9 +27,22 @@ class HomeController extends Controller
         return view('home');
     }
 
+    //Shows all users on Admin page
     public function showUser()
     {
         $users = User::all();
         return view('admin', ['users' => $users]);
+    }
+
+    public function edit(Request $request, $id)
+    {
+
+        //$user = User::where('id', $id)->get();
+
+        $user = User::find($id);
+        $user->role = $request->role;
+
+        $user->save();
+        return redirect('admin');
     }
 }
