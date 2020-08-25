@@ -166,13 +166,6 @@ class PostController extends Controller
             ->get();
         dd($post->original['users_reports_count']);
     }
-    public function test()
-    {
-        /* $post = Post::find(1);
-        dd($post->users); */
-        /* $user = User::find(1);
-        dd($user->posts->count()); */
-    }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
     /**
