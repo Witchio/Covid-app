@@ -33,7 +33,7 @@
     <input type="text" name="comment">
     <input type="submit" value="Comment">
 </form>
-@endforeach
+
 
 <!-- scripts, can probably extend from template, but for now here -->
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
