@@ -14,10 +14,10 @@ class PostController extends Controller
 {
     public function test()
     {
-        /* $post = Post::find(1);
-        dd($post->users); */
-        $user = User::find(1);
-        dd($user->posts->count());
+        $post = Post::find(1);
+        dd($post->users);
+        /* $user = User::find(1);
+        dd($user->posts->count()); */
     }
     /**
      * Display a listing of the resource.
@@ -26,13 +26,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //* Using the Eloquent model
-        $posts = Post::all();
-
-        foreach ($posts as $key => $post) {
-            $likes = $post->users->count();
-        }
-        dd($posts);
+        // Using Eloquent ORM
+        $posts = Post::withCount('users', 'usersReports')->get();
+        // dd($posts);
 
         return view('posts', ['posts' => $posts]);
     }
@@ -218,5 +214,15 @@ class PostController extends Controller
         $posts = Post::withTrashed()->get();
 
         return view('admin-posts', ['posts' => $posts]);
+    }
+
+    // LIKE a post (toggle)
+    public function likePost()
+    {
+        //
+        $user = User::find(Auth::user()->id);
+        $post = Post::find();
+        //$user->posts[] = $post;
+        $user->posts()->save($post);
     }
 }

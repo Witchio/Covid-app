@@ -18,6 +18,7 @@ class CreateReportsTable extends Migration
 
             $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('user_id');
+            $table->unique(array('post_id', 'user_id'));
             $table->timestamps();
 
             $table->foreign('post_id')->references('id')->on('posts');
