@@ -45,7 +45,7 @@
                 console.log('Route: ' + route);
                 $.ajax({
                     url: route,
-                    type: 'put',
+                    type: 'get',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

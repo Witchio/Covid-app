@@ -217,11 +217,11 @@ class PostController extends Controller
     }
 
     // LIKE a post (toggle)
-    public function likePost()
+    public function likePost($id)
     {
         //
         $user = User::find(Auth::user()->id);
-        $post = Post::find();
+        $post = Post::find($id);
         //$user->posts[] = $post;
         $user->posts()->save($post);
     }
