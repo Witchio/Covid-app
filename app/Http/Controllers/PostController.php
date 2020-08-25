@@ -84,13 +84,21 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        //* Sending the post and the boolean to the view
         $post = Post::where('id', $id)->get();
-        $user = Auth::user();
-        //todo check if user already reported 
-        /* $post compare to $user->postsReports[] */
-        return view('post', ['post' => $post[0]]);
+        return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
-
+    //* checking if the user has already reported the post they are viewing
+    public function reportStatus($id)
+    {
+        $user = Auth::user();
+        $reported = false;
+        foreach ($user->postsReports as $value) {
+            if ($value['pivot']['post_id']  == $id) {
+                return $reported = true;
+            }
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -144,9 +152,9 @@ class PostController extends Controller
         //$user = Auth::user(); //works but method is underlined as an error
 
         $user = User::find(Auth::user()->id);
-        $post = Post::find(3);
-        $user->postsReports[] = $post;
+        $post = Post::find($id);
         $user->postsReports()->save($post);
+        return redirect('/posts');
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
