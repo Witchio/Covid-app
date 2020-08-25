@@ -50,3 +50,8 @@ Route::post('/posts/edit/{id}', 'CommentController@store');
 Route::get('/post/update/{editPostId}', 'PostController@edit');
 Route::put('/post/update/{editPostId}', 'PostController@update');
 //roller@show');
+
+//* Routes for Admin Dashboard
+Route::get('/admin', 'HomeController@showUser');
+Route::post('admin/userRole/{id}', 'HomeController@edit');
+//Route::get('admin/userRole/{id}', 'HomeController@edit');
