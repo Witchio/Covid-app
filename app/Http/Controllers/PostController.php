@@ -70,7 +70,7 @@ class PostController extends Controller
         //* Validating and storing image
         if ($request->image) {
             $request->validate([
-                'image' => 'mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+                'image' => 'mimes:jpeg,jpg|max:2048',
             ]);
             $imageName = time() . '.' . $request->image->extension();
             $post->image = $imageName;
@@ -90,10 +90,21 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        //* Sending the post and the boolean to the view
         $post = Post::where('id', $id)->get();
-        return view('post', ['post' => $post[0]]);
+        return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
-
+    //* checking if the user has already reported the post they are viewing
+    public function reportStatus($id)
+    {
+        $user = Auth::user();
+        $reported = false;
+        foreach ($user->postsReports as $value) {
+            if ($value['pivot']['post_id']  == $id) {
+                return $reported = true;
+            }
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -132,7 +143,7 @@ class PostController extends Controller
                 'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
             ]);
 
-            // save the new imageName with unique timestmp and image file name 
+            // save the new imageName with unique timestmp and image file name
             //previous alternative: $imageName = time() . '.' . $request->image->extension();
             $imageName = time() . '.' . $request->image->getClientOriginalName();
             $post->image = $imageName;
@@ -161,10 +172,19 @@ class PostController extends Controller
      */
     public function report($id)
     {
-        $post = Post::where('id', $id)
-            ->withCount('usersReports') //name of the function on Post model
-            ->get();
-        dd($post->original['users_reports_count']);
+        /* $post = Post::where('id', $id)
+        ->withCount('usersReports') //name of the function on Post model
+        ->get(); */
+
+        //dd($post[0]->usersReports); //this gives array with each report
+        //dd($post[0]->usersReports()); //this gives an array with info about the reports table
+
+        //$user = Auth::user(); //works but method is underlined as an error
+
+        $user = User::find(Auth::user()->id);
+        $post = Post::find($id);
+        $user->postsReports()->save($post);
+        return redirect('/posts');
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
@@ -178,6 +198,7 @@ class PostController extends Controller
     {
         //
     }
+
 
     //* if the admin of the user want to permanent delete a post
     /**

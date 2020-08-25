@@ -21,10 +21,30 @@
 </ul>
 
 <!-- Should be icon probably -->
-<button id="report">Report</button>
+@if(!$reported)
+<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
+@endif
+
 <!-- If user that created the post or admin wants to permanently delete it-->
-<button id="delete">Delete</button>
-<a href="/post/report/{{$post->id}}">report</a>
+<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
+
 
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<!-- My script -->
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $("#report").click(function() {
+        $.ajax({
+            type: 'post',
+            url: "{{ route('post.report', ['id' => $post->id]) }}",
+        });
+        console.log('sadasd')
+    })
+</script>

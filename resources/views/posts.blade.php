@@ -6,8 +6,8 @@
 <h1>Posts</h1>
 
 <!-- when clicked goes to PostController create() -->
-<button id="create">Create post</button>
-<a href="{{ route('post.create') }}">create link</a>
+
+<a href="{{ route('post.create') }}"><button id="create">Create post</button></a>
 
 
 <!-- Looop to display posts, getting the data from PostController-->
@@ -16,11 +16,12 @@
 <article>
 
     <h2>{{ $post->title }}</h2>
+    @if($post->image)
     <img src="{{asset("images/$post->image")}}" alt="post image">
+    @endif
     <p>{{ @substr($post->content,0,100 ) }} ...</p>
     <a href="/posts/{{$post->id}}">See more</a>
     <p>likes</p> <!-- TODO join table query -->
-    <p>comments</p> <!-- TODO join table query -->
 </article>
 <p>Comments :</p>
 <ul>
@@ -43,3 +44,22 @@
 @endforeach
 
 @endsection
+
+<!-- scripts, can probably extend from template, but for now here -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<!-- My script -->
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $("#create").click(function() {
+        $.ajax({
+            type: 'get',
+            url: "{{ route('post.create') }}"
+            //url: "./create",
+        });
+    })
+</script>
