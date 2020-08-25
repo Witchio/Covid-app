@@ -25,9 +25,11 @@ class PostController extends Controller
 
     public function main()
     {
-        // NEED TO DO WITH INNER JOIN
-        $posts = Post::orderBy('user_id', 'desc')
-            ->limit(2)
+        // ORDERBY WITH INNER JOIN
+        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id 
+        $posts = Post::withCount('users') //withCount counts the number of User OBJECTS associated to the Post (aka LIKES)
+            ->orderBy('users_count', 'desc')
+            ->limit(3)
             ->get();
         return view('main', ['posts' => $posts]);
     }
