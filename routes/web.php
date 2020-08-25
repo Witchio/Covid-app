@@ -35,6 +35,10 @@ Another 'fix' would have also been to move the route for posts/create above the 
 Route::get('/post/create', 'PostController@create')->name('post.create');
 Route::post('/post/create', 'PostController@store');
 
+// Reporting a post
+Route::get('/post/report/{id}', 'PostController@report')->name('post.report');
+
+
 Route::get('/test', 'PostController@test'); // jo keep
 
 //* Commments
@@ -46,3 +50,11 @@ Route::post('/posts/edit/{id}', 'CommentController@store');
 Route::get('/post/update/{editPostId}', 'PostController@edit');
 Route::put('/post/update/{editPostId}', 'PostController@update');
 //roller@show');
+
+//* Routes for Admin Dashboard
+Route::get('/admin/users', 'HomeController@showUser');
+Route::post('admin/userRole/{id}', 'HomeController@edit');
+Route::post('/admin/delete/{id}', 'HomeController@destroy');
+//Show soft deleted posts
+Route::get('/admin/posts', 'PostController@showSoftDeleted');
+Route::post('/admin/posts/delete/{id}', 'PostController@destroy');

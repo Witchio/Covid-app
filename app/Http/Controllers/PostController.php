@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -26,7 +27,7 @@ class PostController extends Controller
     public function main()
     {
         // ORDERBY WITH INNER JOIN
-        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id 
+        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id
         $posts = Post::withCount('users') //withCount counts the number of User OBJECTS associated to the Post (aka LIKES)
             ->orderBy('users_count', 'desc')
             ->limit(3)
@@ -61,12 +62,15 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id; //only a logged in user can post
 
         //* Validating and storing image
-        $request->validate([
-            'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
-        ]);
-        $imageName = time() . '.' . $request->image->extension();
-        $post->image = $imageName;
-        $request->image->move(public_path() . '/images', $imageName);
+        if ($request->image) {
+            $request->validate([
+                'image' => 'mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+            ]);
+            $imageName = time() . '.' . $request->image->extension();
+            $post->image = $imageName;
+            $request->image->move(public_path() . '/images', $imageName);
+        }
+
 
         $post->save();
         return redirect('/posts');
@@ -118,6 +122,41 @@ class PostController extends Controller
         return view('post', ['post' => $newPost]);
     }
 
+    //* Reporting a post
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function report($id)
+    {
+        $post = Post::where('id', $id)
+            ->withCount('usersReports') //name of the function on Post model
+            ->get();
+        dd($post->original['users_reports_count']);
+    }
+    public function test()
+    {
+        /* $post = Post::find(1);
+        dd($post->users); */
+        /* $user = User::find(1);
+        dd($user->posts->count()); */
+    }
+
+    //* After 3 reports, a post is soft deleted for an admin to review it
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function softDestroy($id)
+    {
+        $result = Post::where('id', $id)->delete();
+    }
+
+    //* if the admin of the user want to permanent delete a post
     /**
      * Remove the specified resource from storage.
      *
@@ -126,6 +165,29 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = Post::where('id', $id)->delete();
+        $result = Post::where('id', $id)->forceDelete();
+
+        return redirect('admin/posts');
+    }
+
+    //* if the admin after reviewing the post deemed it safe
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        $result = Post::where('id', $id)->restore();
+    }
+
+    //* Show the soft-deleted posts on the admin dashboard
+
+    public function showSoftDeleted()
+    {
+        $posts = Post::withTrashed()->get();
+
+        return view('admin-posts', ['posts' => $posts]);
     }
 }

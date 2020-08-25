@@ -1,4 +1,8 @@
 <!-- extends from template-->
+@extends('layouts.app')
+
+@section('content')
+
 <section>
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -42,6 +46,8 @@
 <section>
     <!-- Rss feed, squeleton for that tbd -->
 </section>
+
+@endsection
 
 <!--Chart.js-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
