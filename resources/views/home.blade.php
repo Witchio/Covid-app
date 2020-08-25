@@ -9,14 +9,14 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-
+                    <!-- Login info and creating a redirection-->
                     {{ __('You are logged in!') }}<br>
                     {{ __('Redirecting...') }}
-                    <?php header('Refresh: 3; url="profile"')
+                    <?php header('Refresh: 3; url="profile"') ?>
                 </div>
             </div>
         </div>
