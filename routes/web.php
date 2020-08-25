@@ -29,7 +29,7 @@ Route::post('/post/create', 'PostController@store');
 
 Route::get('/test', 'PostController@test'); // jo keep
 //Route::get('/test', 'PostController@test'); // jo keep
-//DONT DELETE, IMPORTANT ROUTE. For adding comment
+//Route to add comment
 Route::post('/posts/edit/{id}', 'CommentController@store');
 
 Auth::routes();

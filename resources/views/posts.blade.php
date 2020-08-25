@@ -26,13 +26,15 @@
 <ul>
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>
+    <li>
+        <form action="/posts/edit/{{ $post->id}}" method="post">
+            @csrf
+            <input type="text" name="comment">
+            <input type="submit" value="Comment">
+        </form>
+    </li>
     @endforeach
 </ul>
-<form action="/posts/edit/{{ $post->id}}" method="post">
-    @csrf
-    <input type="text" name="comment">
-    <input type="submit" value="Comment">
-</form>
 
 
 <!-- scripts, can probably extend from template, but for now here -->
