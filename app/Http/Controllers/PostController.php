@@ -166,6 +166,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         $result = Post::where('id', $id)->forceDelete();
+
+        return redirect('admin/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe
@@ -178,5 +180,14 @@ class PostController extends Controller
     public function restore($id)
     {
         $result = Post::where('id', $id)->restore();
+    }
+
+    //* Show the soft-deleted posts on the admin dashboard
+
+    public function showSoftDeleted()
+    {
+        $posts = Post::withTrashed()->get();
+
+        return view('admin-posts', ['posts' => $posts]);
     }
 }

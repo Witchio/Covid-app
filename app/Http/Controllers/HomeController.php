@@ -27,13 +27,14 @@ class HomeController extends Controller
         return view('home');
     }
 
-    //Shows all users on Admin page
+    //* Shows all users on Admin page
     public function showUser()
     {
         $users = User::all();
-        return view('admin', ['users' => $users]);
+        return view('admin-users', ['users' => $users]);
     }
 
+    //*Change user role
     public function edit(Request $request, $id)
     {
 
@@ -43,6 +44,13 @@ class HomeController extends Controller
         $user->role = $request->role;
 
         $user->save();
-        return redirect('admin');
+        return redirect('admin/users');
+    }
+
+    //* Soft-delete user with user button
+    public function destroy($id)
+    {
+        $result = User::where('id', $id)->delete();
+        return redirect('admin/users');
     }
 }

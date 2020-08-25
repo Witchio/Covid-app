@@ -30,20 +30,31 @@
                 <td>{{$user->email}} </td>
 
                 <td>
-                    <form method="post" action="admin/userRole/{{$user->id}}">
+                    <form method="post" action="userRole/{{$user->id}}">
                         @csrf
                         <select name="role" value="role">
-                            <option selected disabled>{{ucfirst($user->role)}}</option>
+                            <option selected value="{{ucfirst($user->role)}}">{{ucfirst($user->role)}}</option>
+
+                            @if($user->role=="admin")
                             <option value="user">User</option>
+                            @else
                             <option value="admin">Admin</option>
+                            @endif
                         </select>
                         <input type="submit" value="Change role">
+
+                    </form>
+                    <form action="delete/{{$user->id}}" method="post">
+                        @csrf
+                        <input type="submit" value="Delete user">
                     </form>
                 </td>
 
 
             </tr>
             @endforeach
+
+
 
         </tbody>
 

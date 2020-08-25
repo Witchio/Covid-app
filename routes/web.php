@@ -52,6 +52,9 @@ Route::put('/post/update/{editPostId}', 'PostController@update');
 //roller@show');
 
 //* Routes for Admin Dashboard
-Route::get('/admin', 'HomeController@showUser');
+Route::get('/admin/users', 'HomeController@showUser');
 Route::post('admin/userRole/{id}', 'HomeController@edit');
-//Route::get('admin/userRole/{id}', 'HomeController@edit');
+Route::post('/admin/delete/{id}', 'HomeController@destroy');
+//Show soft deleted posts
+Route::get('/admin/posts', 'PostController@showSoftDeleted');
+Route::post('/admin/posts/delete/{id}', 'PostController@destroy');
