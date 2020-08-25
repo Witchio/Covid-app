@@ -16,7 +16,7 @@
                     <!-- Login info and creating a redirection-->
                     {{ __('You are logged in!') }}<br>
                     {{ __('Redirecting...') }}
-                    <?php header('Refresh: 3; url="profile"') ?>
+                    <?php header('Refresh: 3; url="/"') ?>
                 </div>
             </div>
         </div>

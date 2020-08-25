@@ -24,3 +24,5 @@
         <input type="submit" value="Comment">
     </form>
     @endforeach
+
+    @endsection
