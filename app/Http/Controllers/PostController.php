@@ -8,15 +8,29 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 // TRYING TO MAKE A CONFLICT
+use App\User;
 
 class PostController extends Controller
 {
+    public function test()
+    {
+        /* $post = Post::find(1);
+        dd($post->users); */
+        $user = User::find(1);
+        dd($user->posts->count());
+    }
     /**
      * Display a listing of the resource.
      * TRYING TO MAKE A CONFLICT
      * @return \Illuminate\Http\Response
      */
 
+    public function index()
+    {
+        //* Using the Eloquent model
+        $posts = Post::all();
+        return view('posts', ['posts' => $posts]);
+    }
 
     public function main()
     {
@@ -36,8 +50,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //* redirects to a form  where user can create post
-        return view('add-post');
+        //
     }
 
     /**
@@ -48,23 +61,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //* stores what the user did in add-post in the db
-        //dd($request->image);
-        $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->user_id = Auth::user()->id; //only a logged in user can post
-
-        //* Validating and storing image
-        $request->validate([
-            'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
-        ]);
-        $imageName = time() . '.' . $request->image->extension();
-        $post->image = $imageName;
-        $request->image->move(public_path() . '/images', $imageName);
-
-        $post->save();
-        return redirect('/posts');
+        //
     }
 
     /**
@@ -107,7 +104,31 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
 
+        // check if the user is uploading a new image
+        if ($request->image) {
+            // store the directory file path of the existing(old) image to delete later if needed
+            $image_path = public_path() . '\images\\' . $post->image;
+
+            // Validate and save new image in DB
+            $request->validate([
+                'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+            ]);
+
+            // save the new imageName with unique timestmp and image file name 
+            //previous alternative: $imageName = time() . '.' . $request->image->extension();
+            $imageName = time() . '.' . $request->image->getClientOriginalName();
+            $post->image = $imageName;
+            // store the image to the PUBLIC folder
+            $request->image->move(public_path() . '/images', $imageName);
+
+            // if the old image is in the PUBLIC folder, delete it
+            if (Post::exists($image_path)) {
+                @unlink($image_path);
+            }
+        }
+
         $post->save();
+
 
         $newPost = Post::find($id);
         return view('post', ['post' => $newPost]);
@@ -121,6 +142,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = Post::where('id', $id)->delete();
+        //
     }
 }
