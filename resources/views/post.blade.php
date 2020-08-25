@@ -21,10 +21,10 @@
 </ul>
 
 <!-- Should be icon probably -->
-<button id="report">Report</button>
+<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
 <!-- If user that created the post or admin wants to permanently delete it-->
-<button id="delete">Delete</button>
-<a href="/post/report/{{$post->id}}">report</a>
+<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
+
 
 
 @endsection
@@ -37,11 +37,11 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    $("#create").click(function() {
+    $("#report").click(function() {
         $.ajax({
-            type: 'get',
-            url: "{{ route('post.create') }}"
-            //url: "./create",
+            type: 'post',
+            url: "{{ route('post.report', ['id' => $post->id]) }}",
         });
+        console.log('sadasd')
     })
 </script>

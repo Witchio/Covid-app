@@ -6,8 +6,8 @@
 <h1>Posts</h1>
 
 <!-- when clicked goes to PostController create() -->
-<button id="create">Create post</button>
-<a href="{{ route('post.create') }}">create link</a>
+
+<a href="{{ route('post.create') }}"><button id="create">Create post</button></a>
 
 
 <!-- Looop to display posts, getting the data from PostController-->

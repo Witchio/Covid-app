@@ -64,7 +64,7 @@ class PostController extends Controller
         //* Validating and storing image
         if ($request->image) {
             $request->validate([
-                'image' => 'mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+                'image' => 'mimes:jpeg,jpg|max:2048',
             ]);
             $imageName = time() . '.' . $request->image->extension();
             $post->image = $imageName;
@@ -131,18 +131,17 @@ class PostController extends Controller
      */
     public function report($id)
     {
-        $post = Post::where('id', $id)
-            ->withCount('usersReports') //name of the function on Post model
-            ->get();
-        //dd($post[0]->users_reports_count);
-        $post[0]->dd($post[0]->usersReports);
-    }
-    public function test()
-    {
-        /* $post = Post::find(1);
-        dd($post->users); */
-        /* $user = User::find(1);
-        dd($user->posts->count()); */
+        /* $post = Post::where('id', $id)
+        ->withCount('usersReports') //name of the function on Post model
+        ->get(); */
+
+        //dd($post[0]->usersReports); //this gives array with each report
+        //dd($post[0]->usersReports()); //this gives an array with info about the reports table
+
+        //$user = Auth::user(); //works but method is underlined as an error
+        $post = Post::find($id);
+        $user = User::find(Auth::user()->id);
+        $user->postsReports()->save($post);
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
