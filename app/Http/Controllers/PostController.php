@@ -101,7 +101,31 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
 
+        // check if the user is uploading a new image
+        if ($request->image) {
+            // store the directory file path of the existing(old) image to delete later if needed
+            $image_path = public_path() . '\images\\' . $post->image;
+
+            // Validate and save new image in DB
+            $request->validate([
+                'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+            ]);
+
+            // save the new imageName with unique timestmp and image file name 
+            //previous alternative: $imageName = time() . '.' . $request->image->extension();
+            $imageName = time() . '.' . $request->image->getClientOriginalName();
+            $post->image = $imageName;
+            // store the image to the PUBLIC folder
+            $request->image->move(public_path() . '/images', $imageName);
+
+            // if the old image is in the PUBLIC folder, delete it
+            if (Post::exists($image_path)) {
+                @unlink($image_path);
+            }
+        }
+
         $post->save();
+
 
         $newPost = Post::find($id);
         return view('post', ['post' => $newPost]);
