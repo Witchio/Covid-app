@@ -11,6 +11,7 @@
 
 
 <!-- Looop to display posts, getting the data from PostController-->
+
 @foreach($posts as $post)
 <article>
 
@@ -26,12 +27,17 @@
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>
     @endforeach
-
+    <!-- Only show if user is logged is-->
+    @if (Route::has('login'))
+    @auth
     <form action="/posts/edit/{{ $post->id}}" method="post">
         @csrf
         <input type="text" name="comment">
         <input type="submit" value="Comment">
     </form>
+    @endauth
+    @endif
+
 
 </ul>
 @endforeach
