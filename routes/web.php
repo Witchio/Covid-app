@@ -35,6 +35,10 @@ Another 'fix' would have also been to move the route for posts/create above the 
 Route::get('/post/create', 'PostController@create')->name('post.create');
 Route::post('/post/create', 'PostController@store');
 
+// Reporting a post
+Route::get('/post/report/{id}', 'PostController@report')->name('post.report');
+
+
 Route::get('/test', 'PostController@test'); // jo keep
 
 //* Commments

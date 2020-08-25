@@ -22,4 +22,8 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+    public function usersReports()
+    {
+        return $this->belongsToMany('App\User', 'reports');
+    }
 }
