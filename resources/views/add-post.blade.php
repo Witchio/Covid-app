@@ -1,6 +1,8 @@
 <!-- extend from template -->
+@extends('layouts.app')
 
 <!-- redirected to here from PostController create() -->
+@section('content')
 
 <h1>hello</h1>
 @if (count($errors) > 0)
@@ -21,3 +23,5 @@
     <input type="file" name="image"> <br>
     <input type="submit" name="submit" value="post">
 </form>
+
+@endsection

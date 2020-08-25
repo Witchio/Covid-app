@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
+            //Deletes all foreign key values when deleted
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
