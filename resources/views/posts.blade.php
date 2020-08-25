@@ -20,21 +20,22 @@
     <a href="/posts/{{$post->id}}">See more</a>
     <p>likes</p> <!-- TODO join table query -->
     <p>comments</p> <!-- TODO join table query -->
-    @endforeach
 </article>
 <p>Comments :</p>
 <ul>
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>
-    <li>
-        <form action="/posts/edit/{{ $post->id}}" method="post">
-            @csrf
-            <input type="text" name="comment">
-            <input type="submit" value="Comment">
-        </form>
-    </li>
     @endforeach
+
+    <form action="/posts/edit/{{ $post->id}}" method="post">
+        @csrf
+        <input type="text" name="comment">
+        <input type="submit" value="Comment">
+    </form>
+
 </ul>
+@endforeach
+
 
 
 <!-- scripts, can probably extend from template, but for now here -->
