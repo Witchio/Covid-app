@@ -3,53 +3,19 @@ chartIt();
 
 async function chartIt() {
     await getData();
-    let stats = [];
-    xlabels2.forEach(value => {
-        stats.push(value);
-    });
-    //stats = [12, 33, 45, 77, 89, 55];
-    var ctx2 = document.getElementById('global');
-    var myChart2 = new Chart(ctx2, {
-        type: 'radar',
-        data: {
-            labels: ['Newly Confirmed Cases', 'Total active Cases', 'New Deaths', 'Total Deaths', 'New Recovered', 'Total recovered'],
-            datasets: [{
-                data: xlabels2[0],
-                label: 'World Data',
-                backgroundColor: "rgba(255, 206, 86, 0.5)",
-                fill: true,
-                borderColor: 'rgba(255, 99, 132, 0.7)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                //Border of the line
-                borderWidth: 1,
-                //Border of the data point
-                pointRadius: 0.5,
-                //Css
-            }],
-
-            plugins: {
-                datalabels: {
-                    formatter: (value2) => {
-                        if (value > 1000000000) {
-                            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
-
-                            return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(value2);
-                        }
-                        else {
-                            return '';
-                        }
-                    },
-                }
-            }
-
-        },
+    data = xlabels2[0];
+    document.getElementById('nc').innerHTML = data[0];
+    document.querySelector('#tc').innerHTML = data[1];
+    document.querySelector('#nd').innerHTML = data[2];
+    document.querySelector('#td').innerHTML = data[3];
+    document.querySelector('#nr').innerHTML = data[4];
+    document.querySelector('#tr').innerHTML = data[5];
 
 
-    });
+};
 
 
 
-}
 
 
 async function getData() {
