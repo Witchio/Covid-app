@@ -46,7 +46,6 @@ Route::get('/test', 'PostController@test'); // jo keep
 //* Commments
 //Route to add comment
 Route::post('/posts/comment/{id}', 'CommentController@store');
-Route::post('/posts/comment/{id}', 'CommentController@storeId');
 
 Auth::routes();
 

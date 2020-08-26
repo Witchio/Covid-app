@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +29,7 @@ class PostController extends Controller
     public function index()
     {
         // *Using Eloquent ORM
-        $posts = Post::withCount('users', 'usersReports')->get();
+        $posts = Post::withCount('users', 'comments', 'usersReports')->get();
         // dd($posts);
 
         return view('posts', ['posts' => $posts]);
@@ -38,10 +39,12 @@ class PostController extends Controller
     {
         // ORDERBY WITH INNER JOIN
         // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id
-        $posts = Post::withCount('users') //withCount counts the number of User OBJECTS associated to the Post (aka LIKES)
+        //withCount counts the number of User OBJECTS associated to the Post (aka LIKES or Comments)
+        $posts = Post::withCount('users', 'comments')
             ->orderBy('users_count', 'desc')
             ->limit(3)
             ->get();
+
         return view('main', ['posts' => $posts]);
     }
 
@@ -94,7 +97,7 @@ class PostController extends Controller
     {
         // Using Eloquent ORM
         $post = Post::where('id', $id)
-            ->withCount('users', 'usersReports')->get();
+            ->withCount('users', 'comments', 'usersReports')->get();
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);

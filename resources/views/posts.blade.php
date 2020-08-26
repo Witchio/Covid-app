@@ -27,24 +27,8 @@
     <a href="/posts/{{$post->id}}">See more</a>
     <div>{{ $post->users_count }} likes</div>
 </article>
-<p>Comments :</p>
-<ul>
-    @foreach($post->comments as $comment)
-    <li>{{$comment->comment}}</li>
-    @endforeach
-    <!-- Only show if user is logged is-->
-    @if (Route::has('login'))
-    @auth
-    <form action="/posts/comment/{{ $post->id}}" method="post">
-        @csrf
-        <input type="text" name="comment">
-        <input type="submit" value="Comment">
-    </form>
-    @endauth
-    @endif
+<p>{{ $post->comments_count }} comments</p>
 
-
-</ul>
 @endforeach
 
 @endsection
