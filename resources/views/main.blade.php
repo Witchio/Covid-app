@@ -45,6 +45,9 @@
 
 <section>
     <!-- Rss feed, squeleton for that tbd -->
+    <!-- Link for the xml file: https://rss.app/feeds/Y74AKXIUbHu2XXbr.xml -->
+    <rssapp-wall id="Y74AKXIUbHu2XXbr"></rssapp-wall>
+    <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
 </section>
 
 @endsection
