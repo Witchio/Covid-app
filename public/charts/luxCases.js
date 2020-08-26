@@ -1,19 +1,19 @@
-const xlabels1 = [];
+const luxCases = [];
 chartIt();
 async function chartIt() {
     await getData1();
     let dates = [];
     let newCases = [];
-    xlabels1.forEach(data => {
+    luxCases.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels1.forEach(data => {
+    luxCases.forEach(data => {
         newCases.push(data[1]);
     });
     var ctx1 = document.getElementById('luxemburg');
     Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
@@ -55,7 +55,7 @@ async function getData1() {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels1.push([date[0], cases]);
+        luxCases.push([date[0], cases]);
 
     });
 }

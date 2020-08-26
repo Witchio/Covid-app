@@ -54,5 +54,5 @@
 <!--Label Plugin-->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
 <!--Scripts-->
-<script src="charts/homeChart.js"></script>
+<script src="charts/luxCases.js"></script>
 <script src="charts/continent.js"></script>

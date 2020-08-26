@@ -1,13 +1,13 @@
-const xlabels6 = [];
+const luxDeaths = [];
 chartIt();
 async function chartIt() {
     await getData6();
     let dates = [];
     let newCases = [];
-    xlabels6.forEach(data => {
+    luxDeaths.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels6.forEach(data => {
+    luxDeaths.forEach(data => {
         newCases.push(data[1]);
     });
     var ctx1 = document.getElementById('luxDeaths');
@@ -55,7 +55,7 @@ async function getData6() {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels6.push([date[0], cases]);
+        luxDeaths.push([date[0], cases]);
 
     });
 }

@@ -1,12 +1,3 @@
-
-let select = document.querySelector('#select');
-select.addEventListener('change', function () {
-    const country = this.value;
-    document.querySelector('#luxemburg').style.display = "none";
-    document.querySelector('#luxDeaths').style.display = "none";
-    chartCountry(country);
-})
-
 let xlabels4 = [];
 
 async function chartCountry(request) {
@@ -23,12 +14,12 @@ async function chartCountry(request) {
     var ctx1 = document.getElementById('country');
     Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
                 data: newCases,
-                label: request + ' total requests',
+                label: request + ' total Cases',
                 //Css
                 //Fill the graph or not
                 fill: true,

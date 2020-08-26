@@ -1,9 +1,9 @@
-const xlabels2 = [];
+const globalData = [];
 chartIt();
 
 async function chartIt() {
     await getData();
-    data = xlabels2[0];
+    data = globalData[0];
     document.getElementById('nc').innerHTML = data[0];
     document.querySelector('#tc').innerHTML = data[1];
     document.querySelector('#nd').innerHTML = data[2];
@@ -13,9 +13,6 @@ async function chartIt() {
 
 
 };
-
-
-
 
 
 async function getData() {
@@ -30,6 +27,6 @@ async function getData() {
     const totalDeaths = globals['TotalDeaths'];
     const newRecovered = globals['NewRecovered'];
     const totalRecovered = globals['TotalRecovered'];
-    xlabels2.push([newCases, totalCases, newDeaths, totalDeaths, newRecovered, totalRecovered]);
+    globalData.push([newCases, totalCases, newDeaths, totalDeaths, newRecovered, totalRecovered]);
 
 }

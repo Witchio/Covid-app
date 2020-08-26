@@ -1,22 +1,14 @@
+let countryDeaths = [];
 
-let select = document.querySelector('#select');
-select.addEventListener('change', function () {
-    const country = this.value;
-    document.querySelector('#luxDeaths').style.display = "none";
-    chartCountry(country);
-})
-
-let xlabels5 = [];
-
-async function chartCountry(request) {
-    xlabels5.length = 0;
+async function chartDeaths(request) {
+    countryDeaths.length = 0;
     await getData5(request);
     let dates = [];
     let newCases = [];
-    xlabels5.forEach(data => {
+    countryDeaths.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels5.forEach(data => {
+    countryDeaths.forEach(data => {
         newCases.push(data[1]);
     });
     var ctx1 = document.getElementById('deaths');
@@ -50,6 +42,22 @@ async function chartCountry(request) {
                 datalabels: {
                     display: false
                 }
+            },
+
+            plugins: {
+                datalabels: {
+
+                    formatter: (deaths) => {
+                        if (deaths > 3000000) {
+                            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+
+                            return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(deaths);
+                        }
+                        else {
+                            return '';
+                        }
+                    },
+                },
             }
 
         }
@@ -66,7 +74,7 @@ async function getData5(request) {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels5.push([date[0], cases]);
+        countryDeaths.push([date[0], cases]);
 
     });
 }
