@@ -10,6 +10,18 @@
 <img src="{{asset("images/$post->image")}}" alt="post image">
 @endif
 <p>{{ $post->content }}</p>
+
+<!-- Comment post-->
+@if (Route::has('login'))
+@auth
+<form action="/posts/edit/{{ $post->id}}" method="post">
+    @csrf
+    <input type="text" name="comment">
+    <input type="submit" value="Comment">
+</form>
+@endauth
+@endif
+
 <!-- only for the AUTHOR -->
 <p>
     <a href="/post/update/{{$post->id}}">Edit post details</a>
