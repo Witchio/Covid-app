@@ -3,14 +3,10 @@ chartIt();
 
 async function chartIt() {
     await getData();
-    let stats = [];
-    xlabels2.forEach(value => {
-        stats.push(value);
-    });
-    //stats = [12, 33, 45, 77, 89, 55];
+    console.log(xlabels2);
     var ctx2 = document.getElementById('global');
     var myChart2 = new Chart(ctx2, {
-        type: 'radar',
+        type: 'scatter',
         data: {
             labels: ['Newly Confirmed Cases', 'Total active Cases', 'New Deaths', 'Total Deaths', 'New Recovered', 'Total recovered'],
             datasets: [{
