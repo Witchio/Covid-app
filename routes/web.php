@@ -81,9 +81,9 @@ Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 //! Profile dashboard
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
-Route::put('/profile/update','HomeController@update');
+Route::put('/profile/update', 'HomeController@update');
 
 
 //! Stats page
