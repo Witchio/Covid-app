@@ -74,6 +74,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
+Route::put('/profile/update','HomeController@update');
 
 
 //! Stats page

@@ -58,8 +58,8 @@ class UserSeeder extends Seeder
                 'role' => 'admin',
             ],
             [
-                'name' => 'Edu',
-                'email' => 'edu@edu.com',
+                'name' => 'Eduardo',
+                'email' => 'pintoedu@gmail.com',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
             ],
