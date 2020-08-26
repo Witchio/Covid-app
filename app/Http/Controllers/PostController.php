@@ -102,6 +102,12 @@ class PostController extends Controller
         // Using Eloquent ORM
         $post = Post::where('id', $id)
             ->withCount('users', 'comments', 'usersReports')->get();
+        $comment = Post::where('id', $id)
+            ->withCount('users', 'comments', 'usersReports')->get();
+
+        // https://laravel.com/docs/7.x/eloquent-relationships
+        $comments = Comment::find(1);
+        dd($comments->commentor);
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
@@ -159,7 +165,7 @@ class PostController extends Controller
 
             // Validate and save new image in DB
             $request->validate([
-                'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+                'image' => 'required|mimes:jpeg,jpg|max:2048',
             ]);
 
             // save the new imageName with unique timestmp and image file name
