@@ -31,7 +31,7 @@
 
             <article>
                 <!-- chart3 : Global data table -->
-                <table id="global">
+                <table>
                     <thead>
                         <th>NewConfirmed</th>
                         <th>TotalConfirmed</th>
@@ -50,6 +50,28 @@
                     </tbody>
                 </table>
             </article>
+            <article>
+                <!-- chart4 : Data for all the countries-->
+                <table id="world">
+                    <thead>
+                        <th>NewConfirmed</th>
+                        <th>TotalConfirmed</th>
+                        <th>NewDeaths</th>
+                        <th>TotalDeaths</th>
+                        <th>NewRecovered</th>
+                        <th>TotalRecovered</th>
+                    </thead>
+                    <tbody id="row">
+                        <td id="country"></td>
+                        <td id="ncw"></td>
+                        <td id="tcw"></td>
+                        <td id="ndw"></td>
+                        <td id="tdw"></td>
+                        <td id="nrw"></td>
+                        <td id="trw"></td>
+                    </tbody>
+                </table>
+            </article>
 
         </div>
 </body>
@@ -62,7 +84,8 @@
 <!--Scripts-->
 <!-- <script src="charts/homeChart.js"></script>
 <script src="charts/continent.js"></script> -->
-<script src="charts/global.js"></script>
+<!-- <script src="charts/global.js"></script> -->
+<script src="charts/world.js"></script>
 
 </html>
 @endsection
