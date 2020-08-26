@@ -93,8 +93,6 @@ class PostController extends Controller
     {
         //* Sending the post and the boolean to the view
         $post = Post::where('id', $id)->get();
-        //$user = Auth::user();
-        //dd($user);
         return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
     //* checking if the user has already reported the post they are viewing
@@ -109,6 +107,7 @@ class PostController extends Controller
                 }
             }
         }
+        return $reported;
     }
     /**
      * Show the form for editing the specified resource.
@@ -193,7 +192,7 @@ class PostController extends Controller
         if (count($post->usersReports) == 3) {
             $this->softDestroy($id);
         }
-        //return redirect('/posts');
+        return redirect('/posts');
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
