@@ -26,4 +26,8 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User', 'reports', 'post_id', 'user_id')->withTimestamps();
     }
+    public function commentator()
+    {
+        return $this->hasManyThrough('App\User', 'App\Comment');
+    }
 }
