@@ -29,7 +29,7 @@
         <p>Image : </p>
         <img src="{{ asset("images/$post->image")}}" alt="">
         <p>Content : {{ $post->content }}</p>
-        <p>Likes : </p>
+        <p>{{ $post->users_count }} likes </p>
         <p>Comments :</p>
         <ul>
             @foreach($post->comments as $comment)
