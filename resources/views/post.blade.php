@@ -10,22 +10,40 @@
 <img src="{{asset("images/$post->image")}}" alt="post image">
 @endif
 <p>{{ $post->content }}</p>
+
+<!-- Only show if user is logged in-->
+@if (Auth::user())
 <!-- only for the AUTHOR -->
+@if ($post->user_id==Auth::user()->id)
+@auth
 <p>
     <a href="/post/update/{{$post->id}}">Edit post details</a>
 </p>
+@endauth
+@endif
+@endif
 <br>
-<div>{{ $post->users_count }} likes</div> <!-- TODO join table query -->
 
+<div>{{ $post->users_count }} likes</div>
+
+<!-- Only show if user is logged is-->
+@if (Route::has('login'))
+@auth
 
 <!-- Should be icon probably -->
 <button class="like-btn" value="{{$post->id}}">LIKE icon</button>
+<!-- IF user has not reported this post before -->
 @if(!$reported)
+<!-- IF user is not the post author -->
+@if($post->user_id!=Auth::user()->id)
 <a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
+@endif
 @endif
 <!-- If user that created the post or admin wants to permanently delete it-->
 <a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
 
+@endauth
+@endif
 
 
 <br><br>

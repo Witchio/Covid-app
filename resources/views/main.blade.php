@@ -36,7 +36,7 @@
             <li>{{$comment->comment}}</li>
             @endforeach
         </ul>
-        <a href="/posts/{{$post->id}}">Read hole Post</a><br>
+        <a href="/posts/{{$post->id}}">Go to Post</a><br>
         <hr>
         @endforeach
     </div>

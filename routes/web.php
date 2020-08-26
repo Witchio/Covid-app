@@ -31,11 +31,13 @@ Route::get('/posts/{id}', 'PostController@show');
 To fix this i changed the url to post/create.
 Another 'fix' would have also been to move the route for posts/create above the posts/id* - Luchi */
 //Create/store posts
-Route::get('/post/create', 'PostController@create')->name('post.create');
+// Redirects user if not logged in
+Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth');
 Route::post('/post/create', 'PostController@store');
 
+
 //. Reporting a post
-Route::get('/post/report/{id}', 'PostController@report')->name('post.report');
+Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->middleware('auth');
 
 //. Deleting a post
 //Soft delete
@@ -47,7 +49,7 @@ Route::get('/test', 'PostController@test'); // jo keep
 
 //* Commments
 //Route to add comment
-Route::post('/posts/edit/{id}', 'CommentController@store');
+Route::post('/posts/comment/{id}', 'CommentController@store');
 
 Auth::routes();
 
@@ -55,11 +57,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts/{id}', 'PostController@show');
 
 // UPDATE posts jo
-Route::get('/post/update/{editPostId}', 'PostController@edit');
+Route::get('/post/update/{editPostId}', 'PostController@edit')->middleware('auth');
 Route::put('/post/update/{editPostId}', 'PostController@update');
+// Redirects user if not logged in
+Route::get('/post/update', function () {
+    return redirect('/login');
+})->middleware('auth');
 
 // LIKE posts jo
-Route::get('/post/like/{likePostId}', 'PostController@likePost');
+Route::get('/post/like/{likePostId}', 'PostController@likePost')->middleware('auth');
+// Redirects user if not logged in
+Route::get('/post/like', function () {
+    return redirect('/login');
+})->middleware('auth');
 
 //! Admin Dashboard
 //* Users admin Dashboard

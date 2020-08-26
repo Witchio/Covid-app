@@ -1,8 +1,16 @@
 <!-- extend from tempate -->
-
 @extends('layouts.app')
+
 <!-- section('content') -->
 @section('content')
+
+
+<!-- Only show if user is logged in-->
+@if (Auth::user())
+<!-- only for the AUTHOR -->
+@if ($post->user_id==Auth::user()->id)
+@auth
+
 <form action="" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -17,6 +25,9 @@
     <input type="file" name="image"><br><br>
     <input type="submit" value="Post Update">
 </form>
-<!-- endsection -->
 
+@endauth
+@endif
+@endif
+<!-- endsection -->
 @endsection
