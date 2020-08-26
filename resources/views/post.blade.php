@@ -11,40 +11,59 @@
 @endif
 <p>{{ $post->content }}</p>
 <!-- only for the AUTHOR -->
-<a href="/post/update/{{$post->id}}">Edit post details</a>
-<p>likes</p> <!-- TODO join table query -->
-<p>comments</p> <!-- TODO join table query -->
+<p>
+    <a href="/post/update/{{$post->id}}">Edit post details</a>
+</p>
+<br>
+<div>{{ $post->users_count }} likes</div> <!-- TODO join table query -->
+
+
+<!-- Should be icon probably -->
+<button class="like-btn" value="{{$post->id}}">LIKE icon</button>
+@if(!$reported)
+<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
+@endif
+<!-- If user that created the post or admin wants to permanently delete it-->
+<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
+
+
+
+<br><br>
+<p>-----Comments-----</p> <!-- TODO join table query -->
 <ul>
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>
     @endforeach
 </ul>
 
-<!-- Should be icon probably -->
-@if(!$reported)
-<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
-@endif
-
-<!-- If user that created the post or admin wants to permanently delete it-->
-<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
-
-
-
 @endsection
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-<!-- My script -->
+
+
+@section('js-resources')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 <script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $("#report").click(function() {
-        $.ajax({
-            type: 'post',
-            url: "{{ route('post.report', ['id' => $post->id]) }}",
+    $(function() {
+        $('.like-btn').click(function(e) {
+            let route = '/post/like/' + $(this).val();
+            console.log('Route: ' + route);
+            $.ajax({
+                url: route,
+                type: 'get',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(result) {
+                    console.log(result.message);
+                    $('.content').load(document.URL + ' .content');
+                },
+                error: function(err) {
+                    // If ajax errors happens
+                    alert('AJAX ERROR. Pleace contact administrator');
+                }
+            });
         });
-        console.log('sadasd')
-    })
+    });
 </script>
+@endsection

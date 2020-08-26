@@ -95,6 +95,8 @@
             @yield('content')
         </main>
     </div>
+    @yield('js-resources')
+
 </body>
 
 </html>

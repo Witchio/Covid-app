@@ -55,7 +55,7 @@ class LikeSeeder extends Seeder
                 'user_id' => '7',
             ],
             [
-                'post_id' => '4',
+                'post_id' => '5',
                 'user_id' => '8',
             ],
         );

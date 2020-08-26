@@ -8,16 +8,17 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller
 {
     public function test()
     {
-        /* $post = Post::find(1);
-        dd($post->users); */
-        $user = User::find(1);
-        dd($user->posts->count());
+        $post = Post::find(1);
+        dd($post->users);
+        /* $user = User::find(1);
+        dd($user->posts->count()); */
     }
     /**
      * Display a listing of the resource.
@@ -26,10 +27,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //* Using the Eloquent model
-        if (Auth::user() !== null)
-            $logged = true;
-        $posts = Post::all();
+        // *Using Eloquent ORM
+        $posts = Post::withCount('users', 'usersReports')->get();
+        // dd($posts);
+
         return view('posts', ['posts' => $posts]);
     }
 
@@ -91,12 +92,14 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //* Sending the post and the boolean to the view
-        $post = Post::where('id', $id)->get();
-        //$user = Auth::user();
-        //dd($user);
+        // Using Eloquent ORM
+        $post = Post::where('id', $id)
+            ->withCount('users', 'usersReports')->get();
+
+        // Sending the post and the reportedStatus boolean to the view
         return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
+
     //* checking if the user has already reported the post they are viewing
     public function reportStatus($id)
     {
@@ -240,5 +243,27 @@ class PostController extends Controller
         $posts = Post::onlyTrashed()->get();
 
         return view('admin-posts', ['posts' => $posts]);
+    }
+
+    // LIKE a post (toggle)
+    // https://stackoverflow.com/questions/35285902/laravel-find-if-a-pivot-table-record-exists
+    public function likePost($id)
+    {
+        // initialise variables
+        $user = User::find(Auth::user()->id);
+        $post = Post::find($id);
+
+        // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
+        $hasLike = $user->posts()->where('post_id', $id)->exists();
+
+        // LIKE a post (toggle)
+        if ($hasLike) {
+            // REMOVE a record fr the LIKES table
+            // DB::delete('DELETE from books WHERE id = ?', [$id]);
+            $user->posts()->detach($post);
+        } else {
+            // ADD a record to the LIKES table
+            $user->posts()->save($post);
+        }
     }
 }

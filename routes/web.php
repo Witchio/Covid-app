@@ -57,7 +57,9 @@ Route::get('/posts/{id}', 'PostController@show');
 // UPDATE posts jo
 Route::get('/post/update/{editPostId}', 'PostController@edit');
 Route::put('/post/update/{editPostId}', 'PostController@update');
-//roller@show');
+
+// LIKE posts jo
+Route::get('/post/like/{likePostId}', 'PostController@likePost');
 
 //! Admin Dashboard
 //* Users admin Dashboard
