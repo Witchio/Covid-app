@@ -88,6 +88,7 @@ class PostController extends Controller
         $post->content = $request->content;
 
         $post->save();
+
         return redirect("/posts/$post->id");
     }
 
@@ -104,17 +105,17 @@ class PostController extends Controller
         //->withCount('users', 'comments', 'usersReports')->get();
         $post = Post::where('posts.id', $id)
             ->withCount('users', 'comments', 'usersReports')
-            ->join('comments', 'posts.id', '=', 'comments.post_id')
-            ->join('users', 'comments.user_id', '=', 'users.id')
+            //Need left join else it won't display the posts without comments
+            ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
+            ->leftJoin('users', 'comments.user_id', '=', 'users.id')
             ->select('posts.*', 'comments.*', 'users.*')
             ->get();
-        /* dd($post[0]->image); */
 
         // https://laravel.com/docs/7.x/eloquent-relationships
         //$comments = Comment::find($id);
-        //dd($comment[0]->name);
+
         //$userComment = User::find($id)->userComments();
-        // dd($userComment->get());
+
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
