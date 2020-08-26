@@ -48,7 +48,7 @@
 
 
 <br><br>
-<p>-----Comments-----</p>
+<p>-----Comments ({{ $post->comments_count }})-----</p>
 <ul>
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>

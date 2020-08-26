@@ -48,25 +48,10 @@ class CommentController extends Controller
         $comment->save();
 
         //if we use views it wont recognize the $post variable
-        return redirect('posts');
-    }
-
-    //! Same function but for the individual post page
-
-    public function storeId(Request $request, $id)
-    {
-        //
-
-        $comment = new Comment;
-        $comment->post_id = $id;
-        $comment->user_id = Auth::id();
-        $comment->comment = $request->comment;
-
-        $comment->save();
-
-        //if we use views it wont recognize the $post variable
         return redirect("posts/$id");
     }
+
+
     /**
      * Display the specified resource.
      *
