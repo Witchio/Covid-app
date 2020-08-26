@@ -55,6 +55,7 @@
     @endforeach
 </ul>
 
+
 <!-- Comment post-->
 @if (Route::has('login'))
 @auth

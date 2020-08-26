@@ -102,15 +102,26 @@ class PostController extends Controller
         // Using Eloquent ORM
         $post = Post::where('id', $id)
             ->withCount('users', 'comments', 'usersReports')->get();
-        $comment = Post::where('id', $id)
-            ->withCount('users', 'comments', 'usersReports')->get();
+        $comment = Post::where('posts.id', $id)
+            ->withCount('users', 'comments', 'usersReports')
+            ->join('comments', 'posts.id', '=', 'comments.post_id')
+            ->join('users', 'comments.user_id', '=', 'users.id')
+            ->select('posts.*', 'comments.*', 'users.*')
+            ->get();
+        // dd($comment->name);
 
         // https://laravel.com/docs/7.x/eloquent-relationships
-        $comments = Comment::find(1);
-        dd($comments->commentor);
+        $comments = Comment::find($id);
+        dd($post[0]->comments->user->name);
+        $userComment = User::find($id)->userComments();
+        // dd($userComment->get());
 
         // Sending the post and the reportedStatus boolean to the view
-        return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
+        return view('post', [
+            'post' => $post[0],
+            'reported' => $this->reportStatus($id),
+            'usercomments' => $comments
+        ]);
     }
 
     //* checking if the user has already reported the post they are viewing
