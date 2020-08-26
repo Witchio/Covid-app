@@ -112,6 +112,7 @@ class PostController extends Controller
                 }
             }
         }
+        return $reported;
     }
     /**
      * Show the form for editing the specified resource.
@@ -233,7 +234,10 @@ class PostController extends Controller
      */
     public function restore($id)
     {
-        $result = Post::where('id', $id)->restore();
+        // Restoring post (deleted_at = null)
+        $post = Post::where('id', $id)->restore();
+        //deleting the reports for that post
+        $post = Post::find($id)->usersReports()->detach();
     }
 
     //* Show the soft-deleted posts on the admin dashboard

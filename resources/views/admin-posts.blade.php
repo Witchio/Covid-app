@@ -37,6 +37,7 @@
 
 
         <button class="delete-btn" value="{{$post->id}}">Delete post</button>
+        <button class="restore-btn" value="{{$post->id}}">Restore post</button>
     </article>
     @endforeach
 
@@ -57,6 +58,27 @@
                     },
                     success: function(result) {
 
+                        alert('Ajax success');
+                    },
+                    error: function(err) {
+                        alert('AJAX ERROR. Please contact administrator');
+                    }
+                })
+            })
+        })
+        $(function() {
+            $('.restore-btn').click(function(e) {
+                e.preventDefault();
+                let route = '/admin/posts/restore/' + $(this).val();
+
+                console.log('Route: ' + route);
+                $.ajax({
+                    url: route,
+                    type: 'put',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(result) {
                         alert('Ajax success');
                     },
                     error: function(err) {
