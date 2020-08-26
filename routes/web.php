@@ -70,6 +70,11 @@ Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts'
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
 
 //! Profile dashboard
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/profile', 'HomeController@showProfile')->name('profile');
+
 
 //! Stats page
 

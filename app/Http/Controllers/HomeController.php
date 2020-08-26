@@ -26,6 +26,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
+    public function showProfile()
+    {
+        return view('profile');
+    }
 
     //* Shows all users on Admin page
     public function showUser()
