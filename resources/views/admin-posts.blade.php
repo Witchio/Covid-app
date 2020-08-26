@@ -22,12 +22,10 @@
     <article>
 
         <h2>{{ $post->title }}</h2>
+        @if($post->image)
         <img src="{{asset("images/$post->image")}}" alt="post image">
-        <p>{{ @substr($post->content,0,100 ) }} ...</p>
-        <a href="/posts/{{$post->id}}">See more</a>
-        <p>likes</p> <!-- TODO join table query -->
-        <p>comments</p> <!-- TODO join table query -->
-
+        @endif
+        <p>{{ $post->content }}</p>
 
         <!--Replacing form with ajax-->
         <!-- <form action="posts/delete/{{$post->id}}" method="post">
@@ -38,6 +36,7 @@
 
         <button class="delete-btn" value="{{$post->id}}">Delete post</button>
         <button class="restore-btn" value="{{$post->id}}">Restore post</button>
+        <hr>
     </article>
     @endforeach
 
