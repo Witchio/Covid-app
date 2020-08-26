@@ -177,9 +177,7 @@ class PostController extends Controller
 
         $post->save();
 
-
-        $newPost = Post::find($id);
-        return view('post', ['post' => $newPost,  'reported' => $this->reportStatus($id)]);
+        return redirect("/posts/$post->id");
     }
 
     //* Reporting a post
