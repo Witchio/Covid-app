@@ -93,7 +93,14 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id', $id)->get();
+        // $post = Post::where('id', $id)->get();
+        // return view('post', ['post' => $post[0]]);
+
+        // Using Eloquent ORM
+        $post = Post::where('id', $id)
+            ->withCount('users', 'usersReports')->get();
+        // dd($posts);
+
         return view('post', ['post' => $post[0]]);
     }
 

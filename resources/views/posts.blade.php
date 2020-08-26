@@ -16,7 +16,6 @@
     <p>{{ $post->content }}</p>
     <a href="/posts/{{$post->id}}">See more</a>
     <div>{{ $post->users_count }} likes</div>
-    <button class="like-btn" value="{{$post->id}}">Me likey</button>
     <br>
     <div>{{ $post->users_reports_count }} reports</div>
     <div>Me reporty</div><br>
@@ -32,33 +31,4 @@
         <input type="submit" value="Comment">
     </form>
     @endforeach
-    @endsection
-
-    @section('js-resources')
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
-    <script>
-        $(function() {
-            $('.like-btn').click(function(e) {
-                let route = '/post/like/' + $(this).val();
-                console.log('Route: ' + route);
-                $.ajax({
-                    url: route,
-                    type: 'get',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(result) {
-                        console.log(result.message);
-                        $('.content').load(document.URL + ' .content');
-                    },
-                    error: function(err) {
-                        // If ajax errors happens
-                        alert('AJAX ERROR. Pleace contact administrator');
-                    }
-                });
-            });
-        });
-    </script>
     @endsection

@@ -11,21 +11,25 @@
 @endif
 <p>{{ $post->content }}</p>
 <!-- only for the AUTHOR -->
-<a href="/post/update/{{$post->id}}">Edit post details</a>
-<p>{{ $post->users_count }} likes</p> <!-- TODO join table query -->
-<p>comments</p> <!-- TODO join table query -->
+<p>
+    <a href="/post/update/{{$post->id}}">Edit post details</a>
+</p>
+<br>
+<div>{{ $post->users_count }} likes</div> <!-- TODO join table query -->
+
+<!-- Should be icon probably -->
+<button class="like-btn" value="{{$post->id}}">LIKE icon</button>
+<button id="report">Report</button>
+<!-- If user that created the post or admin wants to permanently delete it-->
+<button id="delete">Delete</button>
+<a href="/post/report/{{$post->id}}">report</a>
+<br><br>
+<p>-----Comments-----</p> <!-- TODO join table query -->
 <ul>
     @foreach($post->comments as $comment)
     <li>{{$comment->comment}}</li>
     @endforeach
 </ul>
-
-<!-- Should be icon probably -->
-<button id="report">Report</button>
-<!-- If user that created the post or admin wants to permanently delete it-->
-<button id="delete">Delete</button>
-<a href="/post/report/{{$post->id}}">report</a>
-
 
 @endsection
 
