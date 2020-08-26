@@ -41,12 +41,6 @@
         @endif
         <p>{{ $post->content }}</p>
 
-        <!--Replacing form with ajax-->
-        <!-- <form action="posts/delete/{{$post->id}}" method="post">
-            @csrf
-            <input type="submit" value="Delete post">
-        </form> -->
-
 
         <button class="delete-btn" value="{{$post->id}}">Delete post</button>
         <button class="restore-btn" value="{{$post->id}}">Restore post</button>
@@ -92,7 +86,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
-                        alert('Ajax success');
+                        alert('Post restored!');
                     },
                     error: function(err) {
                         alert('AJAX ERROR. Please contact administrator');

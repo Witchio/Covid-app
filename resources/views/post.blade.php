@@ -40,6 +40,8 @@
 <a href="/post/report/{{$posts[0]->id}}"><button id="report">Report</button></a>
 @endif
 @endif
+
+@if($post->user_id==Auth::user()->id ||Auth::user()->role == "admin")
 <!-- If user that created the post or admin wants to permanently delete it-->
 <a href="/post/delete/{{$posts[0]->id}}"><button id="report">Delete</button></a>
 

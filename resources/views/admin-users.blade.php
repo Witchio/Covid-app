@@ -28,15 +28,14 @@
 @auth
 
 <body>
-    <table class="table">
+
+    <table class="table table-dark">
 
         <thead>
 
-            <th>Name</th>
-
-            <th>Email</th>
-
-            <th>Role</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
 
         </thead>
 
@@ -45,7 +44,7 @@
 
             <tr>
 
-                <td>{{$user->name}} </td>
+                <th scope="row">{{$user->name}} </th>
 
                 <td>{{$user->email}} </td>
 

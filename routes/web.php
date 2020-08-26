@@ -39,7 +39,8 @@ Route::post('/post/create', 'PostController@store');
 //. Reporting a post
 Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->middleware('auth');
 
-
+//Deleting a post as an admin
+Route::get('/post/delete/{id}', 'PostController@softDestrPost')->middleware('auth');
 
 Route::get('/test', 'PostController@test'); // jo keep
 
