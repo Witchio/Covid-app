@@ -5,11 +5,11 @@ async function chartIt() {
     await getData();
     data = xlabels2[0];
     document.getElementById('nc').innerHTML = data[0];
-    document.getElementById('#tc').innerHTML = data[1];
-    document.getElementById('#nd').innerHTML = data[2];
-    document.getElementById('#td').innerHTML = data[3];
-    document.getElementById('#nr').innerHTML = data[4];
-    document.getElementById('#tr').innerHTML = data[5];
+    document.getElementById('tc').innerHTML = data[1];
+    document.getElementById('nd').innerHTML = data[2];
+    document.getElementById('td').innerHTML = data[3];
+    document.getElementById('nr').innerHTML = data[4];
+    document.getElementById('tr').innerHTML = data[5];
 
 };
 

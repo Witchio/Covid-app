@@ -30,14 +30,31 @@
             </article>
 
             <article>
-                <!-- chart3 : Global data -->
-                <canvas id="global"></canvas>
+                <!-- chart3 : Global data table -->
+                <table id="global">
+                    <thead>
+                        <th>NewConfirmed</th>
+                        <th>TotalConfirmed</th>
+                        <th>NewDeaths</th>
+                        <th>TotalDeaths</th>
+                        <th>NewRecovered</th>
+                        <th>TotalRecovered</th>
+                    </thead>
+                    <tbody id="table">
+                        <td id="nc"></td>
+                        <td id="tc"></td>
+                        <td id="nd"></td>
+                        <td id="td"></td>
+                        <td id="nr"></td>
+                        <td id="tr"></td>
+                    </tbody>
+                </table>
             </article>
+
         </div>
 </body>
 
 
-@endsection
 <!--Chart.js-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <!--Label Plugin-->
@@ -48,3 +65,4 @@
 <script src="charts/global.js"></script>
 
 </html>
+@endsection
