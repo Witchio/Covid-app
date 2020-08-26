@@ -45,9 +45,9 @@
 
 <section>
     <!-- Rss feed, squeleton for that tbd -->
-    <!-- Link for the xml file: https://rss.app/feeds/Y74AKXIUbHu2XXbr.xml -->
-    <rssapp-wall id="Y74AKXIUbHu2XXbr"></rssapp-wall>
-    <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+    <!-- Link for the xml file: https://rss.app/feeds/mPa6EvYZGT7E0ee4.xml - Font: independent.co.uk -->
+        <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list>
+        <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
 </section>
 
 @endsection
