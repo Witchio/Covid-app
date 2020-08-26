@@ -60,7 +60,7 @@
                 },
                 error: function(err) {
                     // If ajax errors happens
-                    alert('AJAX ERROR. Pleace contact administrator');
+                    alert('Please Log In or Register to LIKE posts : AJAX ERROR.');
                 }
             });
         });
