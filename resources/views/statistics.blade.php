@@ -35,10 +35,9 @@
             </article>
         </div>
 </body>
+
+
 @endsection
-
-</html>
-
 <!--Chart.js-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <!--Label Plugin-->
@@ -47,3 +46,5 @@
 <!-- <script src="charts/homeChart.js"></script>
 <script src="charts/continent.js"></script> -->
 <script src="charts/global.js"></script>
+
+</html>
