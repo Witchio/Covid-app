@@ -19,6 +19,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+    <!-- to do a separate stylesheet than the main one, if needed -->
+    @yield('style')
 </head>
 
 <body>
