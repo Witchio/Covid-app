@@ -33,7 +33,7 @@
                 <!-- chart3 : Global data table -->
                 <table>
                     <thead>
-                        <th>NewConfirmed</th>
+                        <th id="">NewConfirmed</th>
                         <th>TotalConfirmed</th>
                         <th>NewDeaths</th>
                         <th>TotalDeaths</th>
@@ -50,11 +50,14 @@
                     </tbody>
                 </table>
             </article>
+            <hr>
+            <hr>
             <article>
                 <!-- chart4 : Data for all the countries-->
                 <table id="world">
                     <thead>
-                        <th>NewConfirmed</th>
+                        <th onclick="byCountry()">Country</th>
+                        <th onclick="byNewCases()">NewConfirmed</th>
                         <th>TotalConfirmed</th>
                         <th>NewDeaths</th>
                         <th>TotalDeaths</th>
@@ -62,13 +65,13 @@
                         <th>TotalRecovered</th>
                     </thead>
                     <tbody id="row">
-                        <td id="country"></td>
-                        <td id="ncw"></td>
-                        <td id="tcw"></td>
-                        <td id="ndw"></td>
-                        <td id="tdw"></td>
-                        <td id="nrw"></td>
-                        <td id="trw"></td>
+                        <td class="country"></td>
+                        <td class="ncw"></td>
+                        <td class="tcw"></td>
+                        <td class="ndw"></td>
+                        <td class="tdw"></td>
+                        <td class="nrw"></td>
+                        <td class="trw"></td>
                     </tbody>
                 </table>
             </article>
@@ -84,7 +87,9 @@
 <!--Scripts-->
 <!-- <script src="charts/homeChart.js"></script>
 <script src="charts/continent.js"></script> -->
-<!-- <script src="charts/global.js"></script> -->
+<script src="charts/countryList.js"></script>
+<script src="charts/country.js"></script>
+<script src="charts/global.js"></script>
 <script src="charts/world.js"></script>
 
 </html>
