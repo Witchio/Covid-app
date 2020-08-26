@@ -86,7 +86,6 @@ class PostController extends Controller
         ]);
         $post->title = $request->title;
         $post->content = $request->content;
-
         $post->save();
 
         return redirect("/posts/$post->id");
@@ -108,15 +107,14 @@ class PostController extends Controller
             //Need left join else it won't display the posts without comments
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
             ->leftJoin('users', 'comments.user_id', '=', 'users.id')
-            ->select('posts.*', 'comments.*', 'users.*')
+            //->select('posts.*', 'comments.*', 'users.*')
+            //! Need to select proper values or bugs
+            ->select('posts.image', 'posts.title', 'posts.content', 'posts.user_id', 'comments.comment',  'users.name', 'posts.id')
             ->get();
 
         // https://laravel.com/docs/7.x/eloquent-relationships
         //$comments = Comment::find($id);
-
         //$userComment = User::find($id)->userComments();
-
-
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
             //Sending out the image indepedentely to avoid bugs
