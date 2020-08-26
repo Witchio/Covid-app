@@ -75,6 +75,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                @if(Auth::user()->role == "admin" )
                                 <!-- Dropdown menu to go to admin pages (Mitchio)-->
                                 <a class="dropdown-item" href="{{ route('admin-posts') }}">
                                     {{ __('Manage posts') }}
@@ -82,6 +83,7 @@
                                 <a class="dropdown-item" href="{{ route('admin-users') }}">
                                     {{ __('Manage users') }}
                                 </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('profile') }}">
                                     {{ __('Profile') }}
                                 </a>
