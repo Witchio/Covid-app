@@ -12,7 +12,7 @@ async function chartIt() {
         cases.push(data[1]);
     });
 
-    var ctx = document.getElementById('continent').getContext('2d');
+    var ctx = document.getElementById('continent');
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -69,22 +69,20 @@ async function chartIt() {
 
         }
     });
-    console.log(Math.Pi);
+
 
 
 }
 
-console.log(xlabels);
 
 async function getData() {
     const response = await fetch('https://corona.lmao.ninja/v2/continents?yesterday=true&sort');
     const data = await response.json();
 
-    console.log(data);
+
     data.forEach(continent => {
         const myContinent = continent['continent'];
         const myCase = continent['cases'];
-        console.log(myContinent, myCase);
         xlabels.push([myContinent, myCase]);
     });
 }

@@ -6,9 +6,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
+    public function test()
+    {
+        /* $post = Post::find(1);
+        dd($post->users); */
+        $user = User::find(1);
+        dd($user->posts->count());
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,17 +27,20 @@ class PostController extends Controller
     public function index()
     {
         //* Using the Eloquent model
+        if (Auth::user() !== null)
+            $logged = true;
         $posts = Post::all();
         return view('posts', ['posts' => $posts]);
     }
 
     public function main()
     {
-        // NEED TO DO WITH INNER JOIN
-        $posts = Post::orderBy('user_id', 'desc')
-            ->limit(2)
+        // ORDERBY WITH INNER JOIN
+        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id
+        $posts = Post::withCount('users') //withCount counts the number of User OBJECTS associated to the Post (aka LIKES)
+            ->orderBy('users_count', 'desc')
+            ->limit(3)
             ->get();
-        // dd($posts);
         return view('main', ['posts' => $posts]);
     }
 
@@ -38,7 +51,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-post');
     }
 
     /**
@@ -49,7 +62,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //* stores what the user did in add-post in the db
+        //dd($request->image);
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->user_id = Auth::user()->id; //only a logged in user can post
+
+        //* Validating and storing image
+        if ($request->image) {
+            $request->validate([
+                'image' => 'mimes:jpeg,jpg|max:2048',
+            ]);
+            $imageName = time() . '.' . $request->image->extension();
+            $post->image = $imageName;
+            $request->image->move(public_path() . '/images', $imageName);
+        }
+
+        $post->save();
+        return redirect("/posts/$post->id");
     }
 
     /**
@@ -60,10 +91,25 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        //* Sending the post and the boolean to the view
         $post = Post::where('id', $id)->get();
-        return view('post', ['post' => $post[0]]);
+        //$user = Auth::user();
+        //dd($user);
+        return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
-
+    //* checking if the user has already reported the post they are viewing
+    public function reportStatus($id)
+    {
+        if (Auth::user() !== null) {
+            $reported = false;
+            $user = Auth::user();
+            foreach ($user->postsReports as $value) {
+                if ($value['pivot']['post_id']  == $id) {
+                    return $reported = true;
+                }
+            }
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -72,7 +118,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        // pull existing data fr DB
+        $post = Post::where('id', $id)->get();
+        return view('edit-post', ['post' => $post[0]]);
     }
 
     /**
@@ -84,9 +132,84 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Update the post in the DB
+        $post = Post::find($id);
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+
+        // check if the user is uploading a new image
+        if ($request->image) {
+            // store the directory file path of the existing(old) image to delete later if needed
+            $image_path = public_path() . '\images\\' . $post->image;
+
+            // Validate and save new image in DB
+            $request->validate([
+                'image' => 'required|mimes:pdf,xlx,csv,jpeg,jpg|max:2048',
+            ]);
+
+            // save the new imageName with unique timestmp and image file name
+            //previous alternative: $imageName = time() . '.' . $request->image->extension();
+            $imageName = time() . '.' . $request->image->getClientOriginalName();
+            $post->image = $imageName;
+            // store the image to the PUBLIC folder
+            $request->image->move(public_path() . '/images', $imageName);
+
+            // if the old image is in the PUBLIC folder, delete it
+            if (Post::exists($image_path)) {
+                @unlink($image_path);
+            }
+        }
+
+        $post->save();
+
+
+        $newPost = Post::find($id);
+        return view('post', ['post' => $newPost]);
     }
 
+    //* Reporting a post
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function report($id)
+    {
+        //dd($post[0]->usersReports); //this gives array with each report
+        //dd($post[0]->usersReports()); //this gives an array with info about the reports table
+
+        //$user = Auth::user(); //works but method is underlined as an error
+
+        //* save record in reports table
+        $post = Post::find($id);
+        if (Auth::user() !== null) {
+            $user = User::find(Auth::user()->id);
+            $user->postsReports()->save($post);
+        }
+
+        //* if post has 3 reports then soft delete for admin to check out
+        if (count($post->usersReports) == 3) {
+            $this->softDestroy($id);
+        }
+        return redirect('/posts');
+    }
+
+    //* After 3 reports, a post is soft deleted for an admin to review it
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function softDestroy($id)
+    {
+        $post = Post::find($id)->delete();
+    }
+
+
+    //* if the admin of the user want to permanent delete a post
     /**
      * Remove the specified resource from storage.
      *
@@ -95,6 +218,27 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = Post::where('id', $id)->forceDelete();
+    }
+
+    //* if the admin after reviewing the post deemed it safe
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        $result = Post::where('id', $id)->restore();
+    }
+
+    //* Show the soft-deleted posts on the admin dashboard
+
+    public function showSoftDeleted()
+    {
+        $posts = Post::onlyTrashed()->get();
+
+        return view('admin-posts', ['posts' => $posts]);
     }
 }

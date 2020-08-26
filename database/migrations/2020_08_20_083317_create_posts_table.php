@@ -19,12 +19,13 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            //Deletes all foreign key values when deleted
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

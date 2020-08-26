@@ -9,6 +9,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    //
+    // SOFT DELETES for admin records
     use SoftDeletes;
+
+    // define RELATIONSHIP manytomany -> USERs (jo)
+    // second argument in belongsToMany() is the name of the intermediary table
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'likes');
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+    public function usersReports()
+    {
+        return $this->belongsToMany('App\User', 'reports', 'post_id', 'user_id')->withTimestamps();
+    }
 }

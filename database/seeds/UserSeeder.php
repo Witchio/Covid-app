@@ -38,12 +38,13 @@ class UserSeeder extends Seeder
                 'password_hashed' => 12345678,
                 'role' => 'user',
             ],
-            [
+            [   // keeping to test
                 'name' => 'jo00',
                 'email' => '0000@pass.word',
                 'password_hashed' => 12345678,
                 'role' => 'admin',
             ],
+
             [
                 'name' => 'MITCHIO',
                 'email' => 'webermitchio@hotmail.com',
