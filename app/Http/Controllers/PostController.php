@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller
@@ -229,7 +230,10 @@ class PostController extends Controller
      */
     public function restore($id)
     {
-        $result = Post::where('id', $id)->restore();
+        // Restoring post (deleted_at = null)
+        $post = Post::where('id', $id)->restore();
+        //deleting the reports for that post
+        $post = Post::find($id)->usersReports()->detach();
     }
 
     //* Show the soft-deleted posts on the admin dashboard

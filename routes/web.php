@@ -37,10 +37,6 @@ Route::post('/post/create', 'PostController@store');
 //. Reporting a post
 Route::get('/post/report/{id}', 'PostController@report')->name('post.report');
 
-//. Deleting a post
-//Soft delete
-
-//Force delete
 
 
 Route::get('/test', 'PostController@test'); // jo keep
@@ -68,6 +64,7 @@ Route::post('/admin/delete/{id}', 'HomeController@destroy');
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts');
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
+Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 
 //! Profile dashboard
 
