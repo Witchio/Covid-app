@@ -4,54 +4,55 @@
 @section('content')
 
 <!-- individual post depending on id -->
-<h2>{{ $post->title }}</h2>
+<h2>{{ $posts[0]->title }}</h2>
 <img src="" alt="">
-@if($post->image)
-<img src="{{asset("images/$post->image")}}" alt="post image">
+@if($posts[0]->image)
+<img src="{{asset("images/$img")}}" alt="post image">
 @endif
-<p>{{ $post->content }}</p>
+<p>{{ $posts[0]->content }}</p>
 
 
 <!-- Only show if user is logged in-->
 @if (Auth::user())
 <!-- only for the AUTHOR -->
-@if ($post->user_id==Auth::user()->id)
+@if ($posts[0]->user_id==Auth::user()->id)
 @auth
 <p>
-    <a href="/post/update/{{$post->id}}">Edit post details</a>
+    <a href="/post/update/{{$posts[0]->id}}">Edit post details</a>
 </p>
 @endauth
 @endif
 @endif
 <br>
 
-<div>{{ $post->users_count }} likes</div>
+<div>{{ $posts[0]->users_count }} likes</div>
 
 <!-- Only show if user is logged is-->
 @if (Route::has('login'))
 @auth
 
 <!-- Should be icon probably -->
-<button class="like-btn" value="{{$post->id}}">LIKE icon</button>
+<button class="like-btn" value="{{$posts[0]->id}}">LIKE icon</button>
 <!-- IF user has not reported this post before -->
 @if(!$reported)
 <!-- IF user is not the post author -->
-@if($post->user_id!=Auth::user()->id)
-<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
+@if($posts[0]->user_id!=Auth::user()->id)
+<a href="/post/report/{{$posts[0]->id}}"><button id="report">Report</button></a>
 @endif
 @endif
 <!-- If user that created the post or admin wants to permanently delete it-->
-<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
+<a href="/post/delete/{{$posts[0]->id}}"><button id="report">Delete</button></a>
 
 @endauth
 @endif
 
 
 <br><br>
-<p>-----Comments ({{ $post->comments_count }})-----</p>
+<p>-----Comments ({{ $posts[0]->comments_count }})-----</p>
 <ul>
-    @foreach($post->comments as $comment)
-    <li>{{$comment->comment}}</li>
+    @foreach($posts as $post)
+    <li>{{$post->comment}}</li>
+    <li>{{$post->name}}</li>
     @endforeach
 </ul>
 
@@ -59,7 +60,7 @@
 <!-- Comment post-->
 @if (Route::has('login'))
 @auth
-<form action="/posts/comment/{{ $post->id}}" method="post">
+<form action="/posts/comment/{{ $posts[0]->id}}" method="post">
     @csrf
     <input type="text" name="comment">
     <input type="submit" value="Comment">

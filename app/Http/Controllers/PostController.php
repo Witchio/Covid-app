@@ -100,27 +100,28 @@ class PostController extends Controller
     public function show($id)
     {
         // Using Eloquent ORM
-        $post = Post::where('id', $id)
-            ->withCount('users', 'comments', 'usersReports')->get();
-        $comment = Post::where('posts.id', $id)
+        //$post = Post::where('id', $id)
+        //->withCount('users', 'comments', 'usersReports')->get();
+        $post = Post::where('posts.id', $id)
             ->withCount('users', 'comments', 'usersReports')
             ->join('comments', 'posts.id', '=', 'comments.post_id')
             ->join('users', 'comments.user_id', '=', 'users.id')
             ->select('posts.*', 'comments.*', 'users.*')
             ->get();
-        // dd($comment->name);
+        /* dd($post[0]->image); */
 
         // https://laravel.com/docs/7.x/eloquent-relationships
-        $comments = Comment::find($id);
-        dd($post[0]->comments->user->name);
-        $userComment = User::find($id)->userComments();
+        //$comments = Comment::find($id);
+        //dd($comment[0]->name);
+        //$userComment = User::find($id)->userComments();
         // dd($userComment->get());
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
-            'post' => $post[0],
+            //Sending out the image indepedentely to avoid bugs
+            'img' => $post[0]->image,
+            'posts' => $post,
             'reported' => $this->reportStatus($id),
-            'usercomments' => $comments
         ]);
     }
 

@@ -71,7 +71,7 @@ Route::get('/post/like', function () {
 //* Users admin Dashboard
 Route::get('/admin/users', 'HomeController@showUser')->name('admin-users');
 Route::post('admin/userRole/{id}', 'HomeController@edit');
-Route::post('/admin/delete/{id}', 'HomeController@destroy');
+Route::post('/admin/delete/{id}', 'HomeController@destroy')->middleware('auth');
 
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
