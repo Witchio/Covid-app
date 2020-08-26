@@ -24,6 +24,6 @@ class Post extends Model
     }
     public function usersReports()
     {
-        return $this->belongsToMany('App\User', 'reports');
+        return $this->belongsToMany('App\User', 'reports', 'post_id', 'user_id')->withTimestamps();
     }
 }

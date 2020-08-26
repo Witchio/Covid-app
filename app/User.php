@@ -46,7 +46,7 @@ class User extends Authenticatable
     }
     public function postsReports()
     {
-        return $this->belongsToMany('App\Post', 'reports');
+        return $this->belongsToMany('App\Post', 'reports', 'user_id', 'post_id')->withTimestamps();
     }
 
     use SoftDeletes;
