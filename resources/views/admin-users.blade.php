@@ -1,9 +1,11 @@
 <!-- extend from tempate -->
-
 @extends('layouts.app')
+
 <!-- section('content') -->
 @section('content')
 
+<!-- Only show if user is logged in-->
+@if (Auth::user())
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<!-- for the USERS -->
+@if (Auth::user()->role=="user")
+@auth
+<p>Access Permissions Insufficient</p>
+@endauth
+@endif
+
+<!-- only for the ADMINS -->
+@if (Auth::user()->role=="admin")
+@auth
 
 <body>
     <table class="table">
@@ -70,6 +83,8 @@
 
 </html>
 
+@endauth
+@endif
+@endif
 <!-- endsection -->
-
 @endsection

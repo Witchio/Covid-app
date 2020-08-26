@@ -1,8 +1,11 @@
 <!-- extend from tempate -->
-
 @extends('layouts.app')
+
 <!-- section('content') -->
 @section('content')
+
+<!-- Only show if user is logged in-->
+@if (Auth::user())
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +18,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
+
+<!-- for the USERS -->
+@if (Auth::user()->role=="user")
+@auth
+<p>Access Permissions Insufficient</p>
+@endauth
+@endif
+
+<!-- only for the ADMINS -->
+@if (Auth::user()->role=="admin")
+@auth
 
 <body>
     <h1>Reported posts</h1>
@@ -91,6 +105,8 @@
 
 </html>
 
+@endauth
+@endif
+@endif
 <!-- endsection -->
-
 @endsection
