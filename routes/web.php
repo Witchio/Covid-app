@@ -90,3 +90,8 @@ Route::get('/profile', 'HomeController@showProfile')->name('profile');
 Route::get('statistics', function () {
     return view('statistics');
 })->name('stats');
+
+//! About us
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about-us');

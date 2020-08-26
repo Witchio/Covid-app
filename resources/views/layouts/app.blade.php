@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+
     <!-- to do a separate stylesheet than the main one, if needed -->
     @yield('style')
 </head>
@@ -48,7 +49,7 @@
                             <a class="nav-link" href="{{ route('posts') }}">{{ __('Posts') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('About Us') }}</a>
+                            <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
                         </li>
                     </ul>
 
