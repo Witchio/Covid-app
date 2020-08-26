@@ -9,7 +9,7 @@
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
         <article style="max-height:1000px;max-width:1000px">
 
-            <canvas id="chart" style="max-height:1000px;max-width:1000px"></canvas>
+            <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
             <!-- chart 1  -->
         </article>
 

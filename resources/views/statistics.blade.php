@@ -28,9 +28,8 @@
                 <select id="select">
                     <option class="option" value="">...</option>
                 </select>
-                <script>
+                //! HELP
 
-                </script>
             </article>
 
 
