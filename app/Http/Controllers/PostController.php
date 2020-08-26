@@ -111,8 +111,8 @@ class PostController extends Controller
                     return $reported = true;
                 }
             }
+            return $reported;
         }
-        return $reported;
     }
     /**
      * Show the form for editing the specified resource.
