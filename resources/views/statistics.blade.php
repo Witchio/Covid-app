@@ -31,9 +31,15 @@
 
             <article>
                 <!-- chart3 : Global data table -->
+<<<<<<< Updated upstream
                 <table>
                     <thead>
                         <th id="">NewConfirmed</th>
+=======
+                <table id="global">
+                    <thead>
+                        <th>NewConfirmed</th>
+>>>>>>> Stashed changes
                         <th>TotalConfirmed</th>
                         <th>NewDeaths</th>
                         <th>TotalDeaths</th>
@@ -87,10 +93,14 @@
 <!--Scripts-->
 <!-- <script src="charts/homeChart.js"></script>
 <script src="charts/continent.js"></script> -->
+<<<<<<< Updated upstream
 <script src="charts/countryList.js"></script>
 <script src="charts/country.js"></script>
 <script src="charts/global.js"></script>
 <script src="charts/world.js"></script>
+=======
+<script src="charts/global.js"></script>
+>>>>>>> Stashed changes
 
 </html>
 @endsection
