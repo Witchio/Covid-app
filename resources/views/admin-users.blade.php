@@ -43,7 +43,7 @@
             @foreach($users as $user)
 
             <tr>
-
+                 @if(Auth::user()->id != $user->id)
                 <th scope="row">{{$user->name}} </th>
 
                 <td>{{$user->email}} </td>
@@ -68,7 +68,7 @@
                         <input type="submit" value="Delete user">
                     </form>
                 </td>
-
+                @endif
 
             </tr>
             @endforeach
