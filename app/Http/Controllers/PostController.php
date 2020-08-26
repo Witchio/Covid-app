@@ -27,6 +27,8 @@ class PostController extends Controller
     public function index()
     {
         //* Using the Eloquent model
+        if (Auth::user() !== null)
+            $logged = true;
         $posts = Post::all();
         return view('posts', ['posts' => $posts]);
     }
@@ -49,7 +51,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-post');
     }
 
     /**
@@ -77,9 +79,8 @@ class PostController extends Controller
             $request->image->move(public_path() . '/images', $imageName);
         }
 
-
         $post->save();
-        return redirect('/posts');
+        return redirect("/posts/$post->id");
     }
 
     /**
@@ -92,16 +93,20 @@ class PostController extends Controller
     {
         //* Sending the post and the boolean to the view
         $post = Post::where('id', $id)->get();
+        //$user = Auth::user();
+        //dd($user);
         return view('post', ['post' => $post[0], 'reported' => $this->reportStatus($id)]);
     }
     //* checking if the user has already reported the post they are viewing
     public function reportStatus($id)
     {
-        $user = Auth::user();
-        $reported = false;
-        foreach ($user->postsReports as $value) {
-            if ($value['pivot']['post_id']  == $id) {
-                return $reported = true;
+        if (Auth::user() !== null) {
+            $reported = false;
+            $user = Auth::user();
+            foreach ($user->postsReports as $value) {
+                if ($value['pivot']['post_id']  == $id) {
+                    return $reported = true;
+                }
             }
         }
     }
@@ -172,18 +177,22 @@ class PostController extends Controller
      */
     public function report($id)
     {
-        /* $post = Post::where('id', $id)
-        ->withCount('usersReports') //name of the function on Post model
-        ->get(); */
-
         //dd($post[0]->usersReports); //this gives array with each report
         //dd($post[0]->usersReports()); //this gives an array with info about the reports table
 
         //$user = Auth::user(); //works but method is underlined as an error
 
-        $user = User::find(Auth::user()->id);
+        //* save record in reports table
         $post = Post::find($id);
-        $user->postsReports()->save($post);
+        if (Auth::user() !== null) {
+            $user = User::find(Auth::user()->id);
+            $user->postsReports()->save($post);
+        }
+
+        //* if post has 3 reports then soft delete for admin to check out
+        if (count($post->usersReports) == 3) {
+            $this->softDestroy($id);
+        }
         return redirect('/posts');
     }
 
@@ -196,7 +205,7 @@ class PostController extends Controller
      */
     public function softDestroy($id)
     {
-        //
+        $post = Post::find($id)->delete();
     }
 
 
@@ -228,7 +237,7 @@ class PostController extends Controller
 
     public function showSoftDeleted()
     {
-        $posts = Post::withTrashed()->get();
+        $posts = Post::onlyTrashed()->get();
 
         return view('admin-posts', ['posts' => $posts]);
     }
