@@ -1,12 +1,18 @@
+getData();
 async function getData() {
-    const response1 = await fetch('https://api.covid19api.com/total/dayone/country/luxembourg/status/confirmed');
-    const data1 = await response1.json();
+    const response = await fetch('https://api.covid19api.com/countries');
+    const data1 = await response.json();
+
 
     data1.forEach(data => {
-        const now = data['Date'];
-        date = now.split('T');
-        const cases = data['Cases'];
-        xlabels1.push([date[0], cases]);
+        const select = document.getElementById('select');
+        const selectClone = select.cloneNode(true);
+
+        let option = selectClone.querySelector('.option');
+        option.innerHTML = data["Country"];
+        option.value = data["Slug"]
+
+        select.append(option);
 
     });
 }

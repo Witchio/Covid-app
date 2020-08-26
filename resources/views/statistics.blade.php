@@ -16,54 +16,54 @@
     <section>
         <!-- This is the parent for the charts and the posts -->
         <div id="charts">
+
+
             <!--To reshaphe charts modify the canvas and the container both or won't work-->
             <article style="max-height:1000px;max-width:1000px">
 
-                <canvas id="chart" style="max-height:1000px;max-width:1000px"></canvas>
                 <!-- chart 1 : Luxemburg -->
+                <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
+                <!-- Selected country -->
+                <canvas id="country"></canvas>
+                <select id="select">
+                    <option class="option" value="">...</option>
+                </select>
+                <script>
+
+                </script>
             </article>
 
 
             <article>
-                <!-- chart2 : Per continent -->
-                <canvas id="continent"></canvas>
-            </article>
-
-            <article>
-                <!-- chart3 : Global data table -->
-<<<<<<< Updated upstream
+                <!-- Global data table -->
                 <table>
-                    <thead>
-                        <th id="">NewConfirmed</th>
-=======
-                <table id="global">
-                    <thead>
-                        <th>NewConfirmed</th>
->>>>>>> Stashed changes
-                        <th>TotalConfirmed</th>
-                        <th>NewDeaths</th>
-                        <th>TotalDeaths</th>
-                        <th>NewRecovered</th>
-                        <th>TotalRecovered</th>
-                    </thead>
-                    <tbody id="table">
-                        <td id="nc"></td>
-                        <td id="tc"></td>
-                        <td id="nd"></td>
-                        <td id="td"></td>
-                        <td id="nr"></td>
-                        <td id="tr"></td>
-                    </tbody>
-                </table>
+                    <table id="global">
+                        <thead>
+                            <th>NewConfirmed</th>
+                            <th>TotalConfirmed</th>
+                            <th>NewDeaths</th>
+                            <th>TotalDeaths</th>
+                            <th>NewRecovered</th>
+                            <th>TotalRecovered</th>
+                        </thead>
+                        <tbody id="table">
+                            <td id="nc"></td>
+                            <td id="tc"></td>
+                            <td id="nd"></td>
+                            <td id="td"></td>
+                            <td id="nr"></td>
+                            <td id="tr"></td>
+                        </tbody>
+                    </table>
             </article>
             <hr>
             <hr>
             <article>
-                <!-- chart4 : Data for all the countries-->
+                <!-- Data for all the countries-->
                 <table id="world">
                     <thead>
-                        <th onclick="byCountry()">Country</th>
-                        <th onclick="byNewCases()">NewConfirmed</th>
+                        <th>Country</th>
+                        <th>NewConfirmed</th>
                         <th>TotalConfirmed</th>
                         <th>NewDeaths</th>
                         <th>TotalDeaths</th>
@@ -91,16 +91,11 @@
 <!--Label Plugin-->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
 <!--Scripts-->
-<!-- <script src="charts/homeChart.js"></script>
-<script src="charts/continent.js"></script> -->
-<<<<<<< Updated upstream
+<script src="charts/homeChart.js"></script>
 <script src="charts/countryList.js"></script>
 <script src="charts/country.js"></script>
 <script src="charts/global.js"></script>
 <script src="charts/world.js"></script>
-=======
-<script src="charts/global.js"></script>
->>>>>>> Stashed changes
 
 </html>
 @endsection

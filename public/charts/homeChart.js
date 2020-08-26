@@ -10,7 +10,7 @@ async function chartIt() {
     xlabels1.forEach(data => {
         newCases.push(data[1]);
     });
-    var ctx1 = document.getElementById('chart');
+    var ctx1 = document.getElementById('luxemburg');
     Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
         type: 'line',
