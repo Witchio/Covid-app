@@ -18,10 +18,11 @@
 
 <form action="" method="POST" enctype="multipart/form-data">
     @csrf
-    <input type=" text" name="title" placeholder="title">
-    <input type="text" name="content" placeholder="content">
+    <input type=" text" name="title" placeholder="title"><br>
+    <input type="text" name="content" placeholder="content"><br>
+    <div>Add Image:</div>
     <input type="file" name="image"> <br>
-    <input type="submit" name="submit" value="post">
+    <input type="submit" name="submit" value="Create post">
 </form>
 
 @endsection

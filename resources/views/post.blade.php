@@ -11,42 +11,60 @@
 @endif
 <p>{{ $post->content }}</p>
 
+
+<!-- Only show if user is logged in-->
+@if (Auth::user())
+<!-- only for the AUTHOR -->
+@if ($post->user_id==Auth::user()->id)
+@auth
+<p>
+    <a href="/post/update/{{$post->id}}">Edit post details</a>
+</p>
+@endauth
+@endif
+@endif
+<br>
+
+<div>{{ $post->users_count }} likes</div>
+
+<!-- Only show if user is logged is-->
+@if (Route::has('login'))
+@auth
+
+<!-- Should be icon probably -->
+<button class="like-btn" value="{{$post->id}}">LIKE icon</button>
+<!-- IF user has not reported this post before -->
+@if(!$reported)
+<!-- IF user is not the post author -->
+@if($post->user_id!=Auth::user()->id)
+<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
+@endif
+@endif
+<!-- If user that created the post or admin wants to permanently delete it-->
+<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
+
+@endauth
+@endif
+
+
+<br><br>
+<p>-----Comments-----</p>
+<ul>
+    @foreach($post->comments as $comment)
+    <li>{{$comment->comment}}</li>
+    @endforeach
+</ul>
+
 <!-- Comment post-->
 @if (Route::has('login'))
 @auth
-<form action="/posts/edit/{{ $post->id}}" method="post">
+<form action="/posts/comment/{{ $post->id}}" method="post">
     @csrf
     <input type="text" name="comment">
     <input type="submit" value="Comment">
 </form>
 @endauth
 @endif
-
-<!-- only for the AUTHOR -->
-<p>
-    <a href="/post/update/{{$post->id}}">Edit post details</a>
-</p>
-<br>
-<div>{{ $post->users_count }} likes</div> <!-- TODO join table query -->
-
-
-<!-- Should be icon probably -->
-<button class="like-btn" value="{{$post->id}}">LIKE icon</button>
-@if(!$reported)
-<a href="/post/report/{{$post->id}}"><button id="report">Report</button></a>
-@endif
-<!-- If user that created the post or admin wants to permanently delete it-->
-<a href="/post/delete/{{$post->id}}"><button id="report">Delete</button></a>
-
-
-
-<br><br>
-<p>-----Comments-----</p> <!-- TODO join table query -->
-<ul>
-    @foreach($post->comments as $comment)
-    <li>{{$comment->comment}}</li>
-    @endforeach
-</ul>
 
 @endsection
 

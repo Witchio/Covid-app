@@ -35,7 +35,7 @@
     <!-- Only show if user is logged is-->
     @if (Route::has('login'))
     @auth
-    <form action="/posts/edit/{{ $post->id}}" method="post">
+    <form action="/posts/comment/{{ $post->id}}" method="post">
         @csrf
         <input type="text" name="comment">
         <input type="submit" value="Comment">
