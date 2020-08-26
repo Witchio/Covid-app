@@ -15,6 +15,7 @@ async function getData() {
         select.append(option);
 
     });
+
 }
 document.querySelector('#select option[value=france]').selected = true;
 console.log(test);

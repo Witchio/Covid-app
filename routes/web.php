@@ -74,7 +74,7 @@ Route::post('admin/userRole/{id}', 'HomeController@edit');
 Route::post('/admin/delete/{id}', 'HomeController@destroy');
 
 //* Posts Admin dashboard
-Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts');
+Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
 Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 

@@ -2,33 +2,33 @@
 let select = document.querySelector('#select');
 select.addEventListener('change', function () {
     const country = this.value;
-    document.querySelector('#luxemburg').style.display = "none";
     document.querySelector('#luxDeaths').style.display = "none";
     chartCountry(country);
 })
 
-let xlabels4 = [];
+let xlabels5 = [];
 
 async function chartCountry(request) {
-    xlabels4.length = 0;
-    await getData4(request);
+    xlabels5.length = 0;
+    await getData5(request);
     let dates = [];
     let newCases = [];
-    xlabels4.forEach(data => {
+    xlabels5.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels4.forEach(data => {
+    xlabels5.forEach(data => {
         newCases.push(data[1]);
     });
-    var ctx1 = document.getElementById('country');
+    var ctx1 = document.getElementById('deaths');
     Chart.defaults.global.responsive = 'true';
+
     var myChart1 = new Chart(ctx1, {
         type: 'line',
         data: {
             labels: dates,
             datasets: [{
                 data: newCases,
-                label: request + ' total requests',
+                label: 'Total deaths ' + request,
                 //Css
                 //Fill the graph or not
                 fill: true,
@@ -57,8 +57,8 @@ async function chartCountry(request) {
 
 }
 
-async function getData4(request) {
-    let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/confirmed';
+async function getData5(request) {
+    let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/deaths';
     const response1 = await fetch(url);
     const data2 = await response1.json();
 
@@ -66,7 +66,7 @@ async function getData4(request) {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels4.push([date[0], cases]);
+        xlabels5.push([date[0], cases]);
 
     });
 }

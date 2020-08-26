@@ -21,17 +21,21 @@
             <!--To reshaphe charts modify the canvas and the container both or won't work-->
             <article style="max-height:1000px;max-width:1000px">
 
-                <!-- chart 1 : Luxemburg -->
+                <!-- chart 1 : Luxemburg cases -->
                 <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
+                <!-- chart 2 : Luxemburg deaths -->
+                <canvas id="luxDeaths" style="max-height:1000px;max-width:1000px"></canvas>
                 <!-- Selected country -->
                 <canvas id="country"></canvas>
+                <canvas id="deaths"></canvas>
                 <select id="select">
                     <option class="option" value="">...</option>
                 </select>
                 //! HELP
 
-            </article>
 
+
+            </article>
 
             <article>
                 <!-- Global data table -->
@@ -59,18 +63,18 @@
             <hr>
             <article>
                 <!-- Data for all the countries-->
-                <table id="world">
-                    <thead>
-                        <th>Country</th>
-                        <th>NewConfirmed</th>
-                        <th>TotalConfirmed</th>
-                        <th>NewDeaths</th>
-                        <th>TotalDeaths</th>
-                        <th>NewRecovered</th>
-                        <th>TotalRecovered</th>
+                <table id="world" class="table table-info table-hover">
+                    <thead class="thead-dark">
+                        <th scope="col">Country</th>
+                        <th scope="col">NewConfirmed</th>
+                        <th scope="col">TotalConfirmed</th>
+                        <th scope="col">NewDeaths</th>
+                        <th scope="col">TotalDeaths</th>
+                        <th scope="col">NewRecovered</th>
+                        <th scope="col">TotalRecovered</th>
                     </thead>
                     <tbody id="row">
-                        <td class="country"></td>
+                        <th class="country" scope="row"></th>
                         <td class="ncw"></td>
                         <td class="tcw"></td>
                         <td class="ndw"></td>
@@ -95,6 +99,8 @@
 <script src="charts/country.js"></script>
 <script src="charts/global.js"></script>
 <script src="charts/world.js"></script>
+<script src="charts/countryDeaths.js"></script>
+<script src="charts/luxDeaths.js"></script>
 
 </html>
 @endsection
