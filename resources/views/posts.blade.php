@@ -6,9 +6,9 @@
 <h1>Posts</h1>
 
 <!-- when clicked goes to PostController create() -->
-
+@if(Auth::user() !== null)
 <a href="{{ route('post.create') }}"><button id="create">Create post</button></a>
-
+@endif
 
 <!-- Looop to display posts, getting the data from PostController-->
 

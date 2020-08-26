@@ -46,10 +46,6 @@ class ReportSeeder extends Seeder
                 'post_id' => '4',
                 'user_id' => '7',
             ],
-            [
-                'post_id' => '4',
-                'user_id' => '8',
-            ],
         );
 
         // insert seeds
