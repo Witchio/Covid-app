@@ -67,10 +67,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //* stores what the user did in add-post in the db
-        //dd($request->image);
         $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
+        // Validating inputs
         $post->user_id = Auth::user()->id; //only a logged in user can post
 
         //* Validating and storing image
@@ -82,6 +80,12 @@ class PostController extends Controller
             $post->image = $imageName;
             $request->image->move(public_path() . '/images', $imageName);
         }
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        $post->title = $request->title;
+        $post->content = $request->content;
 
         $post->save();
         return redirect("/posts/$post->id");
@@ -141,7 +145,10 @@ class PostController extends Controller
     {
         // Update the post in the DB
         $post = Post::find($id);
-
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
         $post->title = $request->title;
         $post->content = $request->content;
 
@@ -172,7 +179,7 @@ class PostController extends Controller
 
 
         $newPost = Post::find($id);
-        return view('post', ['post' => $newPost]);
+        return view('post', ['post' => $newPost,  'reported' => $this->reportStatus($id)]);
     }
 
     //* Reporting a post

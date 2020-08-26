@@ -1,0 +1,18 @@
+//* Variables
+$main_bgc: #001a3b;
+$font_color: #edebd7;
+
+//* Resets
+* {
+    box-sizing: border-box;
+}
+*:not(input) {
+    margin: 0;
+    padding: 0;
+}
+
+//* General CSS
+body {
+    background-color: $main_bgc;
+    color: $font_color;
+}
