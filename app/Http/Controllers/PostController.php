@@ -193,7 +193,7 @@ class PostController extends Controller
         if (count($post->usersReports) == 3) {
             $this->softDestroy($id);
         }
-        //return redirect('/posts');
+        return redirect('/posts');
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
