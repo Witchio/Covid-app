@@ -1,0 +1,14 @@
+select {
+  max-width: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+}
+

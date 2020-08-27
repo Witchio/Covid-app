@@ -1,6 +1,9 @@
 <!-- extend from tempate -->
 @extends('layouts.app')
-
+<!--Link to sass-->
+@section('style')
+<link href="{{ asset('css/admin-posts.css') }}" rel="stylesheet">
+@endsection
 <!-- section('content') -->
 @section('content')
 

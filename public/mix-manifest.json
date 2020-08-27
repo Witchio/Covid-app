@@ -4,5 +4,7 @@
     "/css/nav.css": "/css/nav.css",
     "/css/homepage.css": "/css/homepage.css",
     "/css/admin-users.css": "/css/admin-users.css",
-    "/css/stats.css": "/css/stats.css"
+    "/css/admin-posts.css": "/css/admin-posts.css",
+    "/css/stats.css": "/css/stats.css",
+    "/css/profile.css": "/css/profile.css"
 }

@@ -37313,6 +37313,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/admin-posts.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin-posts.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/admin-users.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/admin-users.scss ***!
@@ -37357,6 +37368,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/stats.scss":
 /*!***********************************!*\
   !*** ./resources/sass/stats.scss ***!
@@ -37369,9 +37391,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/stats.scss ***!
-  \************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37380,7 +37402,9 @@ __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/a
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/nav.scss */"./resources/sass/nav.scss");
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/homepage.scss */"./resources/sass/homepage.scss");
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-users.scss */"./resources/sass/admin-users.scss");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/stats.scss */"./resources/sass/stats.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-posts.scss */"./resources/sass/admin-posts.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/stats.scss */"./resources/sass/stats.scss");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })
