@@ -1,18 +1,18 @@
-const xlabels = [];
-chartIt();
-async function chartIt() {
-    await getData();
+const xlabelsMobile = [];
+chartItMobile();
+async function chartItMobile() {
+    await getMobileData();
     let continent = [];
     let cases = [];
 
-    xlabels.forEach(data => {
+    xlabelsMobile.forEach(data => {
         continent.push(data[0]);
     });
-    xlabels.forEach(data => {
+    xlabelsMobile.forEach(data => {
         cases.push(data[1]);
     });
 
-    var ctx = document.getElementById('continent');
+    var ctx = document.getElementById('continentMobile');
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -52,13 +52,13 @@ async function chartIt() {
 
                     font: {
                         weight: 'bold',
-                        size: 30
+                        size: 15
                     },
                     formatter: (value) => {
                         if (value > 3000000) {
                             //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
 
-                            return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(value);
+                            return new Intl.NumberFormat('de-DE', { maximumSignificantDigits: 3 }).format(value);
                         }
                         else {
                             return '';
@@ -75,7 +75,7 @@ async function chartIt() {
 }
 
 
-async function getData() {
+async function getMobileData() {
     const response = await fetch('https://corona.lmao.ninja/v2/continents?yesterday=true&sort');
     const data = await response.json();
 
@@ -83,6 +83,6 @@ async function getData() {
     data.forEach(continent => {
         const myContinent = continent['continent'];
         const myCase = continent['cases'];
-        xlabels.push([myContinent, myCase]);
+        xlabelsMobile.push([myContinent, myCase]);
     });
 }
