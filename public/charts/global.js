@@ -1,8 +1,8 @@
 const globalData = [];
-chartIt();
+chartGlobal();
 
-async function chartIt() {
-    await getData();
+async function chartGlobal() {
+    await getGlobal();
     data = globalData[0];
     document.getElementById('nc').innerHTML = data[0];
     document.querySelector('#tc').innerHTML = data[1];
@@ -15,10 +15,10 @@ async function chartIt() {
 };
 
 
-async function getData() {
+async function getGlobal() {
     const response2 = await fetch('https://api.covid19api.com/summary');
-    const data2 = await response2.json();
-    const globals = data2['Global'];
+    const dataGlobal = await response2.json();
+    const globals = dataGlobal['Global'];
 
 
     const newCases = globals['NewConfirmed'];

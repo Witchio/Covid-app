@@ -75,9 +75,9 @@ async function chartDeaths(request) {
 async function getData5(request) {
     let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/deaths';
     const response1 = await fetch(url);
-    const data2 = await response1.json();
+    const dataDeaths = await response1.json();
 
-    data2.forEach(data => {
+    dataDeaths.forEach(data => {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
