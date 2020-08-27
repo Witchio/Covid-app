@@ -18,6 +18,10 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User', 'likes');
     }
+    public function postUser()
+    {
+        return $this->belongsTo('App\User');
+    }
     public function comments()
     {
         return $this->hasMany('App\Comment');
@@ -26,8 +30,8 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User', 'reports', 'post_id', 'user_id')->withTimestamps();
     }
-    public function commentator()
+    /* public function commentator()
     {
         return $this->hasManyThrough('App\User', 'App\Comment');
-    }
+    } */
 }

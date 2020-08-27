@@ -16,8 +16,23 @@ class PostController extends Controller
 {
     public function test()
     {
-        $post = Post::find(1);
-        dd($post->users);
+        // $post = Post::find(2);
+        // dd($post->users);
+        // $comment = Comment::where('post_id', 2)->userC;
+        // $postcomments = Post::find(2)->comments('userC')->get();
+        // $postcomments = Post::where('id', 2)->get();
+        $post2 = Post::where('id', 2)
+            ->withCount('users', 'comments', 'usersReports')
+            ->get();
+        // $comment = Comment::find(10)->userC('userComments')->get(); //works
+        // $comment = Comment::find($postcomments[6]->id)->userC('userComments')->get(); //works
+        $userr = User::find(9)->userComments;
+
+        dd($post2);
+        // dd($postcomments[6]->id); // works
+        // dd($comment[0]->name); // works
+        /* $comments = Comment::find($id);
+        dd($post[0]->comments->user->name); */
         /* $user = User::find(1);
         dd($user->posts->count()); */
     }
@@ -98,25 +113,25 @@ class PostController extends Controller
         // Using Eloquent ORM
         $post = Post::where('id', $id)
             ->withCount('users', 'comments', 'usersReports')->get();
-        $comment = Post::where('posts.id', $id)
+        $post1 = Post::where('posts.id', $id)
             ->withCount('users', 'comments', 'usersReports')
             ->join('comments', 'posts.id', '=', 'comments.post_id')
             ->join('users', 'comments.user_id', '=', 'users.id')
             ->select('posts.*', 'comments.*', 'users.*')
             ->get();
+        $post2 = Post::find($id)
+            ->withCount('users', 'comments', 'usersReports')
+            ->comments('userC')->get();
         // dd($comment->name);
 
         // https://laravel.com/docs/7.x/eloquent-relationships
-        $comments = Comment::find($id);
-        dd($post[0]->comments->user->name);
-        $userComment = User::find($id)->userComments();
-        // dd($userComment->get());
+
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
             'post' => $post[0],
             'reported' => $this->reportStatus($id),
-            'usercomments' => $comments
+            'usercomments' => ''
         ]);
     }
 
