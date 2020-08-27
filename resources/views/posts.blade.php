@@ -20,19 +20,29 @@
 
 <!-- Looop to display posts, getting the data from PostController-->
 
-@foreach($posts as $post)
-<article>
+<section id="posts">
+    @foreach($posts as $post)
+    <article>
 
-    <h2>{{ $post->title }}</h2>
-    @if($post->image)
-    <img src="{{asset("images/$post->image")}}" alt="post image">
-    @endif
-    <p>{{ @substr($post->content,0,100 ) }} ...</p>
-    <a href="/posts/{{$post->id}}">See more</a>
-    <div>{{ $post->users_count }} likes</div>
-</article>
-<p>{{ $post->comments_count }} comments</p>
+        @if($post->image)
+        <div class="article-image">
+            <img src="{{asset("images/$post->image")}}" alt="post image">
+        </div>
+        @endif
+        <div class="article-body">
+            <h2>{{ $post->title }}</h2>
+            <p>
+                {{ @substr($post->content,0,300 ) }}...
+                <a href="/posts/{{$post->id}}">See more</a>
+            </p>
+            <div class="like-comment">
+                <div class="post-details">{{ $post->users_count }} <i class="far fa-thumbs-up"></i></div>
+                <div class="post-details">{{ $post->comments_count }} <i class="far fa-comments"></i></div>
+            </div>
+        </div>
 
-@endforeach
+    </article>
+    @endforeach
+</section>
 
 @endsection
