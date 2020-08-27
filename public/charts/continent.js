@@ -1,7 +1,7 @@
 const xlabels = [];
-chartIt();
-async function chartIt() {
-    await getData();
+chartContinent();
+async function chartContinent() {
+    await getContinent();
     let continent = [];
     let cases = [];
 
@@ -75,12 +75,12 @@ async function chartIt() {
 }
 
 
-async function getData() {
+async function getContinent() {
     const response = await fetch('https://corona.lmao.ninja/v2/continents?yesterday=true&sort');
-    const data = await response.json();
+    const continentData = await response.json();
 
 
-    data.forEach(continent => {
+    continentData.forEach(continent => {
         const myContinent = continent['continent'];
         const myCase = continent['cases'];
         xlabels.push([myContinent, myCase]);

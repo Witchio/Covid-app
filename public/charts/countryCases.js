@@ -51,9 +51,9 @@ async function chartCountry(request) {
 async function getData4(request) {
     let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/confirmed';
     const response1 = await fetch(url);
-    const data2 = await response1.json();
+    const data4 = await response1.json();
 
-    data2.forEach(data => {
+    data4.forEach(data => {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];

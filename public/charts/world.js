@@ -1,8 +1,8 @@
 const xlabels3 = [];
-chartIt();
+chartWorld();
 
-async function chartIt() {
-    await getData();
+async function chartWorld() {
+    await getWorld();
     xlabels3.sort();
     xlabels3.forEach(data => {
         //! Can't select class, has to be id for some reason
@@ -38,10 +38,10 @@ async function chartIt() {
     })
 }
 
-async function getData() {
+async function getWorld() {
     const response3 = await fetch('https://api.covid19api.com/summary');
-    const data3 = await response3.json();
-    const worlds = data3['Countries'];
+    const dataWorld = await response3.json();
+    const worlds = dataWorld['Countries'];
 
     worlds.forEach(data => {
         const country = data['Country'];

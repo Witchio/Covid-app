@@ -1,6 +1,6 @@
 const luxDeaths = [];
-chartIt();
-async function chartIt() {
+chartIt6();
+async function chartIt6() {
     await getData6();
     let dates = [];
     let newCases = [];
@@ -49,9 +49,9 @@ async function chartIt() {
 
 async function getData6() {
     const response1 = await fetch('https://api.covid19api.com/total/dayone/country/luxembourg/status/deaths');
-    const data1 = await response1.json();
+    const dataLuxDeaths = await response1.json();
 
-    data1.forEach(data => {
+    dataLuxDeaths.forEach(data => {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];

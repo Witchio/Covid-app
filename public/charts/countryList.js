@@ -1,10 +1,10 @@
-getData();
-async function getData() {
+getCountries();
+async function getCountries() {
     const response = await fetch('https://api.covid19api.com/countries');
-    const data1 = await response.json();
+    const dataCountries = await response.json();
 
 
-    data1.forEach(data => {
+    dataCountries.forEach(data => {
         const select = document.getElementById('select');
         const selectClone = select.cloneNode(true);
 
