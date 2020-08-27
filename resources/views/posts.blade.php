@@ -5,6 +5,10 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
+@section('style')
+<link href="{{ asset('css/posts.css') }}" rel="stylesheet">
+@endsection
+
 <!-- Looop to display posts -->
 @section('content')
 <h1>Posts</h1>
