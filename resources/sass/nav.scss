@@ -1,6 +1,5 @@
-//* Variables
-$main_bgc: #001a3b;
-$font_color: #edebd7;
+//* Write variables in _variables.scss and then import them to your file
+@import "variables";
 
 //* Resets
 * {
