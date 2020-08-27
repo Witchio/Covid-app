@@ -1,1 +1,37 @@
+//* Importing variables
 @import "variables";
+
+//* Mobile view
+h1 {
+    text-align: center;
+}
+#posts {
+    margin-top: 2rem;
+    text-align: center;
+    article {
+        max-width: 80%;
+        margin: 1rem auto;
+        background-color: #393d69;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+        }
+        .like-comment {
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+        }
+    }
+}
+
+//* Tablet view
+@media screen and (min-width: 600px) {
+    #posts {
+        display: flex;
+    }
+}
