@@ -13,28 +13,25 @@ async function chartWorld() {
         country.innerHTML = data[0];
 
         let newConf = clone.querySelector('.ncw');
-        newConf.innerHTML = data[1];
+        newConf.innerHTML = eArabic(data[1]);
 
         let totConf = clone.querySelector('.tcw');
-        totConf.innerHTML = data[2];
+        totConf.innerHTML = eArabic(data[2]);
 
         let newDeath = clone.querySelector('.ndw');
-        newDeath.innerHTML = data[2];
+        newDeath.innerHTML = eArabic(data[2]);
 
         let totDeath = clone.querySelector('.tdw');
-        totDeath.innerHTML = data[2];
+        totDeath.innerHTML = eArabic(data[2]);
 
         let newRec = clone.querySelector('.nrw');
-        newRec.innerHTML = data[2];
+        newRec.innerHTML = eArabic(data[2]);
 
         let totRec = clone.querySelector('.trw');
-        totRec.innerHTML = data[2];
+        totRec.innerHTML = eArabic(data[2]);
 
         const mytable = document.querySelector("#world");
         mytable.append(clone);
-
-
-
     })
 }
 

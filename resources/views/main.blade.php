@@ -13,14 +13,17 @@
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
         <article style="max-height:1000px;max-width:1000px">
 
-            <!-- chart 1  -->
+            <!-- Luxemburg cases  -->
             <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
         </article>
 
 
         <article>
-            <!-- chart2 -->
+            <!-- Continent Chart -->
+            <!--Desktop version -->
             <canvas id="continent"></canvas>
+            <!--Mobile version -->
+            <canvas id="continentMobile"></canvas>
         </article>
     </div>
 
@@ -65,4 +68,5 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
 <!--Scripts-->
 <script src="charts/luxCases.js"></script>
-<script src="charts/continent.js"></script>
+<script src="charts/continentDesktop.js"></script>
+<script src="charts/continentMobile.js"></script>

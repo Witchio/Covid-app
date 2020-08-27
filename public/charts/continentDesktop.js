@@ -58,7 +58,7 @@ async function chartContinent() {
                         if (value > 3000000) {
                             //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
 
-                            return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(value);
+                            return new Intl.NumberFormat('de-DE', { maximumSignificantDigits: 3 }).format(value);
                         }
                         else {
                             return '';

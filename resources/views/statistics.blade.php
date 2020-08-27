@@ -27,6 +27,7 @@
             <canvas id="country"></canvas>
             <canvas id="deaths"></canvas>
             <select id="select">
+                <option selected>Choose country</option>
                 <option class="option" value="">...</option>
             </select>
 
@@ -55,7 +56,7 @@
         <hr>
         <article>
             <!-- Data for all the countries-->
-            <table id="world" class="table table-info table-hover">
+            <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
                 <thead class="thead-dark">
                     <th scope="col">Country</th>
                     <th scope="col">NewConfirmed</th>
@@ -78,6 +79,8 @@
         </article>
 
 
+
+
 </body>
 
 
@@ -85,7 +88,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <!--Label Plugin-->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
-<!--Scripts-->
+
+<!--Local Scripts-->
 <!--These datas display when opening page-->
 <script src="charts/luxCases.js"></script>
 <script src="charts/luxDeaths.js"></script>
@@ -98,8 +102,10 @@
 <!--Tables-->
 <script src="charts/global.js"></script>
 <script src="charts/world.js"></script>
-<!--Label Plugin-->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
+
+
+
+
 
 </html>
 @endsection

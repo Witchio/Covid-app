@@ -12,13 +12,14 @@
 
 ## Using SCSS
 - ### create the scss file you want to use in resources/sass
-- ### then run 'npm run dev' (this will create a css file with the name of your file in public/css)
-  - ex. : post.scss (located in resources/sass) -> after running npm run dev -> creates a post.css (in public/css)
 - ### in webpack.mix.js (located in the root folder) is where to link the scss file you are going to use, like so : 
 ```jsx
 mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css") // this one comes with laravel
     .sass("resources/sass/nav.scss", "public/css"); //this is the one i added
 ```
+- ### then run 'npm run dev' (this will create a css file with the name of your file in public/css)
+  - ex. : post.scss (located in resources/sass) -> after running npm run dev -> creates a post.css (in public/css)
+
 - ### when using the scss file you can run 'npm run watch' (to watch when youre using scss, so each time you save it compiles the scss into css)
   - works like the watch sass
