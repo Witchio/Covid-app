@@ -47,15 +47,20 @@
 
 //* Tablet view
 @media screen and (min-width: 600px) {
-    #charts #continent {
-        display: block !important;
-    }
-    #continentMobile {
-        display: none !important;
+    #charts {
+        display: flex;
+        /* width: 70%; */
+        #continent {
+            display: block !important;
+        }
+        #continentMobile {
+            display: none !important;
+        }
     }
     #posts {
         display: flex;
         flex-flow: wrap row;
+        justify-content: space-around;
         article {
             max-width: 30%;
         }
