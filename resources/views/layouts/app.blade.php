@@ -20,8 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /> 
 
     <!-- to do a separate stylesheet than the nav one (with general css), if needed -->
     @yield('style')
@@ -106,6 +107,33 @@
             @yield('content')
         </main>
     </div>
+
+
+    <!-- Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+
+        <div class="footer-left">
+
+        <p class="footer-links">
+            <a class="link-1" href="{{ route('main') }}">{{ __('Home') }}</a>
+            <a class="link-2" href="{{ route('stats') }}">{{ __('Stats') }}</a>
+            <a class="link-3" href="{{ route('posts') }}">{{ __('Posts') }}</a>
+            <a class="link-4" href="{{ route('about-us') }}">{{ __('About') }}</a>
+        </p>
+
+        <p>Cov-Aid 19 &copy; 2020</p>
+
+        </div>
+
+    </footer>
+
     @yield('js-resources')
 
 </body>
