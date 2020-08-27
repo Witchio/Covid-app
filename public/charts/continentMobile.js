@@ -1,18 +1,18 @@
-const xlabels = [];
-chartContinent();
-async function chartContinent() {
-    await getContinent();
+const xlabelsMobile = [];
+chartItMobile();
+async function chartItMobile() {
+    await getMobileData();
     let continent = [];
     let cases = [];
 
-    xlabels.forEach(data => {
+    xlabelsMobile.forEach(data => {
         continent.push(data[0]);
     });
-    xlabels.forEach(data => {
+    xlabelsMobile.forEach(data => {
         cases.push(data[1]);
     });
 
-    var ctx = document.getElementById('continent');
+    var ctx = document.getElementById('continentMobile');
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -37,13 +37,17 @@ async function chartContinent() {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 99, 132, 1)',
                 ],
+
             }]
         },
         options: {
 
             responsive: true,
             legend: {
-                position: 'bottom'
+                position: 'bottom',
+                labels: {
+                    fontColor: '#fff'
+                }
             },
 
             plugins: {
@@ -52,13 +56,13 @@ async function chartContinent() {
 
                     font: {
                         weight: 'bold',
-                        size: 30
+                        size: 15
                     },
                     formatter: (value) => {
                         if (value > 3000000) {
                             //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
 
-                            return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(value);
+                            return new Intl.NumberFormat('de-DE', { maximumSignificantDigits: 3 }).format(value);
                         }
                         else {
                             return '';
@@ -75,14 +79,14 @@ async function chartContinent() {
 }
 
 
-async function getContinent() {
+async function getMobileData() {
     const response = await fetch('https://corona.lmao.ninja/v2/continents?yesterday=true&sort');
-    const continentData = await response.json();
+    const data = await response.json();
 
 
-    continentData.forEach(continent => {
+    data.forEach(continent => {
         const myContinent = continent['continent'];
         const myCase = continent['cases'];
-        xlabels.push([myContinent, myCase]);
+        xlabelsMobile.push([myContinent, myCase]);
     });
 }
