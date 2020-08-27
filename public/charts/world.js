@@ -32,9 +32,6 @@ async function chartIt() {
 
         const mytable = document.querySelector("#world");
         mytable.append(clone);
-
-
-
     })
 }
 

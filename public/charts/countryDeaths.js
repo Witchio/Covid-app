@@ -22,7 +22,7 @@ async function chartDeaths(request) {
         myChart2.destroy();
     }
     myChart2 = new Chart(ctx1, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
