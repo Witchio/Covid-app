@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/nav.css": "/css/nav.css",
     "/css/homepage.css": "/css/homepage.css",
-    "/css/posts.css": "/css/posts.css"
+    "/css/posts.css": "/css/posts.css",
+    "/css/post.css": "/css/post.css"
 }

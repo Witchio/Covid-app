@@ -25,8 +25,7 @@
     <article>
 
         @if($post->image)
-        <div class="article-image">
-            <img src="{{asset("images/$post->image")}}" alt="post image">
+        <div class="article-image" style='background-image: url({{asset("images/$post->image")}})'>
         </div>
         @endif
         <div class="article-body">
