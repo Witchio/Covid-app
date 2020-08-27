@@ -37313,6 +37313,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/admin-posts.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin-posts.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/final_project/resources/sass/admin-posts.scss'\n    at /Applications/MAMP/htdocs/final_project/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at /Applications/MAMP/htdocs/final_project/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
+
+/***/ }),
+
 /***/ "./resources/sass/admin-users.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/admin-users.scss ***!
@@ -37357,10 +37368,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/final_project/resources/sass/profile.scss'\n    at /Applications/MAMP/htdocs/final_project/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at /Applications/MAMP/htdocs/final_project/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
+
+/***/ }),
+
+/***/ "./resources/sass/stats.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/stats.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/final_project/resources/sass/stats.scss'\n    at /Applications/MAMP/htdocs/final_project/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Applications/MAMP/htdocs/final_project/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at /Applications/MAMP/htdocs/final_project/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ***!
-  \********************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37368,7 +37401,10 @@ __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/js/app
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/nav.scss */"./resources/sass/nav.scss");
 __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/homepage.scss */"./resources/sass/homepage.scss");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-users.scss */"./resources/sass/admin-users.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-users.scss */"./resources/sass/admin-users.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-posts.scss */"./resources/sass/admin-posts.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/stats.scss */"./resources/sass/stats.scss");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })
