@@ -37,13 +37,17 @@ async function chartItMobile() {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 99, 132, 1)',
                 ],
+
             }]
         },
         options: {
 
             responsive: true,
             legend: {
-                position: 'bottom'
+                position: 'bottom',
+                labels: {
+                    fontColor: '#fff'
+                }
             },
 
             plugins: {

@@ -1,5 +1,13 @@
 <!-- extend from tempate -->
 @extends('layouts.app')
+<!--Link to sass-->
+@section('style')
+<link href="{{ asset('css/admin-users.css') }}" rel="stylesheet">
+@endsection
+<!--Font for button-->
+@section('style')
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+@endsection
 
 <!-- section('content') -->
 @section('content')
@@ -44,14 +52,14 @@
 
             <tr>
                  @if(Auth::user()->id != $user->id)
-                <th scope="row">{{$user->name}} </th>
+                <td class="name" scope="row">{{$user->name}} </td>
 
                 <td>{{$user->email}} </td>
 
                 <td>
                     <form method="post" action="userRole/{{$user->id}}">
                         @csrf
-                        <select name="role" value="role">
+                        <select class="form-control" name="role" value="role">
                             <option selected value="{{ucfirst($user->role)}}">{{ucfirst($user->role)}}</option>
 
                             @if($user->role=="admin")
@@ -60,12 +68,12 @@
                             <option value="admin">Admin</option>
                             @endif
                         </select>
-                        <input type="submit" value="Change role">
+                        <input class="btn btn-info" type="submit" value="Change role">
 
                     </form>
                     <form action="delete/{{$user->id}}" method="post">
                         @csrf
-                        <input type="submit" value="Delete user">
+                        <input class="btn btn-danger" type="submit" value="DELETE USER">
                     </form>
                 </td>
                 @endif

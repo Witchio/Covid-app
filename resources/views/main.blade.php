@@ -1,6 +1,10 @@
 <!-- extends from template-->
 @extends('layouts.app')
 
+@section('style')
+<link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
 <section>
@@ -24,33 +28,36 @@
     </div>
 
 
-    <div id="posts">
+    <h1>Trending Community Posts</h1>
+    <section id="posts">
         <!-- displays top posts -->
-        <h2>Trending Community Posts</h2>
         @foreach($posts as $post)
-        <p>Title : {{ $post->title }}</p>
-        <p>Image : </p>
-        <img src="{{ asset("images/$post->image")}}" alt="">
-        <p>Content : {{ $post->content }}</p>
-        <p>{{ $post->users_count }} likes </p>
-        <p>{{ $post->comments_count }} Comments :</p>
-        <ul>
+        <article>
+            <img src="{{ asset("images/$post->image")}}" alt="">
+            <div class="content">
+                <h3> {{ $post->title }}</h3>
+                <p>Content : {{ @substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
+                <div class="like-comment">
+                    <p>{{ $post->users_count }} <i class="fas fa-thumbs-up"></i></p>
+                    <p>{{ $post->comments_count }} <i class="fas fa-comment"></i></p>
+                </div>
+            </div>
+        </article>
+        @endforeach
+        <!--  <ul>
             @foreach($post->comments as $comment)
             <li>{{$comment->comment}}</li>
             @endforeach
-        </ul>
-        <a href="/posts/{{$post->id}}">Go to Post</a><br>
-        <hr>
-        @endforeach
-    </div>
+        </ul> -->
+    </section>
 
 </section>
 
-<section>
+<section id="rss">
     <!-- Rss feed, squeleton for that tbd -->
     <!-- Link for the xml file: https://rss.app/feeds/mPa6EvYZGT7E0ee4.xml - Font: independent.co.uk -->
-        <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list>
-        <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
+    <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list>
+    <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
 </section>
 
 @endsection

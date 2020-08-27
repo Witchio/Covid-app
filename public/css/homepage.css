@@ -1,0 +1,38 @@
+h1 {
+  text-align: center;
+}
+
+#posts {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#posts article {
+  max-width: 80%;
+  margin: 1rem auto;
+  background-color: #393d69;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#posts article img {
+  margin: 0 0 1rem 0;
+  width: 100%;
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#posts article .like-comment {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  #posts {
+    display: flex;
+  }
+}
+
