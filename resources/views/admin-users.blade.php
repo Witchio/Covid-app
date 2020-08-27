@@ -60,12 +60,12 @@
                             <option value="admin">Admin</option>
                             @endif
                         </select>
-                        <input type="submit" value="Change role">
+                        <input class="btn btn-info" type="submit" value="Change role">
 
                     </form>
                     <form action="delete/{{$user->id}}" method="post">
                         @csrf
-                        <input type="submit" value="Delete user">
+                        <input class="btn btn-danger" type="submit" value="DELETE USER">
                     </form>
                 </td>
                 @endif
