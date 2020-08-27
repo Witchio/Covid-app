@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- to do a separate stylesheet than the main one, if needed -->
     @yield('style')
@@ -104,6 +105,33 @@
             @yield('content')
         </main>
     </div>
+
+
+    <!-- Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div class="footer-left">
+
+        <p class="footer-links">
+            <a class="link-1" href="{{ route('main') }}">{{ __('Home') }}</a>
+            <a class="link-2" href="{{ route('stats') }}">{{ __('Stats') }}</a>
+            <a class="link-3" href="{{ route('posts') }}">{{ __('Posts') }}</a>
+            <a class="link-4" href="{{ route('about-us') }}">{{ __('About') }}</a>
+        </p>
+
+        <p>Cov-Aid 19 &copy; 2020</p>
+
+        </div>
+
+    </footer>
+
     @yield('js-resources')
 
 </body>
