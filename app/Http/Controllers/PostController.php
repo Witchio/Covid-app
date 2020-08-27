@@ -103,13 +103,13 @@ class PostController extends Controller
         //$post = Post::where('id', $id)
         //->withCount('users', 'comments', 'usersReports')->get();
         $post = Post::where('posts.id', $id)
-            ->withCount('users', 'comments', 'usersReports')
             //Need left join else it won't display the posts without comments
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
             ->leftJoin('users', 'comments.user_id', '=', 'users.id')
             //->select('posts.*', 'comments.*', 'users.*')
             //! Need to select proper values or bugs
             ->select('posts.image', 'posts.title', 'posts.content', 'posts.user_id', 'comments.comment',  'users.name', 'posts.id')
+            ->withCount('users', 'comments', 'usersReports')
             ->get();
 
         // https://laravel.com/docs/7.x/eloquent-relationships
