@@ -1,3 +1,7 @@
+<!--Link to sass-->
+@section('style')
+<link href="{{ asset('css/stats.css') }}" rel="stylesheet">
+@endsection
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +21,11 @@
 
 
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
-        <article style="max-height:1000px;max-width:1000px">
+        <article>
+            <select id="select">
+                <option selected>Choose country</option>
+                <option class="option" value="">...</option>
+            </select>
 
             <!-- chart 1 : Luxemburg cases -->
             <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
@@ -26,10 +34,6 @@
             <!-- Selected country -->
             <canvas id="country"></canvas>
             <canvas id="deaths"></canvas>
-            <select id="select">
-                <option selected>Choose country</option>
-                <option class="option" value="">...</option>
-            </select>
 
         </article>
 
