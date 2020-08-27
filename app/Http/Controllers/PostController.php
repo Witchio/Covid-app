@@ -121,6 +121,7 @@ class PostController extends Controller
             'img' => $post[0]->image,
             'posts' => $post,
             'reported' => $this->reportStatus($id),
+            'liked' => $this->getlike($id),
         ]);
     }
 
@@ -292,14 +293,31 @@ class PostController extends Controller
         // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
         $hasLike = $user->posts()->where('post_id', $id)->exists();
 
+        $likestatus = false;
         // LIKE a post (toggle)
         if ($hasLike) {
             // REMOVE a record fr the LIKES table
             // DB::delete('DELETE from books WHERE id = ?', [$id]);
             $user->posts()->detach($post);
+            $likestatus = false;
         } else {
             // ADD a record to the LIKES table
             $user->posts()->save($post);
+            $likestatus = true;
         }
+        return $likestatus;
+    }
+    // LIKE a post (toggle)
+    // https://stackoverflow.com/questions/35285902/laravel-find-if-a-pivot-table-record-exists
+    public function getlike($id)
+    {
+        // initialise variables
+        $user = User::find(Auth::user()->id);
+        $post = Post::find($id);
+
+        // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
+        $hasLike = $user->posts()->where('post_id', $id)->exists();
+
+        return $hasLike;
     }
 }
