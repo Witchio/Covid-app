@@ -27,7 +27,7 @@
             <option class="option" value="">...</option>
         </select>
         <label for="">Birthdate</label>
-        <input type="text" class="form-control" name="birthdate" placeholder="Date of Birth" value="{{ Auth::user()->birthdate }}">
+        <input type="date" class="form-control" name="birthdate" placeholder="Date of Birth" value="{{ Auth::user()->birthdate }}">
         <label for="">Country</label>
         <input type="text" class="form-control" name="country" placeholder="Country" value="{{ Auth::user()->country }}">
         <input type="submit" value="Edit">
