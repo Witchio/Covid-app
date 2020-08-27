@@ -27,6 +27,7 @@
             <canvas id="country"></canvas>
             <canvas id="deaths"></canvas>
             <select id="select">
+                <option selected>Choose country</option>
                 <option class="option" value="">...</option>
             </select>
 

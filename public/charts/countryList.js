@@ -17,5 +17,4 @@ async function getData() {
     });
 
 }
-document.querySelector('#select option[value=france]').selected = true;
-console.log(test);
+document.querySelectorAll('.option')[0].pop();
