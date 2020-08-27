@@ -1,7 +1,10 @@
 let countryDeaths = [];
+let myChart2;
 
 async function chartDeaths(request) {
-    countryDeaths.length = 0;
+
+    countryDeaths = [];
+
     await getData5(request);
     let dates = [];
     let newCases = [];
@@ -11,10 +14,14 @@ async function chartDeaths(request) {
     countryDeaths.forEach(data => {
         newCases.push(data[1]);
     });
-    var ctx1 = document.getElementById('deaths');
+    const canvas = document.getElementById('deaths');
+    const ctx1 = canvas.getContext('2d');
     Chart.defaults.global.responsive = 'true';
-
-    var myChart1 = new Chart(ctx1, {
+    //Destroy the previous chart else it will overlap
+    if (myChart2) {
+        myChart2.destroy();
+    }
+    myChart2 = new Chart(ctx1, {
         type: 'line',
         data: {
             labels: dates,

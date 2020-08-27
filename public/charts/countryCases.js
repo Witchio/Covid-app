@@ -1,19 +1,30 @@
 let xlabels4 = [];
-
+let myChart1;
 async function chartCountry(request) {
-    xlabels4.length = 0;
+
+    xlabels4 = [];
+
     await getData4(request);
-    let dates = [];
-    let newCases = [];
+    const dates = [];
+    const newCases = [];
+
     xlabels4.forEach(data => {
         dates.push(data[0]);
+
     });
+
     xlabels4.forEach(data => {
         newCases.push(data[1]);
+
     });
-    var ctx1 = document.getElementById('country');
+    const canvas = document.getElementById('country');
+    const ctx1 = canvas.getContext('2d');
     Chart.defaults.global.responsive = 'true';
-    var myChart1 = new Chart(ctx1, {
+    //Destroy the previous chart else it will overlap
+    if (myChart1) {
+        myChart1.destroy();
+    };
+    myChart1 = new Chart(ctx1, {
         type: 'bar',
         data: {
             labels: dates,
@@ -49,6 +60,7 @@ async function chartCountry(request) {
 }
 
 async function getData4(request) {
+
     let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/confirmed';
     const response1 = await fetch(url);
     const data2 = await response1.json();
@@ -60,4 +72,5 @@ async function getData4(request) {
         xlabels4.push([date[0], cases]);
 
     });
+
 }

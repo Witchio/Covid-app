@@ -15,6 +15,6 @@ async function getData() {
         select.append(option);
 
     });
+    document.querySelector("#select .option").remove();
 
 }
-document.querySelectorAll('.option')[0].pop();
