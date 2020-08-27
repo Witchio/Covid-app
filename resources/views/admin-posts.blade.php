@@ -67,8 +67,8 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
-
-                        alert('Ajax success');
+                        $(this).parent().remove();
+                        alert('AJAX');
                     },
                     error: function(err) {
                         alert('AJAX ERROR. Please contact administrator');

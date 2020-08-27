@@ -2,9 +2,16 @@
 @import "variables";
 
 //* Mobile view
-h1 {
-    text-align: center;
+/* --------- Charts --------- */
+#charts {
+    #continent {
+        display: none !important;
+    }
+    #continentMobile {
+        width: 100%;
+    }
 }
+/* --------- Posts --------- */
 #posts {
     margin-top: 2rem;
     text-align: center;
@@ -14,6 +21,10 @@ h1 {
         background-color: #393d69;
         border-radius: 10px;
         overflow: hidden;
+        h3 {
+            text-decoration: underline;
+            margin: 0.5rem;
+        }
         img {
             margin: 0 0 1rem 0;
             width: 100%;
@@ -23,15 +34,40 @@ h1 {
         .like-comment {
             padding: 0.5rem;
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-content: center;
+            .fa-thumbs-up {
+                padding-right: 0.3rem;
+                position: relative;
+                bottom: 1.5px;
+            }
         }
     }
 }
 
 //* Tablet view
 @media screen and (min-width: 600px) {
+    #charts {
+        display: flex;
+        /* width: 70%; */
+        #continent {
+            display: block !important;
+        }
+        #continentMobile {
+            display: none !important;
+        }
+    }
     #posts {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-around;
+        article {
+            max-width: 30%;
+        }
+    }
+}
+@media screen and (min-width: 960px) {
+    main {
         display: flex;
     }
 }

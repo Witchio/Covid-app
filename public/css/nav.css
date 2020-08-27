@@ -87,6 +87,11 @@ body {
   color: #6e5494;
 }
 
+h1 {
+  text-align: center;
+  margin: 1rem;
+}
+
 main {
   margin: 1rem;
 }

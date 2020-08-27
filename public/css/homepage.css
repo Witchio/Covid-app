@@ -1,6 +1,14 @@
-h1 {
-  text-align: center;
+/* --------- Charts --------- */
+
+#charts #continent {
+  display: none !important;
 }
+
+#charts #continentMobile {
+  width: 100%;
+}
+
+/* --------- Posts --------- */
 
 #posts {
   margin-top: 2rem;
@@ -15,6 +23,11 @@ h1 {
   overflow: hidden;
 }
 
+#posts article h3 {
+  text-decoration: underline;
+  margin: 0.5rem;
+}
+
 #posts article img {
   margin: 0 0 1rem 0;
   width: 100%;
@@ -26,12 +39,43 @@ h1 {
 #posts article .like-comment {
   padding: 0.5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-content: center;
 }
 
+#posts article .like-comment .fa-thumbs-up {
+  padding-right: 0.3rem;
+  position: relative;
+  bottom: 1.5px;
+}
+
 @media screen and (min-width: 600px) {
+  #charts {
+    display: flex;
+    /* width: 70%; */
+  }
+
+  #charts #continent {
+    display: block !important;
+  }
+
+  #charts #continentMobile {
+    display: none !important;
+  }
+
   #posts {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+  }
+
+  #posts article {
+    max-width: 30%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  main {
     display: flex;
   }
 }

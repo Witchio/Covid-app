@@ -1,0 +1,59 @@
+h1 {
+  text-align: center;
+  color: aqua;
+}
+
+#posts {
+  text-align: center;
+}
+
+#posts article {
+  max-width: 80%;
+  margin: 1rem auto;
+  text-align: left;
+  background-color: #393d69;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
+#posts article .article-image {
+  width: 20%;
+  background-size: cover;
+  background-position: center;
+  transition-duration: 0.3s;
+}
+
+#posts article .article-image:hover {
+  transform: scale(1.2);
+}
+
+#posts article .article-body {
+  width: 70%;
+  padding: 1rem;
+}
+
+#posts article .article-body h2 {
+  margin: 0.5rem;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.3s;
+}
+
+#posts article .article-body h2:hover {
+  transform: scale(1.2);
+  left: 40px;
+}
+
+#posts article .like-comment {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-content: center;
+}
+
+#posts article .like-comment .post-details {
+  margin: 0.25rem;
+}
+

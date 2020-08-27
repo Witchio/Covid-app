@@ -1,0 +1,53 @@
+//* Write variables in _variables.scss and then import them to your file
+@import "variables";
+
+h1 {
+    text-align: center;
+    color: aqua;
+}
+
+#posts {
+    text-align: center;
+    article {
+        max-width: 80%;
+        margin: 1rem auto;
+        text-align: left;
+        background-color: #393d69;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        .article-image {
+            width: 20%;
+           background-size: cover;
+           background-position: center;
+           transition-duration: 0.3s;
+           &:hover{
+               transform: scale(1.2);   
+            }
+        }
+        .article-body {
+            width: 70%;
+            padding: 1rem;
+            h2 {
+                margin: 0.5rem;
+                position: relative;
+                top: 0px; 
+                left: 0px; 
+                transition-duration: 0.3s;
+                &:hover{
+                    transform: scale(1.2); 
+                    left: 40px; 
+                }
+            }
+        }
+        .like-comment {
+            padding: 0.5rem;
+            display: flex;
+            justify-content: start;
+            align-content: center;
+            .post-details{
+                margin: 0.25rem;
+            }
+        }
+    }
+}
