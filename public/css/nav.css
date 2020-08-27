@@ -12,3 +12,12 @@ body {
   color: #edebd7;
 }
 
+h1 {
+  text-align: center;
+  margin: 1rem;
+}
+
+main {
+  margin: 1rem;
+}
+
