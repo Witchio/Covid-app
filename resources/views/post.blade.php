@@ -10,6 +10,7 @@
 
 <!-- individual post depending on id -->
 <h1>{{ $posts[0]->title }}</h1>
+<!-- <h3>{{$posts[0]->name}}</h3> -->
 <section class="maincontainer">
     <img src="" alt="">
     @if($posts[0]->image)
