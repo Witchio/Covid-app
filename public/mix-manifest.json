@@ -9,7 +9,5 @@
     "/css/profile.css": "/css/profile.css",
     "/css/posts.css": "/css/posts.css",
     "/css/add-post.css": "/css/add-post.css",
-    "/css/post.css": "/css/post.css",
-    "/css/edit-post.css": "/css/edit-post.css",
-    "/css/about-us.css": "/css/about-us.css"
+    "/css/post.css": "/css/post.css"
 }
