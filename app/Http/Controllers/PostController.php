@@ -311,13 +311,16 @@ class PostController extends Controller
     // https://stackoverflow.com/questions/35285902/laravel-find-if-a-pivot-table-record-exists
     public function getlike($id)
     {
-        // initialise variables
-        $user = User::find(Auth::user()->id);
-        $post = Post::find($id);
-
-        // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
-        $hasLike = $user->posts()->where('post_id', $id)->exists();
-
+        // check if user connected
+        if (Auth::user()) {
+            // initialise variables
+            $user = User::find(Auth::user()->id);
+            $post = Post::find($id);
+            // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
+            $hasLike = $user->posts()->where('post_id', $id)->exists();
+        } else {
+            $hasLike = false;
+        }
         return $hasLike;
     }
 }

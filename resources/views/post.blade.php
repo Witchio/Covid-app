@@ -40,7 +40,6 @@
         @auth
 
         <!-- Should be icon probably -->
-        $liked
         <button class="like-btn" @if ($liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="far fa-thumbs-up"></i></button>
         <button class="like-btn" @if (!$liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="fas fa-thumbs-up"></i></button>
 
