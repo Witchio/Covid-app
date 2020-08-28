@@ -29,19 +29,6 @@ h1 {
   padding: 1rem;
 }
 
-#posts article .article-body h2 {
-  margin: 0.5rem;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  transition-duration: 0.3s;
-}
-
-#posts article .article-body h2:hover {
-  transform: scale(1.2);
-  left: 40px;
-}
-
 #posts article .like-comment {
   padding: 0.5rem;
   display: flex;

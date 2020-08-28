@@ -37313,6 +37313,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/add-post.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/add-post.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/admin-posts.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/admin-posts.scss ***!
@@ -37413,22 +37424,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/post.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\homepage.scss */"./resources/sass/homepage.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\admin-users.scss */"./resources/sass/admin-users.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\admin-posts.scss */"./resources/sass/admin-posts.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\profile.scss */"./resources/sass/profile.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
-module.exports = __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\homepage.scss */"./resources/sass/homepage.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\admin-users.scss */"./resources/sass/admin-users.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\admin-posts.scss */"./resources/sass/admin-posts.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\profile.scss */"./resources/sass/profile.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\add-post.scss */"./resources/sass/add-post.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
 
 
 /***/ })
