@@ -12,7 +12,7 @@
 
 
     <!--To reshaphe charts modify the canvas and the container both or won't work-->
-    <article>
+    <article id="canvas">
 
         <select id="select" class="form-control">
             <option selected>Choose country</option>
