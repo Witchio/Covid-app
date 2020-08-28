@@ -28,7 +28,7 @@ h2 a:hover {
 
 h2 a:active {
   text-decoration: none;
-  color: #edebd7;
+  color: red;
 }
 
 #posts {
@@ -98,7 +98,11 @@ button:active {
   transform: scale(0.99);
 }
 
-@media screen and (min-width: 960px) {
+/* --------- Tablet view --------- */
+
+/* --------- Desktop view --------- */
+
+@media screen and (min-width: 1020px) {
   #posts {
     text-align: center;
   }
@@ -122,7 +126,7 @@ button:active {
   }
 
   #posts article .article-image:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
   }
 
   #posts article .article-body {

@@ -1,10 +1,84 @@
 //* Write variables in _variables.scss and then import them to your file
 @import "variables";
 
-h2 {
+/* --------- Mobile --------- */
+h1 {
     text-align: center;
-    color: aqua;
 
+}
+
+.maincontainer {
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    p {
+        text-align: left;
+        margin: 2rem auto 1.5rem;
+    }
+    
+}
+        
+.authoraccess {
+display: flex;
+justify-content: flex-end;
+}
+
+#editfakebtn {
+    padding: 0.7rem 0.2rem;
+    font-size: 1.04rem;
+}
+
+#editbg {
+    border: 2px solid #6066A9;
+    &:hover{
+        border: 2px solid $palette_one;
+    }
+}
+
+#editbg,
+#delete {
+    background-color: #6066A9;
+    color: $font-color;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 0.5rem;
+    &:hover{
+        background-color: $palette_one;  
+        color: $palette_three;
+    }
+}
+
+.maininfo {
+    span {
+        padding: 0.6rem 0 0.4rem;
+    }
+    width: 15%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+
+    /* unvisited link */
+    a:link {
+        text-decoration: none;
+        color: $font_color;
+    }
+    /* visited link */
+    a:visited {
+        text-decoration: none;
+        color: $font_color;
+    }
+    /* mouse over link */
+    a:hover {
+        text-decoration: none;
+        color: red;
+    }
+    /* selected link */
+    a:active {
+        text-decoration: none;
+        color: $font_color;
+    } 
 }
 
 
@@ -40,4 +114,15 @@ button:focus {
 
 button:active {
     transform: scale(0.99);
+}
+
+
+/* --------- Tablet view --------- */
+@media screen and (min-width: 600px) {
+    
+}
+
+/* --------- Desktop view --------- */
+@media screen and (min-width: 1020px) {
+    
 }
