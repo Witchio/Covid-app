@@ -11,5 +11,7 @@
     "/css/add-post.css": "/css/add-post.css",
     "/css/post.css": "/css/post.css",
     "/css/edit-post.css": "/css/edit-post.css",
+    "/css/login.css": "/css/login.css",
+    "/css/register.css": "/css/register.css",
     "/css/about-us.css": "/css/about-us.css"
 }
