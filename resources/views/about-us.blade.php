@@ -1,6 +1,12 @@
 <!-- extend from tempate -->
 @extends('layouts.app')
 
+<!-- Style -->
+@section('style')
+<link href="{{ asset('css/about-us.css') }}" rel="stylesheet">
+@endsection
+
+<!-- Content -->
 @section('content')
 <h1>Section about us</h1>
 <section>

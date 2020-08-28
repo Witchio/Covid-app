@@ -37313,6 +37313,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/about-us.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/about-us.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/admin-posts.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/admin-posts.scss ***!
@@ -37413,9 +37424,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/post.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/post.scss ./resources/sass/about-us.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37428,7 +37439,8 @@ __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\admin
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\profile.scss */"./resources/sass/profile.scss");
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
-module.exports = __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
+__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
+module.exports = __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\about-us.scss */"./resources/sass/about-us.scss");
 
 
 /***/ })
