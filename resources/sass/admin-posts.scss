@@ -6,31 +6,26 @@ h1 {
 }
 
 h2 {
-
     /* unvisited link */
     a:link {
         text-decoration: none;
         color: $font_color;
     }
-
     /* visited link */
     a:visited {
         text-decoration: none;
         color: $font_color;
     }
-
     /* mouse over link */
     a:hover {
         text-decoration: none;
         color: $font_color;
     }
-
     /* selected link */
     a:active {
         text-decoration: none;
         color: $font_color;
     }
-
 }
 
 #posts {
@@ -49,12 +44,37 @@ h2 {
             height: 10rem;
             background-size: cover;
             background-position: center;
-
         }
 
         .article-body {
             width: 100%;
             padding: 1rem;
+            p {
+                margin: 1rem;
+            }
+            .delete-btn {
+                /* unvisited link */
+                a:link {
+                    text-decoration: none;
+                    color: $font_color;
+                }
+                /* visited link */
+                a:visited {
+                    text-decoration: none;
+                    color: $font_color;
+                }
+                /* mouse over link */
+                a:hover,
+                &:hover {
+                    text-decoration: none;
+                    color: black;
+                }
+                /* selected link */
+                a:active {
+                    text-decoration: none;
+                    color: $font_color;
+                }
+            }
         }
 
         .like-comment {
@@ -62,7 +82,6 @@ h2 {
             display: flex;
             justify-content: start;
             align-content: center;
-
             .post-details {
                 margin: 0.25rem;
             }

@@ -49,8 +49,9 @@
                 <h2>{{ $post->title }}</h2>
                 <p>{{ $post->content }}</p>
 
-
-                <button class="delete-btn btn btn-danger" value="{{$post->id}}">Delete post</button>
+                <button class="delete-btn btn btn-danger" value="{{$post->id}}">
+                    <a href="/post/delete/{{$posts[0]->id}}">Delete post</a>
+                </button>
                 <button class="restore-btn btn btn-info" value="{{$post->id}}">Restore post</button>
                 <hr>
             </div>
@@ -61,7 +62,7 @@
     <!-- Ajax call to delete post -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(function() {
+        /* $(function() {
             $('.delete-btn').click(function(e) {
                 e.preventDefault();
                 let route = '/admin/posts/delete/' + $(this).val();
@@ -74,15 +75,16 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
-                        $(this).parent().remove();
-                        alert('AJAX');
+                        // $(this).parent().remove();
+                        console.log(result.message);
+                        alert('Post permanently deleted');
                     },
                     error: function(err) {
                         alert('AJAX ERROR. Please contact administrator');
                     }
                 })
             })
-        })
+        }) */
         $(function() {
             $('.restore-btn').click(function(e) {
                 e.preventDefault();
@@ -96,6 +98,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
+                        console.log(result.message);
                         alert('Post restored!');
                     },
                     error: function(err) {

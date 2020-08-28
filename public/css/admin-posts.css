@@ -56,6 +56,38 @@ h2 a:active {
   padding: 1rem;
 }
 
+#posts article .article-body p {
+  margin: 1rem;
+}
+
+#posts article .article-body .delete-btn {
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+
+#posts article .article-body .delete-btn a:link {
+  text-decoration: none;
+  color: #edebd7;
+}
+
+#posts article .article-body .delete-btn a:visited {
+  text-decoration: none;
+  color: #edebd7;
+}
+
+#posts article .article-body .delete-btn a:hover,
+#posts article .article-body .delete-btn:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#posts article .article-body .delete-btn a:active {
+  text-decoration: none;
+  color: #edebd7;
+}
+
 #posts article .like-comment {
   padding: 0.5rem;
   display: flex;
