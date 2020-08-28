@@ -32,10 +32,6 @@ async function chartLuxCases() {
             }]
         },
         options: {
-
-            label: {
-                fontColor: 'green',
-            },
             plugins: {
                 datalabels: {
                     display: false

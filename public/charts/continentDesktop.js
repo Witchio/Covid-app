@@ -43,12 +43,12 @@ async function chartContinent() {
 
             responsive: true,
             legend: {
-                position: 'bottom',
-                labels: {
+                position: 'bottom', labels: {
                     fontColor: '#fff',
                     fontWeight: 'bold',
                     fontSize: 30
                 }
+
             },
 
             plugins: {
