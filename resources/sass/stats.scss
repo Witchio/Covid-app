@@ -4,17 +4,32 @@
 
 #worldDataBox {
     text-align: center;
-    /* width: 40%; */
     margin: auto;
     background-color: rgba(12, 49, 95, 0.5);
-    /* padding: 1rem; */
     border-radius: 1rem;
 }
-
-//* main display
-/* #chart-data {
-    display: flex;
-} */
+//*tablet
+@media screen and (min-width: 600px) {
+    #worldDataBox {
+        width: 80%;
+    }
+}
+//* Desktop
+@media screen and (min-width: 1020px) {
+    #chart-data {
+        display: flex;
+        justify-content: space-between;
+        #canvas {
+            width: 67%;
+        }
+        #worldDataBox {
+            width: 30%;
+            margin-top: 0;
+            margin-right: 0;
+            padding: 0.5rem;
+        }
+    }
+}
 
 //* Numbers
 .boxData {
