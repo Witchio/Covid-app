@@ -37390,6 +37390,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/nav.scss":
 /*!*********************************!*\
   !*** ./resources/sass/nav.scss ***!
@@ -37434,6 +37445,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/register.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/register.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/stats.scss":
 /*!***********************************!*\
   !*** ./resources/sass/stats.scss ***!
@@ -37446,9 +37468,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ./resources/sass/edit-post.scss ./resources/sass/about-us.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ./resources/sass/edit-post.scss ./resources/sass/login.scss ./resources/sass/register.scss ./resources/sass/about-us.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37464,6 +37486,8 @@ __webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\posts.scs
 __webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\add-post.scss */"./resources/sass/add-post.scss");
 __webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
 __webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\edit-post.scss */"./resources/sass/edit-post.scss");
+__webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\login.scss */"./resources/sass/login.scss");
+__webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\register.scss */"./resources/sass/register.scss");
 module.exports = __webpack_require__(/*! C:\wamp64\www\PHP\final_project\resources\sass\about-us.scss */"./resources/sass/about-us.scss");
 
 
