@@ -256,6 +256,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $result = Post::where('id', $id)->forceDelete();
+        return redirect('/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe

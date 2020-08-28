@@ -38,7 +38,7 @@ justify-content: center;
 
 #editbg,
 #delete {
-    background-color: #6066A9;
+    background-color: $lighter_bgc;
     color: $font-color;
     font-size: 0.8rem;
     padding: 0.5rem;
@@ -46,7 +46,7 @@ justify-content: center;
     text-decoration: none;
     margin: 0.5rem;
     &:hover{
-        background-color: $palette_one;  
+        background-color: $palette_two;  
         color: $palette_three;
     }
 }

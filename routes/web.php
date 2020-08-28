@@ -41,7 +41,7 @@ Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->m
 
 //Deleting a post as an admin
 //TODO User can do this without being admin
-Route::get('/post/delete/{id}', 'PostController@softDestrPost')->middleware('auth');
+Route::get('/post/delete/{id}', 'PostController@destroy')->middleware('auth');
 
 Route::get('/test', 'PostController@test'); // jo keep
 

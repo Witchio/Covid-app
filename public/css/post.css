@@ -37,7 +37,7 @@ h1 {
 
 #editbg,
 #delete {
-  background-color: #6066A9;
+  background-color: #393d69;
   color: #edebd7;
   font-size: 0.8rem;
   padding: 0.5rem;
@@ -48,7 +48,7 @@ h1 {
 
 #editbg:hover,
 #delete:hover {
-  background-color: #393D69;
+  background-color: #27293F;
   color: #7A7FB8;
 }
 
