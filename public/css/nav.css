@@ -7,13 +7,6 @@
   padding: 0;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 body {
   background-color: #001a3b;
   color: #edebd7;
@@ -36,10 +29,8 @@ main {
   text-align: left;
   font: normal 16px sans-serif;
   padding: 20px 50px;
-  /* Heigth of the footer */
-  position: absolute;
+  left: 0;
   bottom: 0;
-  width: 100%;
 }
 
 .footer-distributed .footer-left p {
@@ -105,20 +96,6 @@ main {
 
 .fa-github {
   color: #6e5494;
-}
-
-main {
   margin: 1rem;
-}
-
-@media (max-width: 600px) {
-  .footer-distributed .footer-right {
-    float: none;
-    margin: 0 auto 20px;
-  }
-}
-
-.footer-distributed .footer-left p.footer-links {
-  line-height: 1.8;
 }
 
