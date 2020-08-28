@@ -7,7 +7,7 @@
 
 @section('content')
 
-<section>
+<section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
@@ -18,8 +18,8 @@
         </article>
 
 
+        <!-- Continents Chart -->
         <article>
-            <!-- Continent Chart -->
             <!--Desktop version -->
             <canvas id="continent"></canvas>
             <!--Mobile version -->
@@ -38,8 +38,8 @@
                 <h3> {{ $post->title }}</h3>
                 <p>Content : {{ @substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
                 <div class="like-comment">
-                    <p>{{ $post->users_count }} <i class="fas fa-thumbs-up"></i></p>
-                    <p>{{ $post->comments_count }} <i class="fas fa-comment"></i></p>
+                    <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
+                    <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
                 </div>
             </div>
         </article>

@@ -40,6 +40,7 @@ Route::post('/post/create', 'PostController@store');
 Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->middleware('auth');
 
 //Deleting a post as an admin
+//TODO User can do this without being admin
 Route::get('/post/delete/{id}', 'PostController@softDestrPost')->middleware('auth');
 
 Route::get('/test', 'PostController@test'); // jo keep
@@ -71,12 +72,16 @@ Route::get('/post/like', function () {
 //! Admin Dashboard
 //* Users admin Dashboard
 Route::get('/admin/users', 'HomeController@showUser')->name('admin-users');
+//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::post('admin/userRole/{id}', 'HomeController@edit');
+//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::post('/admin/delete/{id}', 'HomeController@destroy')->middleware('auth');
 
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
+//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
+//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 
 //! Profile dashboard
@@ -84,6 +89,7 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
+//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::put('/profile/update', 'HomeController@update');
 
 

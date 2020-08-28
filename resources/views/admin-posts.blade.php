@@ -1,6 +1,9 @@
 <!-- extend from tempate -->
 @extends('layouts.app')
-
+<!--Link to sass-->
+@section('style')
+<link href="{{ asset('css/admin-posts.css') }}" rel="stylesheet">
+@endsection
 <!-- section('content') -->
 @section('content')
 
@@ -64,8 +67,8 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
-
-                        alert('Ajax success');
+                        $(this).parent().remove();
+                        alert('AJAX');
                     },
                     error: function(err) {
                         alert('AJAX ERROR. Please contact administrator');
