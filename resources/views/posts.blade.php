@@ -31,7 +31,9 @@
         </div>
         @endif
         <div class="article-body">
-            <h2>{{ $post->title }}</h2>
+
+            <h2><a href="/posts/{{$post->id}}">{{ $post->title }}</a></h2>
+
             <p>
                 {{ @substr($post->content,0,300 ) }}...
                 <a href="/posts/{{$post->id}}">See more</a>
