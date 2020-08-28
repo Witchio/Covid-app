@@ -1,0 +1,25 @@
+main {
+  margin: 0;
+}
+
+section article {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+section article img {
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+}
+
+section .light {
+  background-color: #002352;
+}
+
+section .dark {
+  background-color: #031731;
+}
+

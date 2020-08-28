@@ -34,6 +34,8 @@ main {
     text-align: left;
     font: normal 16px sans-serif;
     padding: 20px 50px;
+    left: 0;
+    bottom: 0;
 }
 
 .footer-distributed .footer-left p {
@@ -102,4 +104,5 @@ main {
 
 .fa-github {
     color: #6e5494;
+    margin: 1rem;
 }
