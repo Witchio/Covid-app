@@ -57,10 +57,10 @@
 </article>
 <br>
 <br>
-<article style="overflow: scroll; height: 600px;">
+<article class="worldTable">
     <!-- Data for all the countries-->
     <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
-        <thead class="thead-dark" style="position:sticky;top:0;">
+        <thead class="thead-dark">
             <th scope="col">Country</th>
             <th scope="col">New Confirmed</th>
             <th scope="col">Total Confirmed</th>

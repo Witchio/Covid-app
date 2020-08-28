@@ -77,7 +77,13 @@ select {
 
 //* Make table sticky
 
-th {
+article.worldTable {
+    overflow: scroll;
+    height: 600px;
+
+}
+
+thead {
     position: sticky;
     top: 0;
 }
