@@ -1,13 +1,20 @@
 @import "variables";
 
+//* Mobile view
+
 #worldDataBox {
     text-align: center;
-    width: 40%;
+    /* width: 40%; */
     margin: auto;
     background-color: rgba(12, 49, 95, 0.5);
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 1rem;
 }
+
+//* main display
+/* #chart-data {
+    display: flex;
+} */
 
 //* Numbers
 .boxData {

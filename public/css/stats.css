@@ -1,11 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);#worldDataBox {
   text-align: center;
-  width: 40%;
+  /* width: 40%; */
   margin: auto;
   background-color: rgba(12, 49, 95, 0.5);
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 1rem;
 }
+
+/* #chart-data {
+    display: flex;
+} */
 
 .boxData {
   font-family: "Roboto", sans-serif;

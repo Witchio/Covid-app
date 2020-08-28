@@ -8,7 +8,7 @@
 
 @section('content')
 
-<section>
+<section id="chart-data">
 
 
     <!--To reshaphe charts modify the canvas and the container both or won't work-->
@@ -27,32 +27,32 @@
         <canvas id="deaths"></canvas>
 
     </article>
+
+
+
+    <!-- Global datas -->
+    <article id="worldDataBox">
+        <h1>Corona Facts</h1>
+
+        <h2 class="dataTitle">New Confirmed</h2>
+        <hr>
+        <span class="boxData orange" id="nc"></span>
+        <h2 class="dataTitle">Total Confirmed</h2>
+        <hr>
+        <span class="boxData orange" id="tc"></span>
+        <h2 class="dataTitle">New Deaths</h2>
+        <hr>
+        <span class="boxData red" id="nd"></span>
+        <h2 class="dataTitle ">Total Deaths</h2>
+        <hr>
+        <span class="boxData red" id="td"></span>
+        <h2 class="dataTitle">New Recovered</h2>
+        <hr>
+        <span class="boxData green" id="nr"></span>
+        <h2 class="dataTitle">Total Recovered</h2>
+        <hr>
+        <span class="boxData green" id="tr"></span>
 </section>
-
-
-<!-- Global datas -->
-<article id="worldDataBox">
-    <h1>Corona Facts</h1>
-
-    <h2 class="dataTitle">New Confirmed</h2>
-    <hr>
-    <span class="boxData orange" id="nc"></span>
-    <h2 class="dataTitle">Total Confirmed</h2>
-    <hr>
-    <span class="boxData orange" id="tc"></span>
-    <h2 class="dataTitle">New Deaths</h2>
-    <hr>
-    <span class="boxData red" id="nd"></span>
-    <h2 class="dataTitle ">Total Deaths</h2>
-    <hr>
-    <span class="boxData red" id="td"></span>
-    <h2 class="dataTitle">New Recovered</h2>
-    <hr>
-    <span class="boxData green" id="nr"></span>
-    <h2 class="dataTitle">Total Recovered</h2>
-    <hr>
-    <span class="boxData green" id="tr"></span>
-
 
 </article>
 <br>
@@ -80,6 +80,7 @@
         </tbody>
     </table>
 </article>
+
 @endsection
 
 
