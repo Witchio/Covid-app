@@ -6,7 +6,12 @@
 @endsection
 <!-- redirected to here from PostController create() -->
 @section('content')
-
+<style>
+    .footer-distributed {
+        position: relative;
+        bottom: 0;
+    }
+</style>
 @if (count($errors) > 0)
 <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.
