@@ -29,7 +29,7 @@ h2 a:hover {
 
 h2 a:active {
   text-decoration: none;
-  color: red;
+  color: #AFB3D4;
 }
 
 #posts {

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('style')
+<link href="{{ asset('css/register.css') }}" rel="stylesheet">
+@endsection
 @section('content')
 <style>
     .footer-distributed {

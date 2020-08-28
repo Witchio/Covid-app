@@ -10,16 +10,21 @@ h1 {
 .maincontainer {
     background-color: $palette_one;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0 1rem;
     width: 98%;
     margin: auto;
     text-align: center;
-
+    img {
+        margin: 1rem auto;
+    }
     p {
+        background-color: $palette_seven;
+        color: #131B23;
         text-align: left;
         padding: 1rem;
-        margin: 1rem auto 0;
-    }
+        // margin: 1rem auto 0;
+        border-radius: 10px;
+    } 
 }
 
 .authoraccess {
@@ -49,10 +54,9 @@ h1 {
     padding: 0.5rem;
     border-radius: 3px;
     text-decoration: none;
-    margin: 0.5rem;
-
-    &:hover {
-        background-color: $palette_two;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    &:hover{
+        background-color: $palette_two;  
         color: $palette_three;
     }
 }
@@ -99,21 +103,24 @@ h1 {
     text-align: center;
 
     ul {
+        background-color: $palette_seven;
         text-align: left;
         list-style-type: none;
-        margin: 0.5rem;
-        padding: 0;
-
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border-radius: 5px;
         li {
-            background-color: $palette_five;
-            border-radius: 5px;
+            background-color: $palette_eight;
+            border-radius: 10px;
             color: black;
-            margin: 0.5rem 1rem;
+            margin: 0.5rem;
+            padding: 0.5rem;
         }
     }
 
     .newcomment {
         width: 60%;
+        margin-top: 1rem;
     }
 }
 
@@ -161,7 +168,6 @@ button:active {
     }
 
     .maininfo {
-
         width: 15%;
         margin: auto auto auto 2rem;
         display: flex;
