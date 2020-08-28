@@ -271,7 +271,6 @@ class PostController extends Controller
     public function showSoftDeleted()
     {
         $posts = Post::onlyTrashed()->get();
-
         return view('admin-posts', ['posts' => $posts]);
     }
 

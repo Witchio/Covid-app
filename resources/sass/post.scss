@@ -1,10 +1,103 @@
 //* Write variables in _variables.scss and then import them to your file
 @import "variables";
 
-h2 {
+/* --------- Mobile --------- */
+h1 {
     text-align: center;
-    color: aqua;
+}
 
+.maincontainer {
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    p {
+        text-align: left;
+        padding: 1rem;
+        margin: 1rem auto 0;
+    } 
+}
+        
+.authoraccess {
+display: flex;
+justify-content: center;
+}
+
+/* #editfakebtn {
+    padding: 0.7rem 0.2rem;
+    font-size: 1.04rem;
+    min-width: 3rem;
+
+} */
+
+/* #editbg {
+    border: 2px solid #6066A9;
+    &:hover{
+        border: 2px solid $palette_one;
+    }
+} */
+
+#editbg,
+#delete {
+    background-color: $lighter_bgc;
+    color: $font-color;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 0.5rem;
+    &:hover{
+        background-color: $palette_two;  
+        color: $palette_three;
+    }
+}
+
+.maininfo {
+    span {
+        padding: 0.6rem 0 0.4rem;
+        min-width: 3rem;
+    }
+    width: 15%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* unvisited link */
+    a:link {
+        text-decoration: none;
+        color: $font_color;
+    }
+    /* visited link */
+    a:visited {
+        text-decoration: none;
+        color: $font_color;
+    }
+    /* mouse over link */
+    a:hover {
+        text-decoration: none;
+        color: red;
+    }
+    /* selected link */
+    a:active {
+        text-decoration: none;
+        color: $font_color;
+    } 
+}
+
+.commentscontainer {
+    width: 98%;
+    margin: auto;
+    text-align: center;
+    ul {
+        text-align: left;
+        list-style-type: none;
+        margin: 0.5rem;
+        padding: 0;
+        li {
+            margin: 0.5rem 1rem;
+        }
+      }
+    .newcomment {
+        width: 60%;
+    }
 }
 
 
@@ -33,11 +126,51 @@ button:focus {
     background: #7A7FB8;
 }
 
-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
-
 button:active {
     transform: scale(0.99);
+}
+
+
+/* --------- Tablet view --------- */
+@media screen and (min-width: 600px) {
+
+    .maincontainer {
+        width: 90%;
+        margin: auto;
+    }
+
+    .authoraccess {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .maininfo {
+        
+        width: 15%;
+        margin: auto auto auto 2rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .commentscontainer {
+        width: 90%;
+        margin: auto;
+        .newcomment {
+            width: 70%;
+        }
+    }
+}
+
+/* --------- Desktop view --------- */
+@media screen and (min-width: 1020px) {
+
+    .maincontainer {
+        width: 70%;
+        margin: auto;
+    }
+    
+    .commentscontainer {
+        width: 70%;
+        margin: auto;
+    }
 }
