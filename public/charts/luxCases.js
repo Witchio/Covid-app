@@ -36,7 +36,15 @@ async function chartLuxCases() {
                 datalabels: {
                     display: false
                 }
-            }
+            },
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
+            },
 
         }
     })

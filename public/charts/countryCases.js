@@ -45,6 +45,14 @@ async function chartCountry(request) {
             }]
         },
         options: {
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
+            },
 
             label: {
                 fontColor: 'green',
