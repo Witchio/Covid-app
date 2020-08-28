@@ -62,9 +62,9 @@ Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->m
 
 /* ------------------------------------------------------------ */
 
-//*Deleting a post as an admin
+//*Deleting a post as an admin or author if the post
 //TODO User can do this without being admin
-Route::get('/post/delete/{id}', 'PostController@softDestrPost')->middleware('auth');
+Route::get('/post/delete/{id}', 'PostController@destroy')->middleware('auth');
 
 /* ------------------------------------------------------------ */
 
@@ -92,7 +92,6 @@ Route::post('/admin/delete/{id}', 'HomeController@destroy')->middleware('auth');
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
 Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
-//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 
 /* ------------------------------------------------------------ */
@@ -102,7 +101,6 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
-//TODO LARAVEL ERROR WHEN ACCESSING THIS PAGE BY URL W/O LOGIN
 Route::put('/profile/update', 'HomeController@update');
 
 /* ------------------------------------------------------------ */
@@ -132,6 +130,9 @@ Route::get('/admin/posts/delete/{id}', function () {
     return redirect('/');
 });
 Route::get('/admin/posts/restore/{id}', function () {
+    return redirect('/');
+});
+Route::get('/profile/update', function () {
     return redirect('/');
 });
 

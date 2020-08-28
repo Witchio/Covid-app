@@ -238,14 +238,6 @@ class PostController extends Controller
         $post = Post::find($id)->delete();
     }
 
-    //This one is used to destroy posts on /post and redirect to /posts
-    public function softDestrPost($id)
-    {
-        $post = Post::find($id)->delete();
-        return redirect('/posts');
-    }
-
-
     //* if the admin of the user want to permanent delete a post
     /**
      * Remove the specified resource from storage.
@@ -256,6 +248,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $result = Post::where('id', $id)->forceDelete();
+        return redirect('/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe
