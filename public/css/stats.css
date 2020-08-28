@@ -2,14 +2,34 @@
   text-align: center;
   width: 40%;
   margin: auto;
+  background-color: rgba(12, 49, 95, 0.5);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .boxData {
+  font-family: "Roboto", sans-serif;
   font-size: 50px;
-  font-weight: bold;
+  margin-bottom: 10rem;
 }
 
 .table td {
   text-align: right;
+}
+
+h1 {
+  font-size: 70px;
+  margin-bottom: 2rem;
+}
+
+hr {
+  color: wheat;
+  border: 0.5px solid rgba(245, 222, 179, 0.6);
+  width: 50%;
+  margin: auto;
+}
+
+select {
+  max-width: 30%;
 }
 

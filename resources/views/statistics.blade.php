@@ -22,11 +22,11 @@
 
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
         <article>
-            <select id="select">
+
+            <select id="select" class="form-control">
                 <option selected>Choose country</option>
                 <option class="option" value="">...</option>
             </select>
-
             <!-- chart 1 : Luxemburg cases -->
             <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
             <!-- chart 2 : Luxemburg deaths -->
@@ -36,52 +36,59 @@
             <canvas id="deaths"></canvas>
 
         </article>
+    </section>
 
 
-        <!-- Global datas -->
-        <article id="worldDataBox">
-            <h1>Corona Facts</h1>
+    <!-- Global datas -->
+    <article id="worldDataBox">
+        <h1>Corona Facts</h1>
 
-            <h2>NewConfirmed</h2>
-            <span class="boxData" id="nc"></span>
-            <h2>TotalConfirmed</h2>
-            <span class="boxData" id="tc"></span>
-            <h2>NewDeaths</h2>
-            <span class="boxData" id="nd"></span>
-            <h2>TotalDeaths</h2>
-            <span class="boxData" id="td"></span>
-            <h2>NewRecovered</h2>
-            <span class="boxData" id="nr"></span>
-            <h2>TotalRecovered</h2>
-            <span class="boxData" id="tr"></span>
-
-
-        </article>
+        <h2 class="dataTitle">NewConfirmed</h2>
         <hr>
+        <span class="boxData" id="nc"></span>
+        <h2 class="dataTitle">TotalConfirmed</h2>
         <hr>
-        <article>
-            <!-- Data for all the countries-->
-            <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
-                <thead class="thead-dark">
-                    <th scope="col">Country</th>
-                    <th scope="col">NewConfirmed</th>
-                    <th scope="col">TotalConfirmed</th>
-                    <th scope="col">NewDeaths</th>
-                    <th scope="col">TotalDeaths</th>
-                    <th scope="col">NewRecovered</th>
-                    <th scope="col">TotalRecovered</th>
-                </thead>
-                <tbody id="row">
-                    <th class="country" scope="row"></th>
-                    <td class="ncw"></td>
-                    <td class="tcw"></td>
-                    <td class="ndw"></td>
-                    <td class="tdw"></td>
-                    <td class="nrw"></td>
-                    <td class="trw"></td>
-                </tbody>
-            </table>
-        </article>
+        <span class="boxData" id="tc"></span>
+        <h2 class="dataTitle">NewDeaths</h2>
+        <hr>
+        <span class="boxData" id="nd"></span>
+        <h2 class="dataTitle">TotalDeaths</h2>
+        <hr>
+        <span class="boxData" id="td"></span>
+        <h2 class="dataTitle">NewRecovered</h2>
+        <hr>
+        <span class="boxData" id="nr"></span>
+        <h2 class="dataTitle">TotalRecovered</h2>
+        <hr>
+        <span class="boxData" id="tr"></span>
+
+
+    </article>
+    <br>
+    <br>
+    <article>
+        <!-- Data for all the countries-->
+        <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
+            <thead class="thead-dark">
+                <th scope="col">Country</th>
+                <th scope="col">NewConfirmed</th>
+                <th scope="col">TotalConfirmed</th>
+                <th scope="col">NewDeaths</th>
+                <th scope="col">TotalDeaths</th>
+                <th scope="col">NewRecovered</th>
+                <th scope="col">TotalRecovered</th>
+            </thead>
+            <tbody id="row">
+                <th class="country" scope="row"></th>
+                <td class="ncw"></td>
+                <td class="tcw"></td>
+                <td class="ndw"></td>
+                <td class="tdw"></td>
+                <td class="nrw"></td>
+                <td class="trw"></td>
+            </tbody>
+        </table>
+    </article>
 
 
 
