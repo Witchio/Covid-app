@@ -12,26 +12,28 @@ h1 {
 
 .maincontainer p {
   text-align: left;
-  margin: 2rem auto 1.5rem;
+  padding: 1rem;
+  margin: 1rem auto 0;
 }
 
 .authoraccess {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-#editfakebtn {
-  padding: 0.7rem 0.2rem;
-  font-size: 1.04rem;
-}
+/* #editfakebtn {
+    padding: 0.7rem 0.2rem;
+    font-size: 1.04rem;
+    min-width: 3rem;
 
-#editbg {
-  border: 2px solid #6066A9;
-}
+} */
 
-#editbg:hover {
-  border: 2px solid #393D69;
-}
+/* #editbg {
+    border: 2px solid #6066A9;
+    &:hover{
+        border: 2px solid $palette_one;
+    }
+} */
 
 #editbg,
 #delete {
@@ -54,7 +56,7 @@ h1 {
   width: 15%;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   /* unvisited link */
   /* visited link */
   /* mouse over link */
@@ -63,6 +65,7 @@ h1 {
 
 .maininfo span {
   padding: 0.6rem 0 0.4rem;
+  min-width: 3rem;
 }
 
 .maininfo a:link {
@@ -83,6 +86,27 @@ h1 {
 .maininfo a:active {
   text-decoration: none;
   color: #edebd7;
+}
+
+.commentscontainer {
+  width: 98%;
+  margin: auto;
+  text-align: center;
+}
+
+.commentscontainer ul {
+  text-align: left;
+  list-style-type: none;
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.commentscontainer ul li {
+  margin: 0.5rem 1rem;
+}
+
+.commentscontainer .newcomment {
+  width: 60%;
 }
 
 button {
@@ -107,16 +131,51 @@ button:focus {
   background: #7A7FB8;
 }
 
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
 button:active {
   transform: scale(0.99);
 }
 
 /* --------- Tablet view --------- */
 
+@media screen and (min-width: 600px) {
+  .maincontainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .authoraccess {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .maininfo {
+    width: 15%;
+    margin: auto auto auto 2rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .commentscontainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .commentscontainer .newcomment {
+    width: 70%;
+  }
+}
+
 /* --------- Desktop view --------- */
+
+@media screen and (min-width: 1020px) {
+  .maincontainer {
+    width: 70%;
+    margin: auto;
+  }
+
+  .commentscontainer {
+    width: 70%;
+    margin: auto;
+  }
+}
 

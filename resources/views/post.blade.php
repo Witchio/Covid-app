@@ -28,7 +28,7 @@
         @if ($posts[0]->user_id==Auth::user()->id)
         <br>
         <div id="editfakebtn">
-            <a href="/post/update/{{$posts[0]->id}}" id="editbg">Edit post details</a>
+            <a href="/post/update/{{$posts[0]->id}}"><button id="editbg">Edit post details</button></a>
         </div>
         @endif
         @endauth
@@ -43,7 +43,6 @@
         @endif
         @endif
     </section>
-    <br>
 
     <section class="maininfo">
         <span>{{ $posts[0]->users_count }} likes</span>
@@ -74,8 +73,7 @@
     <p>-----Comments ({{ $posts[0]->comments_count }})-----</p>
     <ul>
         @foreach($posts as $post)
-        <li>{{$post->comment}}</li>
-        <li>{{$post->name}}</li>
+        <li><b>{{$post->name}}:</b><br> {{$post->comment}}</li>
         @endforeach
     </ul>
 
@@ -85,7 +83,7 @@
     @auth
     <form action="/posts/comment/{{ $posts[0]->id}}" method="post">
         @csrf
-        <input type="text" name="comment">
+        <input type="text" name="comment" class="newcomment">
         <input type="submit" value="Comment">
     </form>
     @endauth
