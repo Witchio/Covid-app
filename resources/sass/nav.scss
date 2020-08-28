@@ -16,8 +16,15 @@ body {
     background-color: $main_bgc;
     color: $font_color;
 }
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+main {
+    margin: 1rem;
+}
 
-// Styles for the footer (model adapted from https://codepen.io/slstudios/pen/mJqjeP )
+//* Styles for the footer (model adapted from https://codepen.io/slstudios/pen/mJqjeP )
 
 .footer-distributed {
     background-color: #292c2f;
@@ -35,7 +42,7 @@ body {
     margin: 0;
 }
 
-// Footer links
+//* Footer links
 
 .footer-distributed p.footer-links {
     font-size: 18px;
@@ -95,12 +102,4 @@ body {
 
 .fa-github {
     color: #6e5494;
-}
-
-h1 {
-    text-align: center;
-    margin: 1rem;
-}
-main {
-    margin: 1rem;
 }
