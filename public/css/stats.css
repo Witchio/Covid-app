@@ -33,3 +33,15 @@ select {
   max-width: 30%;
 }
 
+.red {
+  color: #c0150c;
+}
+
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+

@@ -9,7 +9,7 @@
     border-radius: 1rem;
 }
 
-//Numbers
+//* Numbers
 .boxData {
     font-family: $font-roboto;
     font-size: 50px;
@@ -25,7 +25,6 @@ h1 {
     margin-bottom: 2rem;
 }
 
-
 hr {
     color: wheat;
     border: 0.5px solid rgb(245, 222, 179, 0.6);
@@ -35,4 +34,15 @@ hr {
 
 select {
     max-width: 30%;
+}
+
+//* Colours
+.red {
+    color: #c0150c;
+}
+.orange {
+    color: orange;
+}
+.green {
+    color: green;
 }

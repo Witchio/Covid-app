@@ -19,9 +19,9 @@
             <option class="option" value="">...</option>
         </select>
         <!-- chart 1 : Luxemburg cases -->
-        <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
+        <canvas id="luxemburg"></canvas>
         <!-- chart 2 : Luxemburg deaths -->
-        <canvas id="luxDeaths" style="max-height:1000px;max-width:1000px"></canvas>
+        <canvas id="luxDeaths"></canvas>
         <!-- Selected country -->
         <canvas id="country"></canvas>
         <canvas id="deaths"></canvas>
@@ -36,22 +36,22 @@
 
     <h2 class="dataTitle">New Confirmed</h2>
     <hr>
-    <span class="boxData" id="nc"></span>
+    <span class="boxData orange" id="nc"></span>
     <h2 class="dataTitle">Total Confirmed</h2>
     <hr>
-    <span class="boxData" id="tc"></span>
+    <span class="boxData orange" id="tc"></span>
     <h2 class="dataTitle">New Deaths</h2>
     <hr>
-    <span class="boxData" id="nd"></span>
-    <h2 class="dataTitle">Total Deaths</h2>
+    <span class="boxData red" id="nd"></span>
+    <h2 class="dataTitle ">Total Deaths</h2>
     <hr>
-    <span class="boxData" id="td"></span>
+    <span class="boxData red" id="td"></span>
     <h2 class="dataTitle">New Recovered</h2>
     <hr>
-    <span class="boxData" id="nr"></span>
+    <span class="boxData green" id="nr"></span>
     <h2 class="dataTitle">Total Recovered</h2>
     <hr>
-    <span class="boxData" id="tr"></span>
+    <span class="boxData green" id="tr"></span>
 
 
 </article>
@@ -62,12 +62,12 @@
     <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
         <thead class="thead-dark">
             <th scope="col">Country</th>
-            <th scope="col">NewConfirmed</th>
-            <th scope="col">TotalConfirmed</th>
-            <th scope="col">NewDeaths</th>
-            <th scope="col">TotalDeaths</th>
-            <th scope="col">NewRecovered</th>
-            <th scope="col">TotalRecovered</th>
+            <th scope="col">New Confirmed</th>
+            <th scope="col">Total Confirmed</th>
+            <th scope="col">New Deaths</th>
+            <th scope="col">Total Deaths</th>
+            <th scope="col">New Recovered</th>
+            <th scope="col">Total Recovered</th>
         </thead>
         <tbody id="row">
             <th class="country" scope="row"></th>
