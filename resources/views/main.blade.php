@@ -11,12 +11,6 @@
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
         <!--To reshaphe charts modify the canvas and the container both or won't work-->
-        <article style="max-height:1000px;max-width:1000px">
-
-            <!-- Luxemburg cases  -->
-            <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
-        </article>
-
 
         <!-- Continents Chart -->
         <article>
@@ -24,6 +18,12 @@
             <canvas id="continent"></canvas>
             <!--Mobile version -->
             <canvas id="continentMobile"></canvas>
+        </article>
+
+        <article style="max-height:1000px;max-width:1000px">
+
+            <!-- Luxemburg cases  -->
+            <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
         </article>
     </div>
 
