@@ -2,7 +2,18 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
+//* Fonts
+// Nunito
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+$font-family-sans-serif: "Nunito",
+sans-serif;
+//Font for buttons (Used on admin-users atm)
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+$font-russo: 'Russo One';
+//Roboto font (Used for World Data Box)
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+$font-roboto: 'Roboto',
+sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
