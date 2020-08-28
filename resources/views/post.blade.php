@@ -71,13 +71,13 @@
 <br><br>
 <section class="commentscontainer">
     <h5>----------Comments ({{ $posts[0]->comments_count }})----------</h5>
+    @if($posts[0]->comments_count > 0)
     <ul>
-        @if($posts[0]->comments_count > 0)
         @foreach($posts as $post)
         <li><b>{{$post->name}} :</b><br> {{$post->comment}}</li>
         @endforeach
-        @endif
     </ul>
+    @endif
 
 
     <!-- Comment post-->

@@ -8,10 +8,14 @@ h1 {
 .maincontainer {
   background-color: #393D69;
   border-radius: 10px;
-  padding: 1rem 1rem 0 1rem;
+  padding: 0 1rem;
   width: 98%;
   margin: auto;
   text-align: center;
+}
+
+.maincontainer img {
+  margin: 1rem auto;
 }
 
 .maincontainer p {
@@ -19,7 +23,6 @@ h1 {
   color: #131B23;
   text-align: left;
   padding: 1rem;
-  margin: 1rem auto 0;
   border-radius: 10px;
 }
 
@@ -120,6 +123,7 @@ h1 {
 
 .commentscontainer .newcomment {
   width: 60%;
+  margin-top: 1rem;
 }
 
 button {
