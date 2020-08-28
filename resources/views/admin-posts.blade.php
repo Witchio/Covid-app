@@ -34,22 +34,29 @@
 @auth
 
 <body>
-    <h1>Reported posts</h1>
-    @foreach($posts as $post)
-    <article>
+    <section id="posts">
+        <h1>Reported posts</h1>
+        @foreach($posts as $post)
 
-        <h2>{{ $post->title }}</h2>
-        @if($post->image)
-        <img src="{{asset("images/$post->image")}}" alt="post image">
-        @endif
-        <p>{{ $post->content }}</p>
+        <article>
+
+            @if($post->image)
+            <div class="article-image" style='background-image: url({{asset("images/$post->image")}})'>
+            </div>
+            @endif
+
+            <div class="article-body">
+                <h2>{{ $post->title }}</h2>
+                <p>{{ $post->content }}</p>
 
 
-        <button class="delete-btn" value="{{$post->id}}">Delete post</button>
-        <button class="restore-btn" value="{{$post->id}}">Restore post</button>
-        <hr>
-    </article>
-    @endforeach
+                <button class="delete-btn btn btn-danger" value="{{$post->id}}">Delete post</button>
+                <button class="restore-btn btn btn-info" value="{{$post->id}}">Restore post</button>
+                <hr>
+            </div>
+        </article>
+        @endforeach
+    </section>
 
     <!-- Ajax call to delete post -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
