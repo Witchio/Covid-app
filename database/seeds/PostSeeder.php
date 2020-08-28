@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
         // seeder array
         $posts = array(
             [
-                'title' => 'First Post',
+                'title' => 'Day 40 of Quarantine - Help!',
                 'content' => 'Lorem Ipsum is FAKE TEXT! An extremely credible
                 source has called my office and told me that Lorem Ipsums
                 birth certificate is a fraud. Lorem Ipsum is unattractive, both inside and out.',
@@ -25,7 +25,7 @@ class PostSeeder extends Seeder
                 'deleted_at' => null,
             ],
             [
-                'title' => 'Second Post',
+                'title' => 'Coffee over Zoom - the new normal',
                 'content' => 'Youre telling the enemy exactly what youre going to do.
                 No wonder youve been fighting Lorem Ipsum your entire adult life.',
                 'image' => 'Post2.jpg',
@@ -33,7 +33,7 @@ class PostSeeder extends Seeder
                 'deleted_at' => null,
             ],
             [
-                'title' => 'Third Post',
+                'title' => 'Are the governments doing enough? A thought post',
                 'content' => 'An extremely credible source has called my office
                 and told me that Lorem Ipsums birth certificate is a fraud.
                 Lorem Ipsum is unattractive, both inside and out.',
@@ -42,7 +42,7 @@ class PostSeeder extends Seeder
                 'deleted_at' => null,
             ],
             [
-                'title' => 'Fourth Post',
+                'title' => 'I\'m wearing a mask - not an unreasonable act',
                 'content' => 'Youve been fighting Lorem Ipsum your entire adult life.',
                 'image' => 'Post3.jpg',
                 'user_id' => 4,
