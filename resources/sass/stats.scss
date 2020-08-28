@@ -1,10 +1,17 @@
 @import "variables";
 
+#worldDataBox {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+}
+
+//Numbers
+.boxData {
+    font-size: 50px;
+    font-weight: bold;
+}
 
 .table td {
     text-align: right;
-}
-
-.worldDataBox {
-    justify-content: center;
 }
