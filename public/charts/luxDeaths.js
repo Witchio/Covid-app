@@ -13,7 +13,7 @@ async function chartIt6() {
     var ctx1 = document.getElementById('luxDeaths');
     Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
@@ -23,8 +23,8 @@ async function chartIt6() {
                 //Fill the graph or not
                 fill: true,
                 //Color of the line
-                borderColor: 'rgba(255, 99, 132, 0.7)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(97, 197, 255, 0.7)',
+                backgroundColor: 'rgba(97, 197, 255, 0.5)',
                 //Border of the line
                 borderWidth: 1,
                 //Border of the data point
@@ -32,10 +32,21 @@ async function chartIt6() {
             }]
         },
         options: {
-
-            label: {
-                fontColor: 'green',
+            scales: {
+                scaleLabel: {
+                    fontSize: 20,
+                    fontColor: '#fff',
+                }
             },
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
+            },
+
             plugins: {
                 datalabels: {
                     display: false

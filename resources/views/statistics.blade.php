@@ -57,10 +57,10 @@
 </article>
 <br>
 <br>
-<article>
+<article style="overflow: scroll; height: 600px;">
     <!-- Data for all the countries-->
     <table data-toggle="table" id="world" class="table table-info table-hover table-bordered table-inverse table-striped">
-        <thead class="thead-dark">
+        <thead class="thead-dark" style="position:sticky;top:0;">
             <th scope="col">Country</th>
             <th scope="col">New Confirmed</th>
             <th scope="col">Total Confirmed</th>
@@ -70,7 +70,7 @@
             <th scope="col">Total Recovered</th>
         </thead>
         <tbody id="row">
-            <th class="country" scope="row"></th>
+            <th class="country"></th>
             <td class="ncw"></td>
             <td class="tcw"></td>
             <td class="ndw"></td>

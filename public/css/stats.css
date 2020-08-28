@@ -67,3 +67,9 @@ select {
   color: green;
 }
 
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
