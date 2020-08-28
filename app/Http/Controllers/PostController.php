@@ -102,6 +102,11 @@ class PostController extends Controller
         // Using Eloquent ORM
         //$post = Post::where('id', $id)
         //->withCount('users', 'comments', 'usersReports')->get();
+        $userPost = Post::where('posts.id', $id)
+            ->join('users', 'posts.user_id', '=', 'users.id')
+            ->select('users.name')
+            ->get();
+        //dd($userPost);
         $post = Post::where('posts.id', $id)
             //Need left join else it won't display the posts without comments
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
@@ -111,7 +116,6 @@ class PostController extends Controller
             ->select('posts.image', 'posts.title', 'posts.content', 'posts.user_id', 'comments.comment',  'users.name', 'posts.id')
             ->withCount('users', 'comments', 'usersReports')
             ->get();
-
         // https://laravel.com/docs/7.x/eloquent-relationships
         //$comments = Comment::find($id);
         //$userComment = User::find($id)->userComments();
@@ -122,6 +126,7 @@ class PostController extends Controller
             'posts' => $post,
             'reported' => $this->reportStatus($id),
             'liked' => $this->getlike($id),
+            'user' => $userPost[0],
         ]);
     }
 

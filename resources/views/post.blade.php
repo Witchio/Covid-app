@@ -10,6 +10,7 @@
 
 <!-- individual post depending on id -->
 <h1>{{ $posts[0]->title }}</h1>
+<h1>{{$user->name}}</h1>
 <!-- <h3>{{$posts[0]->name}}</h3> -->
 <section class="maincontainer">
     <img src="" alt="">
