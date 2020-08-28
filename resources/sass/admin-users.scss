@@ -1,8 +1,16 @@
 @import "variables";
 
+h1 {
+    margin: 0 auto;
+}
+
 form {
     max-width: 100px;
+}
 
+#roleform {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 select {
@@ -11,9 +19,9 @@ select {
 
 .btn {
     color: white;
-    font-weight: bold;
+    font-weight: lighter;
     font-family: $font-russo;
-    margin-top: 10px;
+    margin: 0 1rem;
 }
 
 .btn-danger {
@@ -25,9 +33,7 @@ select {
 }
 
 table {
-
     border-radius: 10px;
-
 }
 
 .table th {

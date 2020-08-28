@@ -36,15 +36,13 @@
 @auth
 
 <body>
-
+    <h1>User Management</h1>
     <table class="table table-dark">
 
         <thead>
-
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Role</th>
-
         </thead>
 
         <tbody>
@@ -57,7 +55,7 @@
                 <td>{{$user->email}} </td>
 
                 <td>
-                    <form method="post" action="userRole/{{$user->id}}">
+                    <form method="post" action="userRole/{{$user->id}}" id="roleform">
                         @csrf
                         <select class="form-control" name="role" value="role">
                             <option selected value="{{ucfirst($user->role)}}">{{ucfirst($user->role)}}</option>
@@ -69,11 +67,12 @@
                             @endif
                         </select>
                         <input class="btn btn-info" type="submit" value="Change role">
-
                     </form>
+                </td>
+                <td>
                     <form action="delete/{{$user->id}}" method="post">
                         @csrf
-                        <input class="btn btn-danger" type="submit" value="DELETE USER">
+                        <input class="btn btn-danger" type="submit" value="DELETE User">
                     </form>
                 </td>
                 @endif
