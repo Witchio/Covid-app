@@ -1,0 +1,14 @@
+@import "variables";
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+form div #title {
+    width: 60%;
+}
+
+textarea.form-control {
+    height: 15rem;
+}

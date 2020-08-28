@@ -20,4 +20,5 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/stats.scss", "public/css")
     .sass("resources/sass/profile.scss", "public/css")
     .sass("resources/sass/posts.scss", "public/css")
+    .sass("resources/sass/add-post.scss", "public/css")
     .sass("resources/sass/post.scss", "public/css");
