@@ -23,6 +23,7 @@ async function chartCountry(request) {
     //Destroy the previous chart else it will overlap
     if (myChart1) {
         myChart1.destroy();
+        document.querySelector('#luxemburg').remove();
     };
     myChart1 = new Chart(ctx1, {
         type: 'bar',

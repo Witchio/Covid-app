@@ -20,6 +20,7 @@ async function chartDeaths(request) {
     //Destroy the previous chart else it will overlap
     if (myChart2) {
         myChart2.destroy();
+        document.querySelector('#luxDeaths').remove();
     }
     myChart2 = new Chart(ctx1, {
         type: 'bar',
