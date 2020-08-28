@@ -70,7 +70,7 @@
 
 <br><br>
 <section class="commentscontainer">
-    <p>----------Comments ({{ $posts[0]->comments_count }})----------</p>
+    <h5>----------Comments ({{ $posts[0]->comments_count }})----------</h5>
     <ul>
         @if($posts[0]->comments_count > 0)
         @foreach($posts as $post)
