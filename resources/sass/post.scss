@@ -9,8 +9,7 @@ h2 {
 
 
 // https://css-tricks.com/overriding-default-button-styles/
-button, 
-button:not(:active) 
+button
 {
     display: inline-block;
     border: none;
