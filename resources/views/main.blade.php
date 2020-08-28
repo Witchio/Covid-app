@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -19,12 +18,14 @@
             <!--Mobile version -->
             <canvas id="continentMobile"></canvas>
         </article>
+        <hr>
 
         <article style="max-height:1000px;max-width:1000px">
 
             <!-- Luxemburg cases  -->
             <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
         </article>
+        <hr>
     </div>
 
 
@@ -56,12 +57,12 @@
 <section id="rss">
     <!-- RSS Feeds (all options available) -->
 
-<!-- Font: independent.co.uk -->
+    <!-- Font: independent.co.uk -->
     <!-- News Wall -->
     <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 
     <!-- News Feed (active)-->
-    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0" ></iframe>
+    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
 
     <!-- Carousel -->
     <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
@@ -70,7 +71,7 @@
     <!-- <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list><script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script> -->
 
 
-<!-- Font: World Health Organization -->
+    <!-- Font: World Health Organization -->
     <!-- News Wall -->
     <!-- <rssapp-wall id="Y74AKXIUbHu2XXbr"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 

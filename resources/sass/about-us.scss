@@ -4,22 +4,30 @@
 main {
     margin: 0;
 }
+
 section {
     article {
         margin: auto;
         text-align: center;
         width: 80%;
         margin-bottom: 2rem;
+
         img {
             border-radius: 50%;
             width: 20%;
             height: 20%;
         }
     }
+
     .light {
         background-color: #002352;
     }
+
     .dark {
         background-color: #031731;
     }
+}
+
+h1 {
+    font-size: 5rem;
 }

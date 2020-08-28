@@ -43,8 +43,13 @@ async function chartDeaths(request) {
         },
         options: {
 
-            label: {
-                fontColor: 'green',
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
             },
             plugins: {
                 datalabels: {

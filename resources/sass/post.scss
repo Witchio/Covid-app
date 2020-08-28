@@ -4,6 +4,7 @@
 /* --------- Mobile --------- */
 h1 {
     text-align: center;
+    font-size: 4rem;
 }
 
 .maincontainer {
@@ -13,6 +14,7 @@ h1 {
     width: 98%;
     margin: auto;
     text-align: center;
+
     p {
         background-color: $palette_seven;
         color: #131B23;
@@ -22,10 +24,10 @@ h1 {
         border-radius: 10px;
     } 
 }
-        
+
 .authoraccess {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* #editfakebtn {
@@ -62,36 +64,42 @@ justify-content: center;
         padding: 0.6rem 0 0.4rem;
         min-width: 3rem;
     }
+
     width: 15%;
     margin: auto;
     display: flex;
     justify-content: center;
+
     /* unvisited link */
     a:link {
         text-decoration: none;
         color: $font_color;
     }
+
     /* visited link */
     a:visited {
         text-decoration: none;
         color: $font_color;
     }
+
     /* mouse over link */
     a:hover {
         text-decoration: none;
         color: red;
     }
+
     /* selected link */
     a:active {
         text-decoration: none;
         color: $font_color;
-    } 
+    }
 }
 
 .commentscontainer {
     width: 98%;
     margin: auto;
     text-align: center;
+
     ul {
         background-color: $palette_seven;
         text-align: left;
@@ -106,7 +114,8 @@ justify-content: center;
             margin: 0.5rem;
             padding: 0.5rem;
         }
-      }
+    }
+
     .newcomment {
         width: 60%;
     }
@@ -114,8 +123,7 @@ justify-content: center;
 
 
 // https://css-tricks.com/overriding-default-button-styles/
-button
-{
+button {
     display: inline-block;
     border: none;
     padding: 0.5rem 0.8rem;
@@ -127,8 +135,8 @@ button
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -166,6 +174,7 @@ button:active {
     .commentscontainer {
         width: 90%;
         margin: auto;
+
         .newcomment {
             width: 70%;
         }
@@ -179,7 +188,7 @@ button:active {
         width: 70%;
         margin: auto;
     }
-    
+
     .commentscontainer {
         width: 70%;
         margin: auto;

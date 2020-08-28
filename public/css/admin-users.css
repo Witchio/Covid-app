@@ -11,8 +11,8 @@ form {
   justify-content: space-evenly;
 }
 
-select {
-  max-width: 100px;
+.form-control {
+  width: 100px;
 }
 
 .btn {

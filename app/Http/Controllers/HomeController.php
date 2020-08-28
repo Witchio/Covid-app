@@ -68,10 +68,10 @@ class HomeController extends Controller
         $user->last_name = $request->last_name;
         $user->nationality = $request->nationality;
         $user->birthdate = $request->birthdate;
-        $user->country = $request->country;  
+        $user->country = $request->country;
 
         $user->save();
-        
+
         return redirect('profile');
     }
 }

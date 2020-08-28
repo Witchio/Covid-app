@@ -6,10 +6,18 @@
 #charts {
     #continent {
         display: none !important;
+        margin-bottom: 2rem;
     }
 
     #continentMobile {
         width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    hr {
+        border: 1px rgba(255, 255, 255, 0.4) solid;
+        width: 60%;
+        margin: 0 auto 2rem auto;
     }
 }
 
