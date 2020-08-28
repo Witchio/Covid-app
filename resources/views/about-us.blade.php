@@ -28,8 +28,8 @@
 
     <article id="jo" class="dark">
         <img src='{{asset("images/jo.jpg")}}' alt="leader pic">
-        <h2>MISLEADER</h2>
-        <P>Toffee muffin tootsie roll. Biscuit pudding apple pie pie. Chocolate bar bear claw gummies jelly-o chocolate sesame snaps danish macaroon. Chupa chups candy croissant dragée toffee. Pastry cookie wafer cake gummi bears. Jelly-o liquorice sweet roll caramels marzipan gummies gummies wafer biscuit. Tart liquorice cake bear claw cotton candy danish. Tiramisu gummi bears macaroon.</P>
+        <h2>Joanna W - MISLEADER</h2>
+        <p>@joundefined likes to dream about rainbows and unicorns and being pretty. She does not spend time honing her coding skills. She doesn't enjoy solving logical or technical puzzles. She doesn't live and breathe code and algorithms. SHe doesn't aspire to be part of the underground hacker community, because that doesn't exsist, obviously.</p>
     </article>
     <hr>
 
