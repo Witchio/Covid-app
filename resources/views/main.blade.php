@@ -54,10 +54,35 @@
 </section>
 
 <section id="rss">
-    <!-- Rss feed, squeleton for that tbd -->
-    <!-- Link for the xml file: https://rss.app/feeds/mPa6EvYZGT7E0ee4.xml - Font: independent.co.uk -->
-    <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list>
-    <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
+    <!-- RSS Feeds (all options available) -->
+
+<!-- Font: independent.co.uk -->
+    <!-- News Wall -->
+    <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
+
+    <!-- News Feed (active)-->
+    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0" ></iframe>
+
+    <!-- Carousel -->
+    <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
+
+    <!-- News List -->
+    <!-- <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list><script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script> -->
+
+
+<!-- Font: World Health Organization -->
+    <!-- News Wall -->
+    <!-- <rssapp-wall id="Y74AKXIUbHu2XXbr"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
+
+    <!-- News Feed -->
+    <!-- <iframe width="600" height="700" src="https://rss.app/embed/v1/Y74AKXIUbHu2XXbr" frameBorder="0" ></iframe> -->
+
+    <!-- Carousel -->
+    <!-- <rssapp-carousel id="Y74AKXIUbHu2XXbr"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
+
+    <!-- News List -->
+    <!-- <rssapp-list id="Y74AKXIUbHu2XXbr"></rssapp-list><script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script> -->
+
 </section>
 
 @endsection
