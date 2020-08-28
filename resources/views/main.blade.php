@@ -7,7 +7,7 @@
 
 @section('content')
 
-<section>
+<section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
         <!--To reshaphe charts modify the canvas and the container both or won't work-->

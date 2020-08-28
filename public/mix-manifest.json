@@ -6,5 +6,7 @@
     "/css/admin-users.css": "/css/admin-users.css",
     "/css/admin-posts.css": "/css/admin-posts.css",
     "/css/stats.css": "/css/stats.css",
-    "/css/profile.css": "/css/profile.css"
+    "/css/profile.css": "/css/profile.css",
+    "/css/posts.css": "/css/posts.css",
+    "/css/post.css": "/css/post.css"
 }

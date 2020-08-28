@@ -29,7 +29,7 @@
             margin: 0 0 1rem 0;
             width: 100%;
             height: 10rem;
-            object-fit: cover;
+            /* object-fit: cover; */
         }
         .like-comment {
             padding: 0.5rem;
@@ -47,16 +47,6 @@
 
 //* Tablet view
 @media screen and (min-width: 600px) {
-    #charts {
-        display: flex;
-        /* width: 70%; */
-        #continent {
-            display: block !important;
-        }
-        #continentMobile {
-            display: none !important;
-        }
-    }
     #posts {
         display: flex;
         flex-flow: wrap row;
@@ -66,8 +56,26 @@
         }
     }
 }
-@media screen and (min-width: 960px) {
+//* Desktop view
+@media screen and (min-width: 1020px) {
     main {
         display: flex;
+        justify-content: space-between;
+        #left {
+            width: 60%;
+            #charts {
+                //display: flex;
+                /* width: 70%; */
+                #continent {
+                    display: block !important;
+                }
+                #continentMobile {
+                    display: none !important;
+                }
+            }
+            #rss {
+                width: 30%;
+            }
+        }
     }
 }
