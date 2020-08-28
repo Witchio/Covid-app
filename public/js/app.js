@@ -37445,6 +37445,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
@@ -37457,6 +37458,8 @@ __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\posts
 __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
 module.exports = __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\about-us.scss */"./resources/sass/about-us.scss");
 =======
+=======
+>>>>>>> parent of 1a501a2... profile deisgn
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
@@ -37468,6 +37471,9 @@ __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\profile.scss 
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\add-post.scss */"./resources/sass/add-post.scss");
 module.exports = __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
+<<<<<<< HEAD
+>>>>>>> parent of 1a501a2... profile deisgn
+=======
 >>>>>>> parent of 1a501a2... profile deisgn
 
 
