@@ -4,12 +4,12 @@ chartGlobal();
 async function chartGlobal() {
     await getGlobal();
     data = globalData[0];
-    document.getElementById('nc').innerHTML = data[0];
-    document.querySelector('#tc').innerHTML = data[1];
-    document.querySelector('#nd').innerHTML = data[2];
-    document.querySelector('#td').innerHTML = data[3];
-    document.querySelector('#nr').innerHTML = data[4];
-    document.querySelector('#tr').innerHTML = data[5];
+    document.getElementById('nc').innerHTML = eArabic(data[0]);
+    document.querySelector('#tc').innerHTML = eArabic(data[1]);
+    document.querySelector('#nd').innerHTML = eArabic(data[2]);
+    document.querySelector('#td').innerHTML = eArabic(data[3]);
+    document.querySelector('#nr').innerHTML = eArabic(data[4]);
+    document.querySelector('#tr').innerHTML = eArabic(data[5]);
 
 
 };
