@@ -2,10 +2,18 @@
 
 #charts #continent {
   display: none !important;
+  margin-bottom: 2rem;
 }
 
 #charts #continentMobile {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+#charts hr {
+  border: 1px rgba(255, 255, 255, 0.596) solid;
+  width: 80%;
+  margin: 0 auto 2rem auto;
 }
 
 /* --------- Posts --------- */

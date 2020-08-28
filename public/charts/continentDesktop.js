@@ -19,7 +19,7 @@ async function chartContinent() {
             labels: continent,
             datasets: [{
                 data: cases,
-                label: 'Total Cases Luxemburg',
+                label: 'Covid cases in the world',
                 //Css
                 backgroundColor: [
                     'rgba(255, 159, 64, 0.5)',
@@ -43,13 +43,26 @@ async function chartContinent() {
 
             responsive: true,
             legend: {
-                position: 'bottom', labels: {
+                position: 'left',
+                align: 'center',
+                labels: {
                     fontColor: '#fff',
                     fontWeight: 'bold',
-                    fontSize: 30
+                    fontSize: 25,
+                    padding: 57,
                 }
-
             },
+            //*https://www.chartjs.org/docs/latest/configuration/title.html#position
+            /* title: {
+                display: true,
+                text: 'Test',
+                position: 'right',
+                fontFamily: 'Roboto',
+                fontStyle: 'bold',
+                fontColor: 'wheat',
+                fontSize: 40,
+                lineHeight: '20',
+            }, */
 
             plugins: {
                 datalabels: {

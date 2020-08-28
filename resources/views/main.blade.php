@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-<h1>Fit4Covid</h1>
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -19,6 +18,7 @@
             <!--Mobile version -->
             <canvas id="continentMobile"></canvas>
         </article>
+        <hr>
 
         <article style="max-height:1000px;max-width:1000px">
 
