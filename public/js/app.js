@@ -37313,6 +37313,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/add-post.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/add-post.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin-posts.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin-posts.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/admin-users.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/admin-users.scss ***!
@@ -37328,6 +37350,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/edit-post.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/edit-post.scss ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37353,7 +37386,40 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n138 │ >>>>>>> a8213ef3c358af9ff659e76c55f65e83c58404a0\r\n    │                                                 ^\n    ╵\n  C:\\wamp64\\www\\final_project\\resources\\sass\\nav.scss 138:49  root stylesheet\n    at C:\\wamp64\\www\\final_project\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\wamp64\\www\\final_project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\wamp64\\www\\final_project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\wamp64\\www\\final_project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\wamp64\\www\\final_project\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:88191:16)\n    at _render_closure1.call$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:77610:12)\n    at _RootZone.runBinary$3$3 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:26152:18)\n    at _RootZone.runBinary$3 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:26156:19)\n    at _FutureListener.handleError$1 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24600:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24897:40)\n    at Object._Future__propagateToListeners (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4311:88)\n    at _Future._completeError$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24725:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24117:12)\n    at Object._asyncRethrow (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4065:17)\n    at C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:14087:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4090:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24138:12)\n    at _awaitOnObject_closure0.call$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24130:25)\n    at _RootZone.runBinary$3$3 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:26152:18)\n    at _RootZone.runBinary$3 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:26156:19)\n    at _FutureListener.handleError$1 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24600:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24897:40)\n    at Object._Future__propagateToListeners (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4311:88)\n    at _Future._completeError$2 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24725:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24820:18)\n    at Object._microtaskLoop (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4361:21)\n    at StaticClosure._startMicrotaskLoop (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:4367:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:24032:21)\n    at invokeClosure (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:1363:26)\n    at Immediate.<anonymous> (C:\\wamp64\\www\\final_project\\node_modules\\sass\\sass.dart.js:1384:18)\n    at processImmediate (internal/timers.js:456:21)");
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/post.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/post.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/posts.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/posts.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -37369,9 +37435,9 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/stats.scss ***!
-  \************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ./resources/sass/edit-post.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37380,7 +37446,13 @@ __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\app.scss */".
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\homepage.scss */"./resources/sass/homepage.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\admin-users.scss */"./resources/sass/admin-users.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\admin-posts.scss */"./resources/sass/admin-posts.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\profile.scss */"./resources/sass/profile.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\add-post.scss */"./resources/sass/add-post.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\edit-post.scss */"./resources/sass/edit-post.scss");
 
 
 /***/ })

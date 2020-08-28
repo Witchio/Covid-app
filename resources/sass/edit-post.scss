@@ -1,0 +1,15 @@
+//* Write variables in _variables.scss and then import them to your file
+@import "variables";
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+form div #title {
+    width: 60%;
+}
+
+textarea.form-control {
+    height: 15rem;
+}

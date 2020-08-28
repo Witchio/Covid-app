@@ -1,4 +1,4 @@
-form {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);form {
   max-width: 100px;
 }
 
@@ -9,7 +9,7 @@ select {
 .btn {
   color: white;
   font-weight: bold;
-  font-family: "Russo One", sans-serif;
+  font-family: "Russo One";
   margin-top: 10px;
 }
 

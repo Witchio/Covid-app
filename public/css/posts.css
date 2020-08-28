@@ -1,7 +1,34 @@
-/* --------- Mobile --------- */
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);/* --------- Mobile --------- */
 
 h1 {
   text-align: center;
+}
+
+h2 {
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+
+h2 a:link {
+  text-decoration: none;
+  color: #edebd7;
+}
+
+h2 a:visited {
+  text-decoration: none;
+  color: #edebd7;
+}
+
+h2 a:hover {
+  text-decoration: none;
+  color: #edebd7;
+}
+
+h2 a:active {
+  text-decoration: none;
+  color: #edebd7;
 }
 
 #posts {
@@ -113,7 +140,7 @@ button:active {
 
   #posts article .article-body h2:hover {
     transform: scale(1.2);
-    left: 40px;
+    left: 10%;
   }
 
   #posts article .like-comment {

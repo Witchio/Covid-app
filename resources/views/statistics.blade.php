@@ -41,18 +41,19 @@
         <!-- Global datas -->
         <article id="worldDataBox">
             <h1>Corona Facts</h1>
-            <h1>NewConfirmed</>
-                <span id="nc"></span>
-                <h1>TotalConfirmed</h1>
-                <span id="tc"></span>
-                <h1>NewDeaths</h1>
-                <span id="nd"></span>
-                <h1>TotalDeaths</h1>
-                <span id="td"></span>
-                <h1>NewRecovered</h1>
-                <span id="nr"></span>
-                <h1>TotalRecovered</h1>
-                <span id="tr"></span>
+
+            <h2>NewConfirmed</h2>
+            <span class="boxData" id="nc"></span>
+            <h2>TotalConfirmed</h2>
+            <span class="boxData" id="tc"></span>
+            <h2>NewDeaths</h2>
+            <span class="boxData" id="nd"></span>
+            <h2>TotalDeaths</h2>
+            <span class="boxData" id="td"></span>
+            <h2>NewRecovered</h2>
+            <span class="boxData" id="nr"></span>
+            <h2>TotalRecovered</h2>
+            <span class="boxData" id="tr"></span>
 
 
         </article>

@@ -18,13 +18,15 @@
 </div>
 @endif
 
+<h1>Create Post</h1>
+
 <form action="" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
-        <label for="title">Post-Title</label>
+        <label for="title">Title:</label>
         <input id="title" class="form-control" type=" text" name="title" placeholder="title">
     </div>
-    <label for="content">Post-Content</label>
+    <label for="content">Content:</label>
     <textarea class="form-control" name="content" placeholder="content"></textarea>
     <div class="form-group">
         <div>Add Image:</div>
