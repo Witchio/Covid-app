@@ -1,15 +1,22 @@
 @import "variables";
 
+//* Mobile view
+
 #worldDataBox {
     text-align: center;
-    width: 40%;
+    /* width: 40%; */
     margin: auto;
     background-color: rgba(12, 49, 95, 0.5);
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 1rem;
 }
 
-//Numbers
+//* main display
+/* #chart-data {
+    display: flex;
+} */
+
+//* Numbers
 .boxData {
     font-family: $font-roboto;
     font-size: 50px;
@@ -25,7 +32,6 @@ h1 {
     margin-bottom: 2rem;
 }
 
-
 hr {
     color: wheat;
     border: 0.5px solid rgb(245, 222, 179, 0.6);
@@ -35,4 +41,15 @@ hr {
 
 select {
     max-width: 30%;
+}
+
+//* Colours
+.red {
+    color: #c0150c;
+}
+.orange {
+    color: orange;
+}
+.green {
+    color: green;
 }
