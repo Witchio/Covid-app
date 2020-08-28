@@ -3,8 +3,7 @@ h2 {
   color: aqua;
 }
 
-button,
-button:not(:active) {
+button {
   display: inline-block;
   border: none;
   padding: 0.5rem 0.8rem;
