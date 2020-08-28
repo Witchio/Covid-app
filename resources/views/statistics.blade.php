@@ -5,8 +5,8 @@
 
 <!-- extends from template-->
 @extends('layouts.app')
-
 @section('content')
+<h1>Covid-stats</h1>
 
 <section id="chart-data">
 

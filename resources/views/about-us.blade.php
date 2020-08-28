@@ -8,7 +8,7 @@
 
 <!-- Content -->
 @section('content')
-<h1>Section about us</h1>
+<h1>About us/ Contact</h1>
 <section>
 
     <article id="mitchio" class="dark">

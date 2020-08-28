@@ -4,6 +4,7 @@
 /* --------- Mobile --------- */
 h1 {
     text-align: center;
+    font-size: 4rem;
 }
 
 .maincontainer {
@@ -13,16 +14,17 @@ h1 {
     width: 98%;
     margin: auto;
     text-align: center;
+
     p {
         text-align: left;
         padding: 1rem;
         margin: 1rem auto 0;
-    } 
+    }
 }
-        
+
 .authoraccess {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* #editfakebtn {
@@ -48,8 +50,9 @@ justify-content: center;
     border-radius: 3px;
     text-decoration: none;
     margin: 0.5rem;
-    &:hover{
-        background-color: $palette_two;  
+
+    &:hover {
+        background-color: $palette_two;
         color: $palette_three;
     }
 }
@@ -59,48 +62,56 @@ justify-content: center;
         padding: 0.6rem 0 0.4rem;
         min-width: 3rem;
     }
+
     width: 15%;
     margin: auto;
     display: flex;
     justify-content: center;
+
     /* unvisited link */
     a:link {
         text-decoration: none;
         color: $font_color;
     }
+
     /* visited link */
     a:visited {
         text-decoration: none;
         color: $font_color;
     }
+
     /* mouse over link */
     a:hover {
         text-decoration: none;
         color: red;
     }
+
     /* selected link */
     a:active {
         text-decoration: none;
         color: $font_color;
-    } 
+    }
 }
 
 .commentscontainer {
     width: 98%;
     margin: auto;
     text-align: center;
+
     ul {
         text-align: left;
         list-style-type: none;
         margin: 0.5rem;
         padding: 0;
+
         li {
             background-color: $palette_five;
             border-radius: 5px;
             color: black;
             margin: 0.5rem 1rem;
         }
-      }
+    }
+
     .newcomment {
         width: 60%;
     }
@@ -108,8 +119,7 @@ justify-content: center;
 
 
 // https://css-tricks.com/overriding-default-button-styles/
-button
-{
+button {
     display: inline-block;
     border: none;
     padding: 0.5rem 0.8rem;
@@ -121,8 +131,8 @@ button
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -151,7 +161,7 @@ button:active {
     }
 
     .maininfo {
-        
+
         width: 15%;
         margin: auto auto auto 2rem;
         display: flex;
@@ -161,6 +171,7 @@ button:active {
     .commentscontainer {
         width: 90%;
         margin: auto;
+
         .newcomment {
             width: 70%;
         }
@@ -174,7 +185,7 @@ button:active {
         width: 70%;
         margin: auto;
     }
-    
+
     .commentscontainer {
         width: 70%;
         margin: auto;

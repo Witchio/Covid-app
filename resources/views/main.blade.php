@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-
+<h1>Fit4Covid</h1>
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -56,12 +56,12 @@
 <section id="rss">
     <!-- RSS Feeds (all options available) -->
 
-<!-- Font: independent.co.uk -->
+    <!-- Font: independent.co.uk -->
     <!-- News Wall -->
     <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 
     <!-- News Feed (active)-->
-    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0" ></iframe>
+    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
 
     <!-- Carousel -->
     <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
@@ -70,7 +70,7 @@
     <!-- <rssapp-list id="mPa6EvYZGT7E0ee4"></rssapp-list><script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script> -->
 
 
-<!-- Font: World Health Organization -->
+    <!-- Font: World Health Organization -->
     <!-- News Wall -->
     <!-- <rssapp-wall id="Y74AKXIUbHu2XXbr"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 

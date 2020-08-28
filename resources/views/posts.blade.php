@@ -11,7 +11,7 @@
 
 <!-- Looop to display posts -->
 @section('content')
-<h1>Posts</h1>
+<h1>Covid-Posts</h1>
 
 
 <!-- Looop to display posts, getting the data from PostController-->

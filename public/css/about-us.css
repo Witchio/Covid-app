@@ -23,3 +23,7 @@ section .dark {
   background-color: #031731;
 }
 
+h1 {
+  font-size: 5rem;
+}
+
