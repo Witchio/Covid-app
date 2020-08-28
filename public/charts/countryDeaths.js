@@ -33,8 +33,8 @@ async function chartDeaths(request) {
                 //Fill the graph or not
                 fill: true,
                 //Color of the line
-                borderColor: 'rgba(255, 99, 132, 0.7)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(97, 197, 255, 0.7)',
+                backgroundColor: 'rgba(97, 197, 255, 0.5)',
                 //Border of the line
                 borderWidth: 1,
                 //Border of the data point
