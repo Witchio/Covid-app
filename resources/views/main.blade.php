@@ -25,6 +25,7 @@
             <!-- Luxemburg cases  -->
             <canvas id="luxemburg" style="max-height:1000px;max-width:1000px"></canvas>
         </article>
+        <hr>
     </div>
 
 

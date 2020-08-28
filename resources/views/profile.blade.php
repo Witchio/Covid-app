@@ -35,5 +35,5 @@
 
 </div>
 <!--Push all countries to the select list-->
-<script src="charts/countryList.js"></script>
+<script src="charts/profileCountries.js"></script>
 @endsection
