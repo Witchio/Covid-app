@@ -5,7 +5,18 @@
 <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
 @endsection
 
+<style>
+    #hero-image {
+        background-image: url("/images/banner.jpg");
+    }
+</style>
+@section('banner')
+<div id="hero-image">
+    <h1>Cov-aid</h1>
+</div>
+@endsection
 @section('content')
+
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">

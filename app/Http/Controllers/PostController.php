@@ -44,8 +44,9 @@ class PostController extends Controller
             ->orderBy('users_count', 'desc')
             ->limit(3)
             ->get();
+        $banner = asset('images/banner.png');
 
-        return view('main', ['posts' => $posts]);
+        return view('main', ['posts' => $posts, 'banner' => $banner]);
     }
 
     /**

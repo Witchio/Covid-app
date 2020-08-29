@@ -19,7 +19,7 @@
 /* --------- Posts --------- */
 
 #posts {
-  margin-top: 2rem;
+  margin: 2rem 0;
   text-align: center;
 }
 
@@ -58,6 +58,20 @@
   bottom: 1.5px;
 }
 
+#hero-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+#hero-image h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 0;
+  padding: 5rem;
+}
+
 @media screen and (min-width: 600px) {
   #posts {
     display: flex;
@@ -71,6 +85,10 @@
 }
 
 @media screen and (min-width: 1020px) {
+  #hero-image h1 {
+    text-align: left;
+  }
+
   main {
     display: flex;
     justify-content: space-between;
