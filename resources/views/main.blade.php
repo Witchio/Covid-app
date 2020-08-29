@@ -34,10 +34,10 @@
         <!-- displays top posts -->
         @foreach($posts as $post)
         <article>
-            <img src="{{ asset("images/$post->image")}}" alt="">
+            <img src='{{ asset("images/$post->image")}}' alt="">
             <div class="content">
                 <h3> {{ $post->title }}</h3>
-                <p>Content : {{ @substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
+                <p>Content : {{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
                 <div class="like-comment">
                     <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
                     <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
@@ -46,9 +46,9 @@
         </article>
         @endforeach
         <!--  <ul>
-            @foreach($post->comments as $comment)
-            <li>{{$comment->comment}}</li>
-            @endforeach
+            foreach($post->comments as $comment)
+            <li>{$comment->comment}</li>
+            endforeach
         </ul> -->
     </section>
 

@@ -34,8 +34,6 @@ main {
     text-align: left;
     font: normal 16px sans-serif;
     padding: 20px 50px;
-    left: 0;
-    bottom: 0;
 }
 
 .footer-distributed .footer-left p {
@@ -105,4 +103,10 @@ main {
 .fa-github {
     color: #6e5494;
     margin: 1rem;
+}
+
+//* For the footer problem
+//the div#app will have 100% height minus the 98px from the footer
+div#app {
+    min-height: calc(100vh - 98px);
 }

@@ -4,11 +4,21 @@
 <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 @endsection
 @section('content')
-<style>
-    .footer-distributed {
-        position: fixed;
+<!-- <style>
+    body {
+        height: 100%;
     }
-</style>
+
+    main {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .footer-distributed {
+        position: absolute;
+        bottom: 0;
+    }
+</style> -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
