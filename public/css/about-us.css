@@ -17,6 +17,10 @@ section article {
   padding: 1rem;
   padding-top: 3rem;
   position: relative;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 section article img {
@@ -26,6 +30,13 @@ section article img {
   position: absolute;
   margin-left: -50px;
   top: -50px;
+}
+
+section article .links .fab {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  margin: 0.5rem 0.5rem 0;
 }
 
 section .light {
