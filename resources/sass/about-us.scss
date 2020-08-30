@@ -14,8 +14,9 @@ section {
         text-align: center;
         width: 80%;
         margin-bottom: 4rem;
+        margin-top: 0; //there was some weird margin on my article
         border-radius: 20px;
-        padding: 0.5rem;
+        padding: 1rem;
         padding-top: 3rem;
         position: relative;
         img {
@@ -27,12 +28,20 @@ section {
             top: -50px;
         }
     }
-
     .light {
         background-color: #002352;
     }
-
     .dark {
         background-color: #031731;
+    }
+}
+@media screen and (min-width: 720px) {
+    section {
+        display: flex;
+        flex-flow: wrap;
+        align-content: center;
+        article {
+            width: 45%;
+        }
     }
 }
