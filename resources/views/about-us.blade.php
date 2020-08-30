@@ -9,7 +9,7 @@
 <!-- Content -->
 @section('content')
 <h1>About us/ Contact</h1>
-<section>
+<section id="cards">
 
     <article id="mitchio" class="dark">
         <img src='{{asset("images/mitchio.jpg")}}' alt="leader pic">

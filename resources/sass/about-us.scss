@@ -43,5 +43,32 @@ section {
         article {
             width: 45%;
         }
+        #jo {
+            order: 4;
+        }
+        #edu {
+            order: 3;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    section {
+        article {
+            width: 20%;
+            padding: 3rem 2rem 1rem;
+            h1 {
+                margin-bottom: 5rem;
+            }
+            h2 {
+                margin: 0.5rem;
+            }
+            p {
+                text-align: left;
+            }
+        }
+        #jo,
+        #edu {
+            order: 0;
+        }
     }
 }

@@ -46,5 +46,37 @@ section .dark {
   section article {
     width: 45%;
   }
+
+  section #jo {
+    order: 4;
+  }
+
+  section #edu {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section article {
+    width: 20%;
+    padding: 3rem 2rem 1rem;
+  }
+
+  section article h1 {
+    margin-bottom: 5rem;
+  }
+
+  section article h2 {
+    margin: 0.5rem;
+  }
+
+  section article p {
+    text-align: left;
+  }
+
+  section #jo,
+  section #edu {
+    order: 0;
+  }
 }
 
