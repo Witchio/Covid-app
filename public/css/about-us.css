@@ -2,17 +2,29 @@
   margin: 0;
 }
 
+h1 {
+  margin-bottom: 4rem;
+  font-size: 5rem;
+}
+
 section article {
   margin: auto;
   text-align: center;
   width: 80%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+  padding-top: 3rem;
+  position: relative;
 }
 
 section article img {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: -50px;
+  top: -50px;
 }
 
 section .light {
@@ -21,9 +33,5 @@ section .light {
 
 section .dark {
   background-color: #031731;
-}
-
-h1 {
-  font-size: 5rem;
 }
 
