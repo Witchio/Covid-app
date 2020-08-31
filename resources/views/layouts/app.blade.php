@@ -43,7 +43,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('main') }}">{{ __('Home') }}</a>
+                            <a id="homeBtn" class="nav-link" href="{{ route('main') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('stats')}}">{{ __('Stats') }}</a>
