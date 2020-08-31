@@ -10,7 +10,7 @@ h2 {
 .maincontainer {
   background-color: #393d69;
   border-radius: 10px;
-  padding: 0 0.5rem 0.8rem 0.5rem;
+  padding: 0 0.8rem 0.8rem 0.8rem;
   width: 98%;
   margin: auto;
   text-align: center;
@@ -152,7 +152,7 @@ h2 {
   padding: 0.5rem;
 }
 
-.commentscontainer ul li p {
+.commentscontainer ul li div {
   font-weight: bolder;
   padding-bottom: 0;
   margin-bottom: 0;

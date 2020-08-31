@@ -86,7 +86,7 @@
     <ul>
         @foreach($posts as $post)
         <li id='username'>
-            <p>{{$post->name}} :</p><br> {{$post->comment}}
+            <div>{{$post->name}} :</div>{{$post->comment}}
         </li>
         @endforeach
     </ul>
