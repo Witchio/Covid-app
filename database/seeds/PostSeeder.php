@@ -22,9 +22,8 @@ class PostSeeder extends Seeder
                 birth certificate is a fraud. Lorem Ipsum is unattractive, both inside and out.',
                 'image' => 'title1.jpeg',
                 'user_id' => 1,
-                /* 'deleted_at' => null, */
+                'deleted_at' => null,
                 'created_at' => '2020-08-26 07:52:47',
-                'deleted_at' => '2020-08-26 07:52:47',
             ],
             [
                 'title' => 'Create your own mask for covid-protection !',
@@ -60,6 +59,14 @@ class PostSeeder extends Seeder
                 'user_id' => 5,
                 'deleted_at' => null,
                 'created_at' => '2020-06-26 14:25:47',
+            ],
+            [
+                'title' => 'How to create your own hand sanitizer at home !',
+                'content' => 'Lorem Ipsum is unattractive, both inside and out.',
+                'image' => 'title6.jpeg',
+                'user_id' => 5,
+                'deleted_at' => null,
+                'created_at' => '2020-07-31 22:25:47',
             ],
         );
 
