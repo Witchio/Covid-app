@@ -2,7 +2,6 @@ const xlabels1 = [];
 chartIt();
 async function chartIt() {
     await getData1();
-    console.log(xlabels);
     let dates = [];
     let newCases = [];
     xlabels1.forEach(data => {

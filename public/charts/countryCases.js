@@ -1,34 +1,37 @@
-
-let select = document.querySelector('#select');
-select.addEventListener('change', function () {
-    const country = this.value;
-    document.querySelector('#luxemburg').style.display = "none";
-    chartCountry(country);
-})
-
 let xlabels4 = [];
-
+let myChart1;
 async function chartCountry(request) {
-    xlabels4.length = 0;
-    await getData1(request);
-    let dates = [];
-    let newCases = [];
+
+    xlabels4 = [];
+
+    await getData4(request);
+    const dates = [];
+    const newCases = [];
+
     xlabels4.forEach(data => {
         dates.push(data[0]);
+
     });
+
     xlabels4.forEach(data => {
         newCases.push(data[1]);
-    });
-    var ctx1 = document.getElementById('country');
-    Chart.defaults.global.responsive = 'true';
 
-    var myChart1 = new Chart(ctx1, {
-        type: 'line',
+    });
+    const canvas = document.getElementById('country');
+    const ctx1 = canvas.getContext('2d');
+    Chart.defaults.global.responsive = 'true';
+    //Destroy the previous chart else it will overlap
+    if (myChart1) {
+        myChart1.destroy();
+        document.querySelector('#luxemburg').remove();
+    };
+    myChart1 = new Chart(ctx1, {
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
                 data: newCases,
-                label: 'Total requests ' + request,
+                label: request + ' total Cases',
                 //Css
                 //Fill the graph or not
                 fill: true,
@@ -42,6 +45,14 @@ async function chartCountry(request) {
             }]
         },
         options: {
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
+            },
 
             label: {
                 fontColor: 'green',
@@ -57,16 +68,18 @@ async function chartCountry(request) {
 
 }
 
-async function getData1(request) {
+async function getData4(request) {
+
     let url = 'https://api.covid19api.com/total/dayone/country/' + request + '/status/confirmed';
     const response1 = await fetch(url);
-    const data2 = await response1.json();
+    const data4 = await response1.json();
 
-    data2.forEach(data => {
+    data4.forEach(data => {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
         xlabels4.push([date[0], cases]);
 
     });
+
 }

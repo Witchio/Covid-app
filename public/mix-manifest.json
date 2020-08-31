@@ -1,4 +1,19 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/nav.css": "/css/nav.css",
+    "/css/homepage.css": "/css/homepage.css",
+    "/css/admin-users.css": "/css/admin-users.css",
+    "/css/admin-posts.css": "/css/admin-posts.css",
+    "/css/stats.css": "/css/stats.css",
+    "/css/profile.css": "/css/profile.css",
+    "/css/posts.css": "/css/posts.css",
+    "/css/add-post.css": "/css/add-post.css",
+    "/css/post.css": "/css/post.css",
+    "/css/edit-post.css": "/css/edit-post.css",
+    "/css/login.css": "/css/login.css",
+    "/css/register.css": "/css/register.css",
+    "/css/home.css": "/css/home.css",
+    "/css/password-reset.css": "/css/password-reset.css",
+    "/css/about-us.css": "/css/about-us.css"
 }

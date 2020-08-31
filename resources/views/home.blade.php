@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+<!-- Style -->
+@section('style')
+<link href="{{ asset('css/home.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
+<style>
+    .footer-distributed {
+        position: fixed;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

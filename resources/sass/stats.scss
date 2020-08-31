@@ -1,0 +1,89 @@
+@import "variables";
+
+//* Mobile view
+
+#worldDataBox {
+    text-align: center;
+    margin: auto;
+    background-color: rgba(12, 49, 95, 0.5);
+    border-radius: 1rem;
+}
+
+//*tablet
+@media screen and (min-width: 600px) {
+    #worldDataBox {
+        width: 80%;
+    }
+}
+
+//* Desktop
+@media screen and (min-width: 1020px) {
+    #chart-data {
+        display: flex;
+        justify-content: space-between;
+
+        #canvas {
+            width: 67%;
+        }
+
+        #worldDataBox {
+            width: 30%;
+            margin-top: 0;
+            margin-right: 0;
+            padding: 0.5rem;
+        }
+    }
+}
+
+//* Numbers
+.boxData {
+    font-family: $font-roboto;
+    font-size: 50px;
+    margin-bottom: 10rem;
+}
+
+.table td {
+    text-align: right;
+}
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 2rem;
+}
+
+hr {
+    color: wheat;
+    border: 0.5px solid rgb(245, 222, 179, 0.6);
+    width: 50%;
+    margin: auto;
+}
+
+select {
+    max-width: 30%;
+}
+
+//* Colours
+.red {
+    color: #c0150c;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: green;
+}
+
+//* Make table sticky
+
+article.worldTable {
+    overflow: scroll;
+    height: 600px;
+
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}

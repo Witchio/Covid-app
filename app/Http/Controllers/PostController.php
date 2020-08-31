@@ -45,7 +45,6 @@ class PostController extends Controller
     {
         // *Using Eloquent ORM
         $posts = Post::withCount('users', 'comments', 'usersReports')->get();
-        // dd($posts);
 
         return view('posts', ['posts' => $posts]);
     }
@@ -53,14 +52,14 @@ class PostController extends Controller
     public function main()
     {
         // ORDERBY WITH INNER JOIN
-        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id
-        //withCount counts the number of User OBJECTS associated to the Post (aka LIKES or Comments)
+
         $posts = Post::withCount('users', 'comments')
             ->orderBy('users_count', 'desc')
             ->limit(3)
             ->get();
+        $banner = asset('images/banner.png');
 
-        return view('main', ['posts' => $posts]);
+        return view('main', ['posts' => $posts, 'banner' => $banner]);
     }
 
     /**
@@ -82,10 +81,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //* stores what the user did in add-post in the db
-        //dd($request->image);
         $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
+        // Validating inputs
         $post->user_id = Auth::user()->id; //only a logged in user can post
 
         //* Validating and storing image
@@ -97,8 +94,14 @@ class PostController extends Controller
             $post->image = $imageName;
             $request->image->move(public_path() . '/images', $imageName);
         }
-
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        $post->title = $request->title;
+        $post->content = $request->content;
         $post->save();
+
         return redirect("/posts/$post->id");
     }
 
@@ -111,27 +114,31 @@ class PostController extends Controller
     public function show($id)
     {
         // Using Eloquent ORM
-        $post = Post::where('id', $id)
-            ->withCount('users', 'comments', 'usersReports')->get();
-        $post1 = Post::where('posts.id', $id)
-            ->withCount('users', 'comments', 'usersReports')
-            ->join('comments', 'posts.id', '=', 'comments.post_id')
-            ->join('users', 'comments.user_id', '=', 'users.id')
-            ->select('posts.*', 'comments.*', 'users.*')
+
+        $userPost = Post::where('posts.id', $id)
+            ->join('users', 'posts.user_id', '=', 'users.id')
+            ->select('users.name', 'posts.created_at')
             ->get();
-        $post2 = Post::find($id)
+
+        $post = Post::where('posts.id', $id)
+            //Need left join else it won't display the posts without comments
+            ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
+            ->leftJoin('users', 'comments.user_id', '=', 'users.id')
+            //->select('posts.*', 'comments.*', 'users.*')
+            //! Need to select proper values or bugs
+            ->select('posts.image', 'posts.title', 'posts.content', 'posts.user_id', 'comments.comment',  'users.name', 'posts.id')
             ->withCount('users', 'comments', 'usersReports')
-            ->comments('userC')->get();
-        // dd($comment->name);
-
+            ->get();
         // https://laravel.com/docs/7.x/eloquent-relationships
-
 
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
-            'post' => $post[0],
+            //Sending out the image indepedentely to avoid bugs
+            'img' => $post[0]->image,
+            'posts' => $post,
             'reported' => $this->reportStatus($id),
-            'usercomments' => ''
+            'liked' => $this->getlike($id),
+            'user' => $userPost[0],
         ]);
     }
 
@@ -173,7 +180,10 @@ class PostController extends Controller
     {
         // Update the post in the DB
         $post = Post::find($id);
-
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
         $post->title = $request->title;
         $post->content = $request->content;
 
@@ -187,8 +197,6 @@ class PostController extends Controller
                 'image' => 'required|mimes:jpeg,jpg|max:2048',
             ]);
 
-            // save the new imageName with unique timestmp and image file name
-            //previous alternative: $imageName = time() . '.' . $request->image->extension();
             $imageName = time() . '.' . $request->image->getClientOriginalName();
             $post->image = $imageName;
             // store the image to the PUBLIC folder
@@ -214,8 +222,7 @@ class PostController extends Controller
      */
     public function report($id)
     {
-        //dd($post[0]->usersReports); //this gives array with each report
-        //dd($post[0]->usersReports()); //this gives an array with info about the reports table
+
 
         //$user = Auth::user(); //works but method is underlined as an error
 
@@ -245,7 +252,6 @@ class PostController extends Controller
         $post = Post::find($id)->delete();
     }
 
-
     //* if the admin of the user want to permanent delete a post
     /**
      * Remove the specified resource from storage.
@@ -256,6 +262,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $result = Post::where('id', $id)->forceDelete();
+        return redirect('/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe
@@ -278,7 +285,6 @@ class PostController extends Controller
     public function showSoftDeleted()
     {
         $posts = Post::onlyTrashed()->get();
-
         return view('admin-posts', ['posts' => $posts]);
     }
 
@@ -293,14 +299,34 @@ class PostController extends Controller
         // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
         $hasLike = $user->posts()->where('post_id', $id)->exists();
 
+        $likestatus = false;
         // LIKE a post (toggle)
         if ($hasLike) {
             // REMOVE a record fr the LIKES table
             // DB::delete('DELETE from books WHERE id = ?', [$id]);
             $user->posts()->detach($post);
+            $likestatus = false;
         } else {
             // ADD a record to the LIKES table
             $user->posts()->save($post);
+            $likestatus = true;
         }
+        return $likestatus;
+    }
+    // LIKE a post (toggle)
+    // https://stackoverflow.com/questions/35285902/laravel-find-if-a-pivot-table-record-exists
+    public function getlike($id)
+    {
+        // check if user connected
+        if (Auth::user()) {
+            // initialise variables
+            $user = User::find(Auth::user()->id);
+            $post = Post::find($id);
+            // query if the USER already LIKED this post: assign TRUEorFALSE (if record exists or not)
+            $hasLike = $user->posts()->where('post_id', $id)->exists();
+        } else {
+            $hasLike = false;
+        }
+        return $hasLike;
     }
 }

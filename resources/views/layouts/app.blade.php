@@ -19,11 +19,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+    <!-- to do a separate stylesheet than the nav one (with general css), if needed -->
+    @yield('style')
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -36,7 +43,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('main') }}">{{ __('Home') }}</a>
+                            <a id="homeBtn" class="nav-link" href="{{ route('main') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('stats')}}">{{ __('Stats') }}</a>
@@ -45,7 +52,7 @@
                             <a class="nav-link" href="{{ route('posts') }}">{{ __('Posts') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('About Us') }}</a>
+                            <a class="nav-link" href="{{ route('about-us') }}">{{ __('About Us') }}</a>
                         </li>
                     </ul>
 
@@ -72,12 +79,17 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                @if(Auth::user()->role == "admin" )
                                 <!-- Dropdown menu to go to admin pages (Mitchio)-->
                                 <a class="dropdown-item" href="{{ route('admin-posts') }}">
                                     {{ __('Manage posts') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('admin-users') }}">
                                     {{ __('Manage users') }}
+                                </a>
+                                @endif
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    {{ __('Profile') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -90,11 +102,39 @@
                 </div>
             </div>
         </nav>
+        @yield('banner')
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+
+    <!-- Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+
+        <div class="footer-left">
+
+            <p class="footer-links">
+                <a class="link-1" href="{{ route('main') }}">{{ __('Home') }}</a>
+                <a class="link-2" href="{{ route('stats') }}">{{ __('Stats') }}</a>
+                <a class="link-3" href="{{ route('posts') }}">{{ __('Posts') }}</a>
+                <a class="link-4" href="{{ route('about-us') }}">{{ __('About') }}</a>
+            </p>
+
+            <p>Cov-Aid 19 &copy; 2020</p>
+
+        </div>
+
+    </footer>
+
     @yield('js-resources')
 
 </body>

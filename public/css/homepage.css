@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);@import url(https://fonts.googleapis.com/css2?family=Allerta&display=swap);/* --------- Banner --------- */
+
+#hero-image h1 {
+  font-family: "Allerta", sans-serif;
+}
+
+/* --------- Charts --------- */
+
+#charts #continent {
+  display: none !important;
+  margin-bottom: 2rem;
+}
+
+#charts #continentMobile {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#charts hr {
+  border: 1px rgba(255, 255, 255, 0.4) solid;
+  width: 60%;
+  margin: 0 auto 2rem auto;
+}
+
+a {
+  color: #edebd7;
+}
+
+/* --------- Posts --------- */
+
+#posts {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#posts article {
+  max-width: 80%;
+  margin: 1rem auto;
+  background-color: #393d69;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px black outset;
+  box-shadow: 0px 22px 34px 5px rgba(0, 0, 0, 0.75);
+}
+
+#posts article h3 {
+  text-decoration: underline;
+  margin: 0.5rem;
+}
+
+#posts article img {
+  margin: 0 0 1rem 0;
+  width: 100%;
+  height: 10rem;
+  /* object-fit: cover; */
+}
+
+#posts article .like-comment {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+#posts article .like-comment .fa-thumbs-up {
+  padding-right: 0.3rem;
+  position: relative;
+  bottom: 1.5px;
+}
+
+#hero-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+#hero-image h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 0;
+  padding: 5rem;
+}
+
+@media screen and (min-width: 600px) {
+  #posts {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+  }
+
+  #posts article {
+    max-width: 30%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #charts #continent {
+    display: block !important;
+  }
+
+  #charts #continentMobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #hero-image h1 {
+    text-align: left;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main #left {
+    width: 60%;
+  }
+
+  main #left #charts #continentMobile {
+    display: block !important;
+  }
+
+  main #left #charts #continent {
+    display: none !important;
+  }
+
+  main #left #rss {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  main #left #charts #continent {
+    display: block !important;
+  }
+
+  main #left #charts #continentMobile {
+    display: none !important;
+  }
+}
+

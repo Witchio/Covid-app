@@ -1,5 +1,13 @@
 <!-- extend from tempate -->
 @extends('layouts.app')
+<!--Link to sass-->
+@section('style')
+<link href="{{ asset('css/admin-users.css') }}" rel="stylesheet">
+@endsection
+<!--Font for button-->
+@section('style')
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+@endsection
 
 <!-- section('content') -->
 @section('content')
@@ -28,31 +36,28 @@
 @auth
 
 <body>
-    <table class="table">
+    <h1>User Management</h1>
+    <table class="table table-dark">
 
         <thead>
-
-            <th>Name</th>
-
-            <th>Email</th>
-
-            <th>Role</th>
-
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
         </thead>
 
         <tbody>
             @foreach($users as $user)
 
             <tr>
-
-                <td>{{$user->name}} </td>
+                 @if(Auth::user()->id != $user->id)
+                <td class="name" scope="row">{{$user->name}} </td>
 
                 <td>{{$user->email}} </td>
 
                 <td>
-                    <form method="post" action="userRole/{{$user->id}}">
+                    <form method="post" action="userRole/{{$user->id}}" id="roleform">
                         @csrf
-                        <select name="role" value="role">
+                        <select class="form-control" name="role" value="role">
                             <option selected value="{{ucfirst($user->role)}}">{{ucfirst($user->role)}}</option>
 
                             @if($user->role=="admin")
@@ -61,15 +66,16 @@
                             <option value="admin">Admin</option>
                             @endif
                         </select>
-                        <input type="submit" value="Change role">
-
-                    </form>
-                    <form action="delete/{{$user->id}}" method="post">
-                        @csrf
-                        <input type="submit" value="Delete user">
+                        <input class="btn btn-info" type="submit" value="Change role">
                     </form>
                 </td>
-
+                <td>
+                    <form action="delete/{{$user->id}}" method="post">
+                        @csrf
+                        <input class="btn btn-danger" type="submit" value="DELETE User">
+                    </form>
+                </td>
+                @endif
 
             </tr>
             @endforeach

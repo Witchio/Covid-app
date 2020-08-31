@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);@import url(https://fonts.googleapis.com/css2?family=Allerta&display=swap);h1 {
+  margin: 0 auto;
+}
+
+form {
+  max-width: 100px;
+}
+
+#roleform {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-control {
+  width: 100px;
+}
+
+.btn {
+  color: white;
+  font-weight: lighter;
+  font-family: "Russo One";
+  margin: 0 1rem;
+}
+
+.btn-danger {
+  background-color: rgba(227, 52, 47, 0.7);
+}
+
+.btn-info {
+  background-color: rgba(108, 178, 235, 0.7);
+}
+
+table {
+  border-radius: 10px;
+}
+
+.table th {
+  border-top: 0;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.table td {
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+td.name {
+  font-size: 20px;
+}
+
+.table-dark {
+  background-color: rgba(52, 58, 64, 0.6);
+}
+

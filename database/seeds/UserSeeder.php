@@ -15,40 +15,40 @@ class UserSeeder extends Seeder
         // seeder array
         $users = array(
             [
-                'name' => 'One',
+                'name' => 'Jane One',
                 'email' => '1111@pass.word',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Two',
+                'name' => 'Mark Two',
                 'email' => '2222@pass.word',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Three',
+                'name' => 'Tom Three',
                 'email' => '3333@pass.word',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Four',
+                'name' => 'Fran Four',
                 'email' => '4444@pass.word',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [   // keeping to test
-                'name' => 'jo00',
+                'name' => 'joanna',
                 'email' => '0000@pass.word',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
             ],
 
             [
-                'name' => 'MITCHIO',
+                'name' => 'mitchio',
                 'email' => 'webermitchio@hotmail.com',
-                'password_hashed' => 12345678,
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
             ],
             [
@@ -58,9 +58,9 @@ class UserSeeder extends Seeder
                 'role' => 'admin',
             ],
             [
-                'name' => 'Edu',
-                'email' => 'edu@edu.com',
-                'password_hashed' => 12345678,
+                'name' => 'Eduardo',
+                'email' => 'pintoedu@gmail.com',
+                'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
             ],
         );

@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js("resources/js/app.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css")
+    .sass("resources/sass/nav.scss", "public/css")
+    .sass("resources/sass/homepage.scss", "public/css")
+    .sass("resources/sass/admin-users.scss", "public/css")
+    .sass("resources/sass/admin-posts.scss", "public/css")
+    .sass("resources/sass/stats.scss", "public/css")
+    .sass("resources/sass/profile.scss", "public/css")
+    .sass("resources/sass/posts.scss", "public/css")
+    .sass("resources/sass/add-post.scss", "public/css")
+    .sass("resources/sass/post.scss", "public/css")
+    .sass("resources/sass/edit-post.scss", "public/css")
+    .sass("resources/sass/login.scss", "public/css")
+    .sass("resources/sass/register.scss", "public/css")
+    .sass("resources/sass/home.scss", "public/css")
+    .sass("resources/sass/password-reset.scss", "public/css")
+    .sass("resources/sass/about-us.scss", "public/css");

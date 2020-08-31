@@ -1,0 +1,243 @@
+//* Write variables in _variables.scss and then import them to your file
+@import "variables";
+
+/* --------- Mobile --------- */
+h2 {
+    text-align: center;
+    // font-size: 3rem;
+    margin: 0 auto;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+.maincontainer {
+    background-color: $palette_one;
+    border-radius: 10px;
+    padding: 0 0.5rem 0.8rem 0.5rem;
+    width: 98%;
+    margin: auto;
+    text-align: center;
+    h5 {
+        text-align: left;
+        padding: 0.5rem 0 0.5rem 0;
+        font-size: 0.9rem;
+    }
+    /* img {
+        margin-right: 0.5rem;
+        width: 45%;
+    } */
+    .article-image {
+        width: 45%;
+        margin-right: 0.5rem;
+        background-size: cover;
+        background-position: center;
+    }
+    p {
+        background-color: $palette_seven;
+        color: #131B23;
+        line-height: 1.2rem;
+        text-align: left;
+        padding: 1rem;
+        // margin: 1rem auto 0;
+        border-radius: 10px;
+    } 
+}
+
+.articlebody {
+    display: flex;
+    justify-content: space-between;
+    .articlecontent {
+        width: 50%;
+    }
+}
+
+.articlefooter {
+    display: flex;
+    justify-content: space-between;
+    // padding: 0 0 0.5rem 0;
+    
+    .maininfo {
+        span {
+            padding: 0.6rem 0 0.2rem;
+            min-width: 3rem;
+        }
+
+        width: 15%;
+        display: flex;
+        justify-content: start;
+
+        button {
+            padding-bottom: 0;
+
+            i {
+                padding-bottom: 0;
+            }
+        }
+        #report {
+            padding-top: 0.7rem;
+        }
+        #report:hover {
+            color: red;
+        }
+
+        /* unvisited link */
+        a:link {
+            text-decoration: none;
+            color: $font_color;
+        }
+
+        /* visited link */
+        a:visited {
+            text-decoration: none;
+            color: $font_color;
+        }
+
+        /* mouse over link */
+        a:hover {
+            text-decoration: none;
+            color: red;
+        }
+
+        /* selected link */
+        a:active {
+            text-decoration: none;
+            color: $font_color;
+        }
+    }
+
+    .authoraccess {
+        display: flex;
+        justify-content: center;
+        
+        #editbg,
+        #delete {
+            background-color: $palette_three;
+            color: $font-color;
+            font-size: 0.8rem;
+            padding: 0.3rem;
+            border-radius: 3px;
+            text-decoration: none;
+            margin: 0.5rem 0.5rem 0 0.5rem;
+            &:hover{
+                background-color: $palette_two;  
+                color: $palette_three;
+            }
+        }
+    }
+}
+
+.commentscontainer {
+    width: 98%;
+    margin: auto;
+    text-align: center;
+
+    ul {
+        background-color: $palette_seven;
+        text-align: left;
+        list-style-type: none;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border-radius: 5px;
+        li {
+            background-color: $palette_eight;
+            border-radius: 10px;
+            color: black;
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+    }
+
+    .newcomment {
+        width: 60%;
+        margin-top: 1rem;
+    }
+}
+
+
+// https://css-tricks.com/overriding-default-button-styles/
+button {
+    display: inline-block;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #7A7FB8;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* .maininfo {
+    button:hover {
+        text-decoration: none;
+        color: red;
+    }
+} */
+
+
+/* --------- Tablet view --------- */
+@media screen and (min-width: 600px) {
+
+    .maincontainer {
+        width: 90%;
+        margin: auto;
+    }
+
+    .articlebody {
+        display: flex;
+        justify-content: space-around;
+        .articlecontent {
+            width: 65%;
+        }
+    }
+
+    .authoraccess {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .maininfo {
+        width: 15%;
+        margin: auto auto auto 0.5rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .commentscontainer {
+        width: 90%;
+        margin: auto;
+
+        .newcomment {
+            width: 70%;
+        }
+    }
+}
+
+/* --------- Desktop view --------- */
+@media screen and (min-width: 1020px) {
+
+    .maincontainer {
+        width: 70%;
+        margin: auto;
+    }
+
+    .commentscontainer {
+        width: 70%;
+        margin: auto;
+    }
+}

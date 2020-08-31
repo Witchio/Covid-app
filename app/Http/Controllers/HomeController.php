@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -57,5 +58,20 @@ class HomeController extends Controller
     {
         $result = User::where('id', $id)->delete();
         return redirect('admin/users');
+    }
+
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->nationality = $request->nationality;
+        $user->birthdate = $request->birthdate;
+        $user->country = $request->country;
+
+        $user->save();
+
+        return redirect('profile');
     }
 }

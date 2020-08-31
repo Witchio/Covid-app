@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);@import url(https://fonts.googleapis.com/css2?family=Allerta&display=swap);#worldDataBox {
+  text-align: center;
+  margin: auto;
+  background-color: rgba(12, 49, 95, 0.5);
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  #worldDataBox {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  #chart-data {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #chart-data #canvas {
+    width: 67%;
+  }
+
+  #chart-data #worldDataBox {
+    width: 30%;
+    margin-top: 0;
+    margin-right: 0;
+    padding: 0.5rem;
+  }
+}
+
+.boxData {
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+  margin-bottom: 10rem;
+}
+
+.table td {
+  text-align: right;
+}
+
+h1 {
+  font-size: 70px;
+  margin-bottom: 2rem;
+}
+
+hr {
+  color: wheat;
+  border: 0.5px solid rgba(245, 222, 179, 0.6);
+  width: 50%;
+  margin: auto;
+}
+
+select {
+  max-width: 30%;
+}
+
+.red {
+  color: #c0150c;
+}
+
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+article.worldTable {
+  overflow: scroll;
+  height: 600px;
+}
+
+thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+

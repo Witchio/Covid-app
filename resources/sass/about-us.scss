@@ -1,0 +1,91 @@
+//* Write variables in _variables.scss and then import them to your file
+@import "variables";
+
+main {
+    margin: 0;
+}
+h1 {
+    margin-bottom: 4rem;
+    font-size: 5rem;
+}
+section {
+    article {
+        margin: auto;
+        text-align: center;
+        width: 80%;
+        margin-bottom: 4rem;
+        margin-top: 0; //there was some weird margin on my article
+        border-radius: 20px;
+        padding: 1rem;
+        padding-top: 3rem;
+        position: relative;
+        // Box shadow
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            margin-left: -50px;
+            top: -50px;
+        }
+        //some flexbox for the icons
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        //icons css
+        .links {
+            .fab {
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                margin: 0.5rem 0.5rem 0;
+            }
+        }
+    }
+    .light {
+        background-color: #002352;
+    }
+    .dark {
+        background-color: #031731;
+    }
+}
+@media screen and (min-width: 720px) {
+    section {
+        display: flex;
+        flex-flow: wrap;
+        align-content: center;
+        article {
+            width: 45%;
+        }
+        #jo {
+            order: 4;
+        }
+        #edu {
+            order: 3;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    section {
+        article {
+            width: 20%;
+            padding: 3rem 2rem 1rem;
+            h1 {
+                margin-bottom: 5rem;
+            }
+            h2 {
+                margin: 0.5rem;
+            }
+            p {
+                text-align: left;
+            }
+        }
+        #jo,
+        #edu {
+            order: 0;
+        }
+    }
+}

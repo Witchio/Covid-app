@@ -1,19 +1,19 @@
-const xlabels1 = [];
-chartIt();
-async function chartIt() {
+const luxCases = [];
+chartLuxCases();
+async function chartLuxCases() {
     await getData1();
     let dates = [];
     let newCases = [];
-    xlabels1.forEach(data => {
+    luxCases.forEach(data => {
         dates.push(data[0]);
     });
-    xlabels1.forEach(data => {
+    luxCases.forEach(data => {
         newCases.push(data[1]);
     });
     var ctx1 = document.getElementById('luxemburg');
     Chart.defaults.global.responsive = 'true';
     var myChart1 = new Chart(ctx1, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: dates,
             datasets: [{
@@ -32,15 +32,19 @@ async function chartIt() {
             }]
         },
         options: {
-
-            label: {
-                fontColor: 'green',
-            },
             plugins: {
                 datalabels: {
                     display: false
                 }
-            }
+            },
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: '#fff',
+                    fontWeight: 'bold',
+                    fontSize: 30
+                }
+            },
 
         }
     })
@@ -49,13 +53,13 @@ async function chartIt() {
 
 async function getData1() {
     const response1 = await fetch('https://api.covid19api.com/total/dayone/country/luxembourg/status/confirmed');
-    const data1 = await response1.json();
+    const dataLuxCases = await response1.json();
 
-    data1.forEach(data => {
+    dataLuxCases.forEach(data => {
         const now = data['Date'];
         date = now.split('T');
         const cases = data['Cases'];
-        xlabels1.push([date[0], cases]);
+        luxCases.push([date[0], cases]);
 
     });
 }

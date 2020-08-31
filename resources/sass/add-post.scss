@@ -1,0 +1,31 @@
+@import "variables";
+
+/* --------- Mobile --------- */
+form {
+    width: 98%;
+    margin: auto;
+}
+
+form div #title {
+    width: 60%;
+}
+
+textarea.form-control {
+    height: 15rem;
+}
+
+/* --------- Tablet view --------- */
+@media screen and (min-width: 600px) {
+    form {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+/* --------- Desktop view --------- */
+@media screen and (min-width: 1020px) {
+    form {
+        width: 50%;
+        margin: auto;
+    }
+}
