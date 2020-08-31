@@ -48,7 +48,7 @@ class PostSeeder extends Seeder
             [
                 'title' => 'Covid-19 gave me the opportunity to spend more time with my family',
                 'content' => 'Youve been fighting Lorem Ipsum your entire adult life.',
-                'image' => 'Post3.jpg',
+                'image' => 'title4.jpeg',
                 'user_id' => 4,
                 'deleted_at' => '2020-08-26 07:52:47',
                 'created_at' => '2020-08-22 03:32:12',
