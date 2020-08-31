@@ -7,7 +7,7 @@
 
 <style>
     #hero-image {
-        background-image: url("/images/banner.jpg");
+        background-image: url("/images/banner.png");
     }
 </style>
 @section('banner')
