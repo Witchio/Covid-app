@@ -26,4 +26,5 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/login.scss", "public/css")
     .sass("resources/sass/register.scss", "public/css")
     .sass("resources/sass/home.scss", "public/css")
+    .sass("resources/sass/password-reset.scss", "public/css")
     .sass("resources/sass/about-us.scss", "public/css");
