@@ -46,15 +46,15 @@
         @foreach($posts as $post)
         <article>
             <img src='{{ asset("images/$post->image")}}' alt="">
-            <div class="content">
+            <div class="post-top">
                 <a href="/posts/{{$post->id}}">
                     <h3> {{ $post->title }}</h3>
                 </a>
                 <p>Content : {{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
-                <div class="like-comment">
-                    <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
-                    <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
-                </div>
+            </div>
+            <div class="like-comment">
+                <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
+                <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
             </div>
         </article>
         @endforeach
