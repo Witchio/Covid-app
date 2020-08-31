@@ -41,7 +41,7 @@
                     @if(!$reported)
                     <!-- IF user is not the post author -->
                     @if($posts[0]->user_id!=Auth::user()->id)
-                    <button id="report"><a href="/post/report/{{$posts[0]->id}}"><i class="far fa-flag"></i></a></button>
+                    <a href="/post/report/{{$posts[0]->id}}"><button id="report"><i class="far fa-flag"></i></button></a>
                     @endif
                     @endif
                     @endauth
