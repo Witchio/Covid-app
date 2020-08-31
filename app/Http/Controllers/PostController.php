@@ -105,9 +105,9 @@ class PostController extends Controller
         //->withCount('users', 'comments', 'usersReports')->get();
         $userPost = Post::where('posts.id', $id)
             ->join('users', 'posts.user_id', '=', 'users.id')
-            ->select('users.name')
+            ->select('users.name', 'posts.created_at')
             ->get();
-        //dd($userPost);
+        // dd($userPost);
         $post = Post::where('posts.id', $id)
             //Need left join else it won't display the posts without comments
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')

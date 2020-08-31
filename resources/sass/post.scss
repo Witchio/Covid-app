@@ -7,20 +7,20 @@ h1 {
     font-size: 3rem;
     margin: 0 auto;
 }
-h4 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
 
 .maincontainer {
     background-color: $palette_one;
     border-radius: 10px;
-    padding: 0 1rem;
+    padding: 0 0.5rem 0.8rem 0.5rem;
     width: 98%;
     margin: auto;
     text-align: center;
+    h5 {
+        text-align: left;
+        padding: 0.5rem 0 0.5rem 0;
+    }
     img {
-        margin: 1rem auto;
+        margin-right: 0.5rem;
     }
     p {
         background-color: $palette_seven;
@@ -32,73 +32,80 @@ h4 {
     } 
 }
 
-.authoraccess {
+.articlebody {
     display: flex;
-    justify-content: center;
-}
-
-/* #editfakebtn {
-    padding: 0.7rem 0.2rem;
-    font-size: 1.04rem;
-    min-width: 3rem;
-
-} */
-
-/* #editbg {
-    border: 2px solid #6066A9;
-    &:hover{
-        border: 2px solid $palette_one;
-    }
-} */
-
-#editbg,
-#delete {
-    background-color: $palette_three;
-    color: $font-color;
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    border-radius: 3px;
-    text-decoration: none;
-    margin: 0.5rem 0.5rem 0 0.5rem;
-    &:hover{
-        background-color: $palette_two;  
-        color: $palette_three;
+    justify-content: space-between;
+    .articlecontent {
+        width: 50%;
     }
 }
 
-.maininfo {
-    span {
-        padding: 0.6rem 0 0.4rem;
-        min-width: 3rem;
-    }
-
-    width: 15%;
-    margin: auto;
+.articlefooter {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    // padding: 0 0 0.5rem 0;
+    
+    .maininfo {
+        span {
+            padding: 0.6rem 0 0.2rem;
+            min-width: 3rem;
+        }
 
-    /* unvisited link */
-    a:link {
-        text-decoration: none;
-        color: $font_color;
+        width: 15%;
+        display: flex;
+        justify-content: start;
+
+        button {
+            padding-bottom: 0;
+
+            i {
+                padding-bottom: 0;
+            }
+        }
+
+        /* unvisited link */
+        a:link {
+            text-decoration: none;
+            color: $font_color;
+        }
+
+        /* visited link */
+        a:visited {
+            text-decoration: none;
+            color: $font_color;
+        }
+
+        /* mouse over link */
+        a:hover {
+            text-decoration: none;
+            color: red;
+        }
+
+        /* selected link */
+        a:active {
+            text-decoration: none;
+            color: $font_color;
+        }
     }
 
-    /* visited link */
-    a:visited {
-        text-decoration: none;
-        color: $font_color;
-    }
-
-    /* mouse over link */
-    a:hover {
-        text-decoration: none;
-        color: red;
-    }
-
-    /* selected link */
-    a:active {
-        text-decoration: none;
-        color: $font_color;
+    .authoraccess {
+        display: flex;
+        justify-content: center;
+        
+        #editbg,
+        #delete {
+            background-color: $palette_three;
+            color: $font-color;
+            font-size: 0.8rem;
+            padding: 0.5rem 0.5rem 0;
+            border-radius: 3px;
+            text-decoration: none;
+            // margin: 0.5rem 0.5rem 0 0.5rem;
+            &:hover{
+                background-color: $palette_two;  
+                color: $palette_three;
+            }
+        }
     }
 }
 
@@ -167,6 +174,14 @@ button:active {
         margin: auto;
     }
 
+    .articlebody {
+        display: flex;
+        justify-content: space-around;
+        .articlecontent {
+            width: 65%;
+        }
+    }
+
     .authoraccess {
         display: flex;
         justify-content: flex-end;
@@ -174,7 +189,7 @@ button:active {
 
     .maininfo {
         width: 15%;
-        margin: auto auto auto 2rem;
+        margin: auto auto auto 0.5rem;
         display: flex;
         justify-content: flex-start;
     }

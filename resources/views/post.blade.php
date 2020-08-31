@@ -10,63 +10,70 @@
 
 <!-- individual post depending on id -->
 <h1>{{ $posts[0]->title }}</h1>
-<h4>by {{$user->name}}</h4>
+
+
 <!-- <h3>{{$posts[0]->name}}</h3> -->
 <section class="maincontainer">
-    <img src="" alt="">
-    @if($posts[0]->image)
-    <img src="{{asset("images/$img")}}" alt="post image">
-    @endif
+    <em>
+        <h5>posted by <b>{{$user->name}}</b>, on {{@substr($user->created_at, 0, 16)}}</h5>
+    </em>
+    <section class="articlebody">
 
-    <p>{{ $posts[0]->content }}</p>
-
-
-    <section class="authoraccess">
-        <!-- {{$posts[0]->user_id}} -->
-        <!-- Only show if user is logged in-->
-        @if (Auth::user())
-        <!-- only for the AUTHOR -->
-        @auth
-        @if ($posts[0]->user_id==Auth::user()->id)
-        <br>
-        <div id="editfakebtn">
-            <a href="/post/update/{{$posts[0]->id}}"><button id="editbg">Edit post details</button></a>
-        </div>
-        @endif
-        @endauth
+        @if($posts[0]->image)
+        <img src="{{asset("images/$img")}}" alt="post image">
         @endif
 
-        @if(Auth::user() !== null)
-        @if($posts[0]->user_id==Auth::user()->id ||Auth::user()->role == "admin")
-        <!-- If user that created the post or admin wants to permanently delete it-->
-        <div>
-            <a href="/post/delete/{{$posts[0]->id}}"><button id="delete">Delete Post</button></a>
-        </div>
-        @endif
-        @endif
+        <section class="articlecontent">
+            <p>{{ $posts[0]->content }}</p>
+
+            <section class="articlefooter">
+                <section class="maininfo">
+                    <span>{{ $posts[0]->users_count }} likes</span>
+
+                    <!-- Only show if user is logged is-->
+                    @if (Route::has('login'))
+                    @auth
+                    <button class="like-btn" @if ($liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="far fa-thumbs-up"></i></button>
+                    <button class="like-btn" @if (!$liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="fas fa-thumbs-up"></i></button>
+                    <!-- IF user has not reported this post before -->
+                    @if(!$reported)
+                    <!-- IF user is not the post author -->
+                    @if($posts[0]->user_id!=Auth::user()->id)
+                    <button id="report"><a href="/post/report/{{$posts[0]->id}}"><i class="far fa-flag"></i></a></button>
+                    @endif
+                    @endif
+                    @endauth
+                    @endif
+                </section>
+
+                <section class="authoraccess">
+                    <!-- {{$posts[0]->user_id}} -->
+                    <!-- Only show if user is logged in-->
+                    @if (Auth::user())
+                    <!-- only for the AUTHOR -->
+                    @auth
+                    @if ($posts[0]->user_id==Auth::user()->id)
+                    <br>
+                    <div id="editfakebtn">
+                        <a href="/post/update/{{$posts[0]->id}}"><button id="editbg">Edit post details</button></a>
+                    </div>
+                    @endif
+                    @endauth
+                    @endif
+
+                    @if(Auth::user() !== null)
+                    @if($posts[0]->user_id==Auth::user()->id ||Auth::user()->role == "admin")
+                    <!-- If user that created the post or admin wants to permanently delete it-->
+                    <div>
+                        <a href="/post/delete/{{$posts[0]->id}}"><button id="delete">Delete Post</button></a>
+                    </div>
+                    @endif
+                    @endif
+                </section>
+            </section>
+        </section>
     </section>
 
-    <section class="maininfo">
-        <span>{{ $posts[0]->users_count }} likes</span>
-
-        <!-- Only show if user is logged is-->
-        @if (Route::has('login'))
-        @auth
-        <button class="like-btn" @if ($liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="far fa-thumbs-up"></i></button>
-        <button class="like-btn" @if (!$liked) style="display: none;" @endif value="{{$posts[0]->id}}" onclick="toggleLike()"><i class="fas fa-thumbs-up"></i></button>
-        <!-- IF user has not reported this post before -->
-        @if(!$reported)
-        <!-- IF user is not the post author -->
-        @if($posts[0]->user_id!=Auth::user()->id)
-        <button id="report"><a href="/post/report/{{$posts[0]->id}}"><i class="far fa-flag"></i></a></button>
-        @endif
-        @endif
-
-
-
-        @endauth
-        @endif
-    </section>
 </section>
 
 
