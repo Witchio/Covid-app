@@ -50,7 +50,7 @@
                 <a href="/posts/{{$post->id}}">
                     <h3> {{ $post->title }}</h3>
                 </a>
-                <p>Content : {{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
+                <p>{{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
             </div>
             <div class="like-comment">
                 <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>

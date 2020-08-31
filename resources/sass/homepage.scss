@@ -49,7 +49,6 @@ a {
         flex-flow: column;
         justify-content: space-between;
         h3 {
-            text-decoration: underline;
             margin: 0.5rem 0;
         }
 
@@ -73,6 +72,9 @@ a {
                 position: relative;
                 bottom: 1.5px;
             }
+        }
+        a:hover {
+            text-decoration: underline;
         }
     }
 }

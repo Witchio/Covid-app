@@ -47,7 +47,6 @@ a {
 }
 
 #posts article h3 {
-  text-decoration: underline;
   margin: 0.5rem 0;
 }
 
@@ -73,6 +72,10 @@ a {
   padding-right: 0.3rem;
   position: relative;
   bottom: 1.5px;
+}
+
+#posts article a:hover {
+  text-decoration: underline;
 }
 
 #hero-image {
