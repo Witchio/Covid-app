@@ -16,44 +16,57 @@ class PostSeeder extends Seeder
         // seeder array
         $posts = array(
             [
-                'title' => 'Day 40 of Quarantine - Help!',
+                'title' => 'Travel tips during the pandemic',
                 'content' => 'Lorem Ipsum is FAKE TEXT! An extremely credible
                 source has called my office and told me that Lorem Ipsums
                 birth certificate is a fraud. Lorem Ipsum is unattractive, both inside and out.',
-                'image' => 'Post1.jpg',
+                'image' => 'title1.jpeg',
                 'user_id' => 1,
                 'deleted_at' => null,
+                'created_at' => '2020-08-26 07:52:47',
             ],
             [
-                'title' => 'Coffee over Zoom - the new normal',
+                'title' => 'Create your own mask for covid-protection !',
                 'content' => 'Youre telling the enemy exactly what youre going to do.
                 No wonder youve been fighting Lorem Ipsum your entire adult life.',
-                'image' => 'Post2.jpg',
+                'image' => 'title2.jpeg',
                 'user_id' => 2,
                 'deleted_at' => null,
+                'created_at' => '2020-08-23 12:52:27',
             ],
             [
-                'title' => 'Are the governments doing enough? A thought post',
+                'title' => 'Remote working, why home office is a better solution even after the pandemic',
                 'content' => 'An extremely credible source has called my office
                 and told me that Lorem Ipsums birth certificate is a fraud.
                 Lorem Ipsum is unattractive, both inside and out.',
-                'image' => 'Post2.jpg',
+                'image' => 'title3.jpeg',
                 'user_id' => 3,
                 'deleted_at' => null,
+                'created_at' => '2020-04-13 02:32:49',
             ],
             [
-                'title' => 'I\'m wearing a mask - not an unreasonable act',
+                'title' => 'Covid-19 gave me the opportunity to spend more time with my family',
                 'content' => 'Youve been fighting Lorem Ipsum your entire adult life.',
-                'image' => 'Post3.jpg',
+                'image' => 'title4.jpeg',
                 'user_id' => 4,
                 'deleted_at' => '2020-08-26 07:52:47',
+                'created_at' => '2020-08-22 03:32:12',
             ],
             [
-                'title' => 'Fifth Post',
+                'title' => 'Corona virus and sports - How to hit the gym whiles respecting social distancing rules',
                 'content' => 'Lorem Ipsum is unattractive, both inside and out.',
-                'image' => 'Post1.jpg',
+                'image' => 'title5.jpeg',
                 'user_id' => 5,
                 'deleted_at' => null,
+                'created_at' => '2020-06-26 14:25:47',
+            ],
+            [
+                'title' => 'How to create your own hand sanitizer at home !',
+                'content' => 'Lorem Ipsum is unattractive, both inside and out.',
+                'image' => 'title6.jpeg',
+                'user_id' => 5,
+                'deleted_at' => null,
+                'created_at' => '2020-07-31 22:25:47',
             ],
         );
 
@@ -65,6 +78,7 @@ class PostSeeder extends Seeder
                 'image' => $value['image'],
                 'user_id' => $value['user_id'],
                 'deleted_at' => $value['deleted_at'],
+                'created_at' => $value['created_at'],
             ]);
         }
     }

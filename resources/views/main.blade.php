@@ -12,7 +12,7 @@
 </style>
 @section('banner')
 <div id="hero-image">
-    <h1>Cov-aid</h1>
+    <h1>Cov-Aid</h1>
 </div>
 @endsection
 @section('content')
@@ -47,7 +47,9 @@
         <article>
             <img src='{{ asset("images/$post->image")}}' alt="">
             <div class="content">
-                <h3> {{ $post->title }}</h3>
+                <a href="/posts/{{$post->id}}">
+                    <h3> {{ $post->title }}</h3>
+                </a>
                 <p>Content : {{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
                 <div class="like-comment">
                     <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>

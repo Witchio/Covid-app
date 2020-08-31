@@ -2,6 +2,11 @@
 @import "variables";
 
 //* Mobile view
+/* --------- Banner --------- */
+#hero-image h1 {
+    font-family: $font-allerta;
+}
+
 /* --------- Charts --------- */
 #charts {
     #continent {
@@ -21,10 +26,15 @@
     }
 }
 
+a {
+    color: $font-color;
+}
+
 /* --------- Posts --------- */
 #posts {
     margin: 2rem 0;
     text-align: center;
+
     article {
         max-width: 80%;
         margin: 1rem auto;
@@ -62,6 +72,7 @@
         }
     }
 }
+
 #hero-image {
     background-position: center;
     background-repeat: no-repeat;
@@ -89,13 +100,26 @@
     }
 }
 
+@media screen and (min-width: 900px) {
+    #charts {
+        #continent {
+            display: block !important;
+        }
+
+        #continentMobile {
+            display: none !important;
+        }
+    }
+}
+
 //* Desktop view
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1200px) {
     #hero-image {
         h1 {
             text-align: left;
         }
     }
+
     main {
         display: flex;
         justify-content: space-between;
@@ -104,13 +128,11 @@
             width: 60%;
 
             #charts {
-                //display: flex;
-                /* width: 70%; */
-                #continent {
+                #continentMobile {
                     display: block !important;
                 }
 
-                #continentMobile {
+                #continent {
                     display: none !important;
                 }
             }
@@ -118,6 +140,17 @@
             #rss {
                 width: 30%;
             }
+        }
+    }
+}
+@media screen and (min-width: 1500px) {
+    main #left #charts {
+        #continent {
+            display: block !important;
+        }
+
+        #continentMobile {
+            display: none !important;
         }
     }
 }
