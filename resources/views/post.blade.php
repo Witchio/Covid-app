@@ -9,7 +9,7 @@
 @section('content')
 
 <!-- individual post depending on id -->
-<h1>{{ $posts[0]->title }}</h1>
+<h2>{{ $posts[0]->title }}</h2>
 
 
 <!-- <h3>{{$posts[0]->name}}</h3> -->

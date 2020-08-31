@@ -2,10 +2,12 @@
 @import "variables";
 
 /* --------- Mobile --------- */
-h1 {
+h2 {
     text-align: center;
-    font-size: 3rem;
+    // font-size: 3rem;
     margin: 0 auto;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
 }
 
 .maincontainer {
@@ -21,6 +23,8 @@ h1 {
     }
     img {
         margin-right: 0.5rem;
+        width: 45%;
+
     }
     p {
         background-color: $palette_seven;
@@ -98,10 +102,10 @@ h1 {
             background-color: $palette_three;
             color: $font-color;
             font-size: 0.8rem;
-            padding: 0.5rem 0.5rem 0;
+            padding: 0.3rem;
             border-radius: 3px;
             text-decoration: none;
-            // margin: 0.5rem 0.5rem 0 0.5rem;
+            margin: 0.5rem 0.5rem 0 0.5rem;
             &:hover{
                 background-color: $palette_two;  
                 color: $palette_three;
