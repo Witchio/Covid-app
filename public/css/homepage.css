@@ -127,12 +127,12 @@
   }
 }
 
-@media screen and (min-width: 1400px) {
-  #charts #continent {
+@media screen and (min-width: 1500px) {
+  main #left #charts #continent {
     display: block !important;
   }
 
-  #charts #continentMobile {
+  main #left #charts #continentMobile {
     display: none !important;
   }
 }
