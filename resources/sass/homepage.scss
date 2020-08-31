@@ -6,6 +6,7 @@
 #hero-image h1 {
     font-family: $font-allerta;
 }
+
 /* --------- Charts --------- */
 #charts {
     #continent {
@@ -25,10 +26,15 @@
     }
 }
 
+a {
+    color: $font-color;
+}
+
 /* --------- Posts --------- */
 #posts {
     margin: 2rem 0;
     text-align: center;
+
     article {
         max-width: 80%;
         margin: 1rem auto;
@@ -66,6 +72,7 @@
         }
     }
 }
+
 #hero-image {
     background-position: center;
     background-repeat: no-repeat;
@@ -92,6 +99,7 @@
         }
     }
 }
+
 @media screen and (min-width: 900px) {
     #charts {
         #continent {
@@ -111,6 +119,7 @@
             text-align: left;
         }
     }
+
     main {
         display: flex;
         justify-content: space-between;

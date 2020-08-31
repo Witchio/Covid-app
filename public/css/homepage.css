@@ -22,6 +22,10 @@
   margin: 0 auto 2rem auto;
 }
 
+a {
+  color: #edebd7;
+}
+
 /* --------- Posts --------- */
 
 #posts {
