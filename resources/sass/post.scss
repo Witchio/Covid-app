@@ -73,6 +73,12 @@ h2 {
                 padding-bottom: 0;
             }
         }
+        #report {
+            padding-top: 0.7rem;
+        }
+        #report:hover {
+            color: red;
+        }
 
         /* unvisited link */
         a:link {
@@ -175,6 +181,13 @@ button:focus {
 button:active {
     transform: scale(0.99);
 }
+
+/* .maininfo {
+    button:hover {
+        text-decoration: none;
+        color: red;
+    }
+} */
 
 
 /* --------- Tablet view --------- */
