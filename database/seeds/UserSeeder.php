@@ -39,14 +39,14 @@ class UserSeeder extends Seeder
                 'role' => 'user',
             ],
             [   // keeping to test
-                'name' => 'jomama',
+                'name' => 'joanna',
                 'email' => '0000@pass.word',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
             ],
 
             [
-                'name' => 'MITCHIO',
+                'name' => 'mitchio',
                 'email' => 'webermitchio@hotmail.com',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
