@@ -16,7 +16,7 @@
             <img src='{{asset("images/mitchio.jpg")}}' alt="leader pic">
             <h2>Mitchio Weber</h2>
             <p>
-                Organa kit sidious owen antilles. Bothan dooku ben palpatine. Moff hutt darth mara lars skywalker moff windu yoda. Darth fisto darth lando lando lando fisto. Darth dantooine moff jabba amidala kessel calrissian. Sidious maul mandalore antilles tatooine luke moff darth. Sith leia darth antilles darth. Lando jade hutt obi-wan mon mothma ackbar.</p>
+                Hello everyone ! My name is Mitchio, I'm half japanese and a physics graduate. My main contributions were the stats page, the login/register and the admin dashboards. I was also assigned as the project leader and took care of ensuring a nice workflow by assigning the tasks and working on the sprint backlogs.</p>
         </div>
         <div class="links">
             <a href="https://www.linkedin.com/in/mitchio-weber-4328021ab/" target="_blank"><i class="fab fa-linkedin"></i></a>
