@@ -46,6 +46,7 @@
                     @endif
                     @endauth
                     @endif
+
                 </section>
 
                 <section class="authoraccess">
@@ -75,9 +76,11 @@
             </section>
         </section>
     </section>
-
 </section>
-
+@if($reported)
+<p class="reportedmsg">
+    <i class="fas fa-exclamation-triangle"></i> You have reported this post</p>
+@endif
 
 <br><br>
 <section class="commentscontainer">

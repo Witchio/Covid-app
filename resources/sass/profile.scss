@@ -1,5 +1,21 @@
 @import "variables";
 
+.profileForm {
+    width: 60%;
+    margin: auto;
+}
+
+.datadisplay {
+    display: flex;
+    input {
+        width: 50%;
+    }
+    p {
+        padding-top: 0.4rem;
+        padding-left: 2rem;
+    }
+}
+
 select {
     max-width: 200px;
 }
@@ -7,12 +23,13 @@ select {
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    // width: 300px;
 }
 
 input[type=submit] {
     margin-top: 1.5rem;
     font-family: $font-russo;
+    width: 10rem;
 }
 
 #title {

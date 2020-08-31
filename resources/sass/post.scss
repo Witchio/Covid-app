@@ -30,6 +30,7 @@ h2 {
     } */
     .article-image {
         width: 45%;
+        min-height: 20rem;
         margin-right: 0.5rem;
         background-size: cover;
         background-position: center;
@@ -130,6 +131,13 @@ h2 {
                 color: $palette_three;
             }
         }
+    }
+}
+
+.reportedmsg {
+    text-align: center;
+    i {
+        color: red;
     }
 }
 

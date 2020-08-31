@@ -33,6 +33,7 @@
     </div>
     <label for="content">Content:</label>
     <textarea class="form-control" name="content" placeholder="content"></textarea>
+    <br>
     <div class="form-group">
         <div>Add Image:</div>
         <input type="file" name="image"> <br>

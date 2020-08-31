@@ -33,7 +33,7 @@
     @csrf
     @method('PUT')
     <label for="editTitle">Title:</label><br>
-    <input type="text" name="title" class="form-control" id="editTitle" value="{{$post->title}}"><br>
+    <input type="text" name="title" class="form-control" id="title" value="{{$post->title}}"><br>
     <label for="editContent">Content:</label><br>
     <!-- <input type="text" name="content" id="" value="{{$post->content}}"> -->
     <textarea class="form-control" name="content" id="editContent" cols="30" rows="10">{{$post->content}}</textarea><br>
