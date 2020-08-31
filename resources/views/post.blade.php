@@ -85,7 +85,9 @@
     @if($posts[0]->comments_count > 0)
     <ul>
         @foreach($posts as $post)
-        <li><b>{{$post->name}} :</b><br> {{$post->comment}}</li>
+        <li id='username'>
+            <p>{{$post->name}} :</p><br> {{$post->comment}}
+        </li>
         @endforeach
     </ul>
     @endif

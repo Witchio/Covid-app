@@ -152,6 +152,13 @@ h2 {
   padding: 0.5rem;
 }
 
+.commentscontainer ul li p {
+  font-family: "Russo One";
+  font-weight: bolder;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .commentscontainer .newcomment {
   width: 60%;
   margin-top: 1rem;

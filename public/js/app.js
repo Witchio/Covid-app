@@ -37496,23 +37496,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\nav.scss */"./resources/sass/nav.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\homepage.scss */"./resources/sass/homepage.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\admin-users.scss */"./resources/sass/admin-users.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\admin-posts.scss */"./resources/sass/admin-posts.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\stats.scss */"./resources/sass/stats.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\profile.scss */"./resources/sass/profile.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\posts.scss */"./resources/sass/posts.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\add-post.scss */"./resources/sass/add-post.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\post.scss */"./resources/sass/post.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\edit-post.scss */"./resources/sass/edit-post.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\login.scss */"./resources/sass/login.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\register.scss */"./resources/sass/register.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\home.scss */"./resources/sass/home.scss");
-__webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\password-reset.scss */"./resources/sass/password-reset.scss");
-module.exports = __webpack_require__(/*! D:\wamp64\www\Project\final_project\resources\sass\about-us.scss */"./resources/sass/about-us.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/nav.scss */"./resources/sass/nav.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/homepage.scss */"./resources/sass/homepage.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-users.scss */"./resources/sass/admin-users.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/admin-posts.scss */"./resources/sass/admin-posts.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/stats.scss */"./resources/sass/stats.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/profile.scss */"./resources/sass/profile.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/posts.scss */"./resources/sass/posts.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/add-post.scss */"./resources/sass/add-post.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/post.scss */"./resources/sass/post.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/edit-post.scss */"./resources/sass/edit-post.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/login.scss */"./resources/sass/login.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/register.scss */"./resources/sass/register.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/home.scss */"./resources/sass/home.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/password-reset.scss */"./resources/sass/password-reset.scss");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/final_project/resources/sass/about-us.scss */"./resources/sass/about-us.scss");
 
 
 /***/ })
