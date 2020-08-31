@@ -16,8 +16,25 @@ class PostController extends Controller
 {
     public function test()
     {
-        $post = Post::find(1);
-        dd($post->users);
+        // $post = Post::find(2);
+        // dd($post->users);
+        // $comment = Comment::where('post_id', 2)->userC;
+        // $postcomments = Post::find(2)->comments('userC')->get();
+        // $postcomments = Post::where('id', 2)->get();
+        $post2 = Post::where('id', 2)
+            ->withCount('users', 'comments', 'usersReports')
+            ->get();
+        // $comment = Comment::find(10)->userC('userComments')->get(); //works
+        // $comment = Comment::find($postcomments[6]->id)->userC('userComments')->get(); //works
+        $userr = User::find(9)->userComments;
+
+        dd($post2);
+        // dd($postcomments[6]->id); // works
+        // dd($comment[0]->name); // works
+        /* $comments = Comment::find($id);
+        dd($post[0]->comments->user->name); */
+        /* $user = User::find(1);
+        dd($user->posts->count()); */
     }
     /**
      * Display a listing of the resource.
@@ -205,8 +222,6 @@ class PostController extends Controller
      */
     public function report($id)
     {
-
-
         //$user = Auth::user(); //works but method is underlined as an error
 
         //* save record in reports table
@@ -244,7 +259,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = Post::where('id', $id)->forceDelete();
+        $post = Post::find($id);
+
+        if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
+            $post->forceDelete();
+        }
         return redirect('/posts');
     }
 
