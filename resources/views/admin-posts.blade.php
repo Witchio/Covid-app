@@ -62,35 +62,11 @@
     <!-- Ajax call to delete post -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        /* $(function() {
-            $('.delete-btn').click(function(e) {
-                e.preventDefault();
-                let route = '/admin/posts/delete/' + $(this).val();
-
-                console.log('Route: ' + route);
-                $.ajax({
-                    url: route,
-                    type: 'delete',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(result) {
-                        // $(this).parent().remove();
-                        console.log(result.message);
-                        alert('Post permanently deleted');
-                    },
-                    error: function(err) {
-                        alert('AJAX ERROR. Please contact administrator');
-                    }
-                })
-            })
-        }) */
         $(function() {
             $('.restore-btn').click(function(e) {
                 e.preventDefault();
                 let route = '/admin/posts/restore/' + $(this).val();
 
-                console.log('Route: ' + route);
                 $.ajax({
                     url: route,
                     type: 'put',
@@ -98,7 +74,6 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(result) {
-                        console.log(result.message);
                         alert('Post restored!');
                     },
                     error: function(err) {

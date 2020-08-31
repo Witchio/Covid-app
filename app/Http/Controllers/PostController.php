@@ -18,8 +18,6 @@ class PostController extends Controller
     {
         $post = Post::find(1);
         dd($post->users);
-        /* $user = User::find(1);
-        dd($user->posts->count()); */
     }
     /**
      * Display a listing of the resource.
@@ -30,7 +28,6 @@ class PostController extends Controller
     {
         // *Using Eloquent ORM
         $posts = Post::withCount('users', 'comments', 'usersReports')->get();
-        // dd($posts);
 
         return view('posts', ['posts' => $posts]);
     }
@@ -38,8 +35,7 @@ class PostController extends Controller
     public function main()
     {
         // ORDERBY WITH INNER JOIN
-        // SELECT p.*, COUNT(l.post_id) FROM posts p INNER JOIN likes l ON p.id = l.post_id GROUP BY p.id
-        //withCount counts the number of User OBJECTS associated to the Post (aka LIKES or Comments)
+
         $posts = Post::withCount('users', 'comments')
             ->orderBy('users_count', 'desc')
             ->limit(3)
@@ -101,13 +97,12 @@ class PostController extends Controller
     public function show($id)
     {
         // Using Eloquent ORM
-        //$post = Post::where('id', $id)
-        //->withCount('users', 'comments', 'usersReports')->get();
+
         $userPost = Post::where('posts.id', $id)
             ->join('users', 'posts.user_id', '=', 'users.id')
             ->select('users.name', 'posts.created_at')
             ->get();
-        // dd($userPost);
+
         $post = Post::where('posts.id', $id)
             //Need left join else it won't display the posts without comments
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
@@ -118,8 +113,7 @@ class PostController extends Controller
             ->withCount('users', 'comments', 'usersReports')
             ->get();
         // https://laravel.com/docs/7.x/eloquent-relationships
-        //$comments = Comment::find($id);
-        //$userComment = User::find($id)->userComments();
+
         // Sending the post and the reportedStatus boolean to the view
         return view('post', [
             //Sending out the image indepedentely to avoid bugs
@@ -186,8 +180,6 @@ class PostController extends Controller
                 'image' => 'required|mimes:jpeg,jpg|max:2048',
             ]);
 
-            // save the new imageName with unique timestmp and image file name
-            //previous alternative: $imageName = time() . '.' . $request->image->extension();
             $imageName = time() . '.' . $request->image->getClientOriginalName();
             $post->image = $imageName;
             // store the image to the PUBLIC folder
@@ -213,8 +205,7 @@ class PostController extends Controller
      */
     public function report($id)
     {
-        //dd($post[0]->usersReports); //this gives array with each report
-        //dd($post[0]->usersReports()); //this gives an array with info about the reports table
+
 
         //$user = Auth::user(); //works but method is underlined as an error
 

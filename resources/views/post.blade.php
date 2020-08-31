@@ -114,7 +114,6 @@
     $(function() {
         $('.like-btn').click(function(e) {
             let route = '/post/like/' + $(this).val();
-            console.log('Route: ' + route);
             $.ajax({
                 url: route,
                 type: 'get',
@@ -122,7 +121,6 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(result) {
-                    console.log(result.message);
                     $('.content').load(document.URL + ' .content');
                 },
                 error: function(err) {
