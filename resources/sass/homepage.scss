@@ -9,6 +9,11 @@
 
 /* --------- Charts --------- */
 #charts {
+    h1 {
+        text-decoration: underline;
+        margin-bottom: 3rem;
+    }
+
     #continent {
         display: none !important;
         margin-bottom: 2rem;
@@ -143,6 +148,7 @@ a {
         }
     }
 }
+
 @media screen and (min-width: 1500px) {
     main #left #charts {
         #continent {
