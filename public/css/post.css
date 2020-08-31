@@ -27,6 +27,7 @@ h1 {
 .maincontainer p {
   background-color: #abadc4;
   color: #131B23;
+  line-height: 1.2rem;
   text-align: left;
   padding: 1rem;
   border-radius: 10px;
