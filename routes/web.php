@@ -91,7 +91,8 @@ Route::post('/admin/delete/{id}', 'HomeController@destroy')->middleware('auth');
 
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
-Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
+// for faulty AJAX call
+// Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
 Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 
 /* ------------------------------------------------------------ */

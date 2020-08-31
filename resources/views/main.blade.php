@@ -15,8 +15,8 @@
     <h1>Cov-Aid</h1>
 </div>
 @endsection
-@section('content')
 
+@section('content')
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">

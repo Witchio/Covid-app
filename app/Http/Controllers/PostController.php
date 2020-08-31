@@ -222,8 +222,6 @@ class PostController extends Controller
      */
     public function report($id)
     {
-
-
         //$user = Auth::user(); //works but method is underlined as an error
 
         //* save record in reports table
@@ -261,7 +259,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = Post::where('id', $id)->forceDelete();
+        $post = Post::find($id);
+
+        if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
+            $post->forceDelete();
+        }
         return redirect('/posts');
     }
 

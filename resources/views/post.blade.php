@@ -64,7 +64,7 @@
                     @endif
 
                     @if(Auth::user() !== null)
-                    @if($posts[0]->user_id==Auth::user()->id ||Auth::user()->role == "admin")
+                    @if($posts[0]->user_id==Auth::user()->id || Auth::user()->role == "admin")
                     <!-- If user that created the post or admin wants to permanently delete it-->
                     <div>
                         <a href="/post/delete/{{$posts[0]->id}}"><button id="delete">Delete Post</button></a>
