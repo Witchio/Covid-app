@@ -20,7 +20,9 @@
     <section class="articlebody">
 
         @if($posts[0]->image)
-        <img src="{{asset("images/$img")}}" alt="post image">
+        <!-- <img src="{{asset("images/$img")}}" alt="post image"> -->
+        <div class="article-image" style='background-image: url({{asset("images/$img")}})'>
+        </div>
         @endif
 
         <section class="articlecontent">

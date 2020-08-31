@@ -14,16 +14,23 @@ h2 {
   width: 98%;
   margin: auto;
   text-align: center;
+  /* img {
+      margin-right: 0.5rem;
+      width: 45%;
+  } */
 }
 
 .maincontainer h5 {
   text-align: left;
   padding: 0.5rem 0 0.5rem 0;
+  font-size: 0.9rem;
 }
 
-.maincontainer img {
-  margin-right: 0.5rem;
+.maincontainer .article-image {
   width: 45%;
+  margin-right: 0.5rem;
+  background-size: cover;
+  background-position: center;
 }
 
 .maincontainer p {

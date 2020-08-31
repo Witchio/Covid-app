@@ -37423,6 +37423,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/password-reset.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/password-reset.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/post.scss":
 /*!**********************************!*\
   !*** ./resources/sass/post.scss ***!
@@ -37479,9 +37490,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ./resources/sass/edit-post.scss ./resources/sass/login.scss ./resources/sass/register.scss ./resources/sass/home.scss ./resources/sass/about-us.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/homepage.scss ./resources/sass/admin-users.scss ./resources/sass/admin-posts.scss ./resources/sass/stats.scss ./resources/sass/profile.scss ./resources/sass/posts.scss ./resources/sass/add-post.scss ./resources/sass/post.scss ./resources/sass/edit-post.scss ./resources/sass/login.scss ./resources/sass/register.scss ./resources/sass/home.scss ./resources/sass/password-reset.scss ./resources/sass/about-us.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37500,6 +37511,7 @@ __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\edit-post.scs
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\register.scss */"./resources/sass/register.scss");
 __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\home.scss */"./resources/sass/home.scss");
+__webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\password-reset.scss */"./resources/sass/password-reset.scss");
 module.exports = __webpack_require__(/*! C:\wamp64\www\final_project\resources\sass\about-us.scss */"./resources/sass/about-us.scss");
 
 

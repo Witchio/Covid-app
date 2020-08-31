@@ -20,11 +20,17 @@ h2 {
     h5 {
         text-align: left;
         padding: 0.5rem 0 0.5rem 0;
+        font-size: 0.9rem;
     }
-    img {
+    /* img {
         margin-right: 0.5rem;
         width: 45%;
-
+    } */
+    .article-image {
+        width: 45%;
+        margin-right: 0.5rem;
+        background-size: cover;
+        background-position: center;
     }
     p {
         background-color: $palette_seven;
