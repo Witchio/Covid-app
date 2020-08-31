@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+<!-- Style -->
+@section('style')
+<link href="{{ asset('css/home.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 <style>
     .footer-distributed {
