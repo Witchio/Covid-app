@@ -23,6 +23,11 @@ h1 {
 main {
     margin: 1rem;
 }
+//for logo
+#logo {
+    width: 60px;
+    margin-right: 0.5rem;
+}
 
 //* Styles for the footer (model adapted from https://codepen.io/slstudios/pen/mJqjeP )
 
@@ -102,7 +107,6 @@ main {
 
 .fa-github {
     color: #6e5494;
-    margin: 1rem;
 }
 
 //* For the footer problem
