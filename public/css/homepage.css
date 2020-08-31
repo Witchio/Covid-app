@@ -1,4 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);/* --------- Charts --------- */
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);@import url(https://fonts.googleapis.com/css2?family=Allerta&display=swap);/* --------- Banner --------- */
+
+#hero-image h1 {
+  font-family: "Allerta", sans-serif;
+}
+
+/* --------- Charts --------- */
 
 #charts #continent {
   display: none !important;
@@ -84,7 +90,17 @@
   }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 900px) {
+  #charts #continent {
+    display: block !important;
+  }
+
+  #charts #continentMobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   #hero-image h1 {
     text-align: left;
   }
@@ -98,20 +114,26 @@
     width: 60%;
   }
 
-  main #left #charts {
-    /* width: 70%; */
-  }
-
-  main #left #charts #continent {
+  main #left #charts #continentMobile {
     display: block !important;
   }
 
-  main #left #charts #continentMobile {
+  main #left #charts #continent {
     display: none !important;
   }
 
   main #left #rss {
     width: 30%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #charts #continent {
+    display: block !important;
+  }
+
+  #charts #continentMobile {
+    display: none !important;
   }
 }
 

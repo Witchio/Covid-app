@@ -12,7 +12,7 @@
 </style>
 @section('banner')
 <div id="hero-image">
-    <h1>Cov-aid</h1>
+    <h1>Cov-Aid</h1>
 </div>
 @endsection
 @section('content')

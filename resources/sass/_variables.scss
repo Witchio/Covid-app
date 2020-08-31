@@ -6,17 +6,19 @@ $body-bg: #f8fafc;
 
 // Nunito
 @import url("https://fonts.googleapis.com/css?family=Nunito");
-$font-family-sans-serif: "Nunito",
-sans-serif;
+$font-family-sans-serif: "Nunito", sans-serif;
 
 //Font for buttons (Used on admin-users atm)
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
-$font-russo: 'Russo One';
+$font-russo: "Russo One";
 
 //Roboto font (Used for World Data Box)
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-$font-roboto: 'Roboto',
-sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+$font-roboto: "Roboto", sans-serif;
+
+//Allerta font (Used for banner)
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+$font-allerta: "Allerta", sans-serif;
 
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
@@ -34,14 +36,14 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
 // our Palette: https://coolors.co/393d69-27293f-7a7fb8-afb3d4-edebd7-fecef1
-$palette_one: #393D69;
-$palette_two: #27293F;
-$palette_three: #7A7FB8;
-$palette_four: #AFB3D4;
-$palette_five: #EDEBD7;
-$palette_six: #FECEF1;
-$palette_seven: #ABADC4;
-$palette_eight: #EBEBEB;
+$palette_one: #393d69;
+$palette_two: #27293f;
+$palette_three: #7a7fb8;
+$palette_four: #afb3d4;
+$palette_five: #edebd7;
+$palette_six: #fecef1;
+$palette_seven: #abadc4;
+$palette_eight: #ebebeb;
 
 //* our variables
 $main_bgc: #001a3b;
