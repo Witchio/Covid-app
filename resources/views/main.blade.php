@@ -15,8 +15,8 @@
     <h1>Cov-Aid</h1>
 </div>
 @endsection
-@section('content')
 
+@section('content')
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -24,6 +24,7 @@
 
         <!-- Continents Chart -->
         <article>
+            <h1>Current cases in the world</h1>
             <!--Desktop version -->
             <canvas id="continent"></canvas>
             <!--Mobile version -->
@@ -75,7 +76,7 @@
     <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 
     <!-- News Feed (active)-->
-    <iframe width="600" height="1670" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
+    <iframe width="600" height="1770" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
 
     <!-- Carousel -->
     <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
