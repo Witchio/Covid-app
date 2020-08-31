@@ -52,7 +52,7 @@
         <div class="content">
             <img src=' {{asset("images/eduardo.jpg")}}' alt="leader pic">
             <h2>Eduardo Pinto</h2>
-            <p>We need to harvest synergy effects time to open the kimono that ipo will be a game-changer, and build on a culture of contribution and inclusion. First-order optimal strategies personal development yet future-proof take five, punch the tree, and come back in here with a clear head pulling teeth, optimize the fireball and we need to harvest synergy effects.</p>
+             <p>Hi, I'm Eduardo. My main focus in the project was to define a way to include a responsive news feed to the main page which displays the most recent events about Covid-19 pandemic. Then I've created a profile page, that gets and sends user info into the database, and improved the original navigation bar with some new links and routes. Finally I created a responsive footer with social networking interaction.</p>
         </div>
 
         <div class="links">
