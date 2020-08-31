@@ -15,25 +15,25 @@ class UserSeeder extends Seeder
         // seeder array
         $users = array(
             [
-                'name' => 'Jane One',
+                'name' => 'Brad',
                 'email' => '1111@pass.word',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Mark Two',
+                'name' => 'Will',
                 'email' => '2222@pass.word',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Tom Three',
+                'name' => 'Marie',
                 'email' => '3333@pass.word',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',
             ],
             [
-                'name' => 'Fran Four',
+                'name' => 'John',
                 'email' => '4444@pass.word',
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'user',

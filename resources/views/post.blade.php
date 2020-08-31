@@ -9,7 +9,7 @@
 @section('content')
 
 <!-- individual post depending on id -->
-<h1>{{ $posts[0]->title }}</h1>
+<h2>{{ $posts[0]->title }}</h2>
 
 
 <!-- <h3>{{$posts[0]->name}}</h3> -->
@@ -20,7 +20,9 @@
     <section class="articlebody">
 
         @if($posts[0]->image)
-        <img src="{{asset("images/$img")}}" alt="post image">
+        <!-- <img src="{{asset("images/$img")}}" alt="post image"> -->
+        <div class="article-image" style='background-image: url({{asset("images/$img")}})'>
+        </div>
         @endif
 
         <section class="articlecontent">
@@ -39,7 +41,7 @@
                     @if(!$reported)
                     <!-- IF user is not the post author -->
                     @if($posts[0]->user_id!=Auth::user()->id)
-                    <button id="report"><a href="/post/report/{{$posts[0]->id}}"><i class="far fa-flag"></i></a></button>
+                    <a href="/post/report/{{$posts[0]->id}}"><button id="report"><i class="far fa-flag"></i></button></a>
                     @endif
                     @endif
                     @endauth
@@ -62,7 +64,7 @@
                     @endif
 
                     @if(Auth::user() !== null)
-                    @if($posts[0]->user_id==Auth::user()->id ||Auth::user()->role == "admin")
+                    @if($posts[0]->user_id==Auth::user()->id || Auth::user()->role == "admin")
                     <!-- If user that created the post or admin wants to permanently delete it-->
                     <div>
                         <a href="/post/delete/{{$posts[0]->id}}"><button id="delete">Delete Post</button></a>
@@ -83,7 +85,9 @@
     @if($posts[0]->comments_count > 0)
     <ul>
         @foreach($posts as $post)
-        <li><b>{{$post->name}} :</b><br> {{$post->comment}}</li>
+        <li id='username'>
+            <div>{{$post->name}} :</div>{{$post->comment}}
+        </li>
         @endforeach
     </ul>
     @endif
@@ -114,7 +118,6 @@
     $(function() {
         $('.like-btn').click(function(e) {
             let route = '/post/like/' + $(this).val();
-            console.log('Route: ' + route);
             $.ajax({
                 url: route,
                 type: 'get',
@@ -122,7 +125,6 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(result) {
-                    console.log(result.message);
                     $('.content').load(document.URL + ' .content');
                 },
                 error: function(err) {

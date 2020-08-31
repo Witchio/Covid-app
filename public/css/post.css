@@ -1,32 +1,42 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);@import url(https://fonts.googleapis.com/css2?family=Allerta&display=swap);/* --------- Mobile --------- */
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 3rem;
   margin: 0 auto;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
 }
 
 .maincontainer {
   background-color: #393d69;
   border-radius: 10px;
-  padding: 0 0.5rem 0.8rem 0.5rem;
+  padding: 0 0.8rem 0.8rem 0.8rem;
   width: 98%;
   margin: auto;
   text-align: center;
+  /* img {
+      margin-right: 0.5rem;
+      width: 45%;
+  } */
 }
 
 .maincontainer h5 {
   text-align: left;
   padding: 0.5rem 0 0.5rem 0;
+  font-size: 0.9rem;
 }
 
-.maincontainer img {
+.maincontainer .article-image {
+  width: 45%;
   margin-right: 0.5rem;
+  background-size: cover;
+  background-position: center;
 }
 
 .maincontainer p {
   background-color: #abadc4;
   color: #131B23;
+  line-height: 1.2rem;
   text-align: left;
   padding: 1rem;
   border-radius: 10px;
@@ -69,6 +79,14 @@ h1 {
   padding-bottom: 0;
 }
 
+.articlefooter .maininfo #report {
+  padding-top: 0.7rem;
+}
+
+.articlefooter .maininfo #report:hover {
+  color: red;
+}
+
 .articlefooter .maininfo a:link {
   text-decoration: none;
   color: #edebd7;
@@ -99,9 +117,10 @@ h1 {
   background-color: #7a7fb8;
   color: #edebd7;
   font-size: 0.8rem;
-  padding: 0.5rem 0.5rem 0;
+  padding: 0.3rem;
   border-radius: 3px;
   text-decoration: none;
+  margin: 0.5rem 0.5rem 0 0.5rem;
 }
 
 .articlefooter .authoraccess #editbg:hover,
@@ -131,6 +150,12 @@ h1 {
   color: black;
   margin: 0.5rem;
   padding: 0.5rem;
+}
+
+.commentscontainer ul li div {
+  font-weight: bolder;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .commentscontainer .newcomment {
@@ -163,6 +188,13 @@ button:focus {
 button:active {
   transform: scale(0.99);
 }
+
+/* .maininfo {
+    button:hover {
+        text-decoration: none;
+        color: red;
+    }
+} */
 
 /* --------- Tablet view --------- */
 

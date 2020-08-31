@@ -2,39 +2,54 @@
 @import "variables";
 
 /* --------- Mobile --------- */
-h1 {
+h2 {
     text-align: center;
-    font-size: 3rem;
+    // font-size: 3rem;
     margin: 0 auto;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
 }
 
 .maincontainer {
     background-color: $palette_one;
     border-radius: 10px;
-    padding: 0 0.5rem 0.8rem 0.5rem;
+    padding: 0 0.8rem 0.8rem 0.8rem;
     width: 98%;
     margin: auto;
     text-align: center;
+
     h5 {
         text-align: left;
         padding: 0.5rem 0 0.5rem 0;
+        font-size: 0.9rem;
     }
-    img {
+
+    /* img {
         margin-right: 0.5rem;
+        width: 45%;
+    } */
+    .article-image {
+        width: 45%;
+        margin-right: 0.5rem;
+        background-size: cover;
+        background-position: center;
     }
+
     p {
         background-color: $palette_seven;
         color: #131B23;
+        line-height: 1.2rem;
         text-align: left;
         padding: 1rem;
         // margin: 1rem auto 0;
         border-radius: 10px;
-    } 
+    }
 }
 
 .articlebody {
     display: flex;
     justify-content: space-between;
+
     .articlecontent {
         width: 50%;
     }
@@ -44,7 +59,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     // padding: 0 0 0.5rem 0;
-    
+
     .maininfo {
         span {
             padding: 0.6rem 0 0.2rem;
@@ -61,6 +76,14 @@ h1 {
             i {
                 padding-bottom: 0;
             }
+        }
+
+        #report {
+            padding-top: 0.7rem;
+        }
+
+        #report:hover {
+            color: red;
         }
 
         /* unvisited link */
@@ -91,18 +114,19 @@ h1 {
     .authoraccess {
         display: flex;
         justify-content: center;
-        
+
         #editbg,
         #delete {
             background-color: $palette_three;
             color: $font-color;
             font-size: 0.8rem;
-            padding: 0.5rem 0.5rem 0;
+            padding: 0.3rem;
             border-radius: 3px;
             text-decoration: none;
-            // margin: 0.5rem 0.5rem 0 0.5rem;
-            &:hover{
-                background-color: $palette_two;  
+            margin: 0.5rem 0.5rem 0 0.5rem;
+
+            &:hover {
+                background-color: $palette_two;
                 color: $palette_three;
             }
         }
@@ -121,12 +145,19 @@ h1 {
         margin: 0.5rem 0;
         padding: 0.5rem;
         border-radius: 5px;
+
         li {
             background-color: $palette_eight;
             border-radius: 10px;
             color: black;
             margin: 0.5rem;
             padding: 0.5rem;
+
+            div {
+                font-weight: bolder;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -165,6 +196,13 @@ button:active {
     transform: scale(0.99);
 }
 
+/* .maininfo {
+    button:hover {
+        text-decoration: none;
+        color: red;
+    }
+} */
+
 
 /* --------- Tablet view --------- */
 @media screen and (min-width: 600px) {
@@ -177,6 +215,7 @@ button:active {
     .articlebody {
         display: flex;
         justify-content: space-around;
+
         .articlecontent {
             width: 65%;
         }

@@ -7,7 +7,7 @@
 
 <style>
     #hero-image {
-        background-image: url("/images/banner.jpg");
+        background-image: url("/images/banner.png");
     }
 </style>
 @section('banner')
@@ -15,8 +15,8 @@
     <h1>Cov-Aid</h1>
 </div>
 @endsection
-@section('content')
 
+@section('content')
 <section id="left">
     <!-- This is the parent for the charts and the posts -->
     <div id="charts">
@@ -24,6 +24,7 @@
 
         <!-- Continents Chart -->
         <article>
+            <h1>Current cases in the world</h1>
             <!--Desktop version -->
             <canvas id="continent"></canvas>
             <!--Mobile version -->
@@ -46,15 +47,15 @@
         @foreach($posts as $post)
         <article>
             <img src='{{ asset("images/$post->image")}}' alt="">
-            <div class="content">
+            <div class="post-top">
                 <a href="/posts/{{$post->id}}">
                     <h3> {{ $post->title }}</h3>
                 </a>
-                <p>Content : {{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
-                <div class="like-comment">
-                    <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
-                    <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
-                </div>
+                <p>{{ substr($post->content,0,150 ) }}... <a href="/posts/{{$post->id}}">See more</a></p>
+            </div>
+            <div class="like-comment">
+                <p>{{ $post->users_count }} <i class="far fa-thumbs-up"></i></p>
+                <p>{{ $post->comments_count }} <i class="far fa-comments"></i></p>
             </div>
         </article>
         @endforeach
@@ -75,7 +76,7 @@
     <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 
     <!-- News Feed (active)-->
-    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
+    <iframe width="600" height="1770" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
 
     <!-- Carousel -->
     <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->

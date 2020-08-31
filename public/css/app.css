@@ -4417,7 +4417,6 @@ input[type=button].btn-block {
   padding: 0.5rem 1rem;
 }
 
-
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
@@ -4519,7 +4518,6 @@ input[type=button].btn-block {
   justify-content: space-between;
 }
 
-/*Navbar logo positioned on the left*/
 .navbar-brand {
   display: inline-block;
   padding-top: 0.32rem;
@@ -4536,15 +4534,6 @@ input[type=button].btn-block {
   text-decoration: none;
 }
 
-#homeBtn {
-  font-size: 1.125rem;
-  padding-top: 0.32rem;
-  padding-bottom: 0.32rem;
-  line-height: inherit;
-  white-space: nowrap;
-  color: #fff;
-}
-
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -4557,7 +4546,6 @@ input[type=button].btn-block {
   padding-right: 0;
   padding-left: 0;
 }
-
 
 .navbar-nav .dropdown-menu {
   position: static;

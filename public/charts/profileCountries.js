@@ -2,7 +2,6 @@ getProfileCountries();
 async function getProfileCountries() {
     const response = await fetch('https://restcountries.eu/rest/v2/all');
     const dataCountries = await response.json();
-    console.log(dataCountries);
 
 
     dataCountries.forEach(data => {
