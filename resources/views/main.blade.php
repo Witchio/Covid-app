@@ -75,7 +75,7 @@
     <!-- <rssapp-wall id="mPa6EvYZGT7E0ee4"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
 
     <!-- News Feed (active)-->
-    <iframe width="600" height="1500" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
+    <iframe width="600" height="1670" src="https://rss.app/embed/v1/mPa6EvYZGT7E0ee4" frameBorder="0"></iframe>
 
     <!-- Carousel -->
     <!-- <rssapp-carousel id="mPa6EvYZGT7E0ee4"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script> -->
