@@ -232,10 +232,18 @@ class PostController extends Controller
         }
 
         //* if post has 3 reports then soft delete for admin to check out
-        if (count($post->usersReports) == 3) {
+        if (count($post->usersReports) >= 3) {
             $this->softDestroy($id);
+            return redirect("/post/reported");
+        } else {
+            return redirect("/posts/$post->id");
         }
-        return redirect("/posts/$post->id");
+    }
+
+    // After 3rd report, post is hidden and user gets redirected to notification
+    public function thirdReport()
+    {
+        return view('reported-post');
     }
 
     //* After 3 reports, a post is soft deleted for an admin to review it
@@ -259,12 +267,22 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::withTrashed()->find($id);
 
         if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
             $post->forceDelete();
         }
         return redirect('/posts');
+    }
+
+
+    public function destroyAdmin($id)
+    {
+        $post = Post::withTrashed()->find($id);
+        if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
+            $post->forceDelete();
+        }
+        return redirect('/admin/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe
