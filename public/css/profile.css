@@ -3,6 +3,14 @@
   margin: auto;
 }
 
+.profileForm p {
+  font-size: 1.1rem;
+}
+
+.profileForm p span {
+  font-size: 1.5rem;
+}
+
 .datadisplay {
   display: flex;
 }
