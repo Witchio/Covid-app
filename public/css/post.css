@@ -28,6 +28,7 @@ h2 {
 
 .maincontainer .article-image {
   width: 45%;
+  min-height: 20rem;
   margin-right: 0.5rem;
   background-size: cover;
   background-position: center;
@@ -127,6 +128,14 @@ h2 {
 .articlefooter .authoraccess #delete:hover {
   background-color: #27293f;
   color: #7a7fb8;
+}
+
+.reportedmsg {
+  text-align: center;
+}
+
+.reportedmsg i {
+  color: red;
 }
 
 .commentscontainer {
