@@ -93,7 +93,7 @@ Route::post('/admin/delete/{id}', 'HomeController@destroy')->middleware('auth');
 //* Posts Admin dashboard
 Route::get('/admin/posts', 'PostController@showSoftDeleted')->name('admin-posts')->middleware('auth');
 // for faulty AJAX call
-// Route::delete('/admin/posts/delete/{id}', 'PostController@destroy');
+Route::get('/admin/posts/delete/{id}', 'PostController@destroyAdmin');
 Route::put('/admin/posts/restore/{id}', 'PostController@restore');
 
 /* ------------------------------------------------------------ */
@@ -125,12 +125,12 @@ Route::get('/about-us', function () {
 Route::get('admin/userRole/{id}', function () {
     return redirect('/');
 });
-Route::get('admin/delete/{id}', function () {
+/* Route::get('admin/delete/{id}', function () {
     return redirect('/');
-});
-Route::get('/admin/posts/delete/{id}', function () {
+}); */
+/* Route::get('/admin/posts/delete/{id}', function () {
     return redirect('/');
-});
+}); */
 Route::get('/admin/posts/restore/{id}', function () {
     return redirect('/');
 });
