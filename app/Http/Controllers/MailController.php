@@ -11,9 +11,14 @@ class MailController extends Controller
         return view('simple');
     }
 
+    // cov-aid19@outlook.com
+    // WitchioMeber
+    // firstname: Cov-AID
+    // lastname: 19
+    // birthdate: 19/09/1990
+    // smtp.mailtrap.io
     public function sendMail()
     {
-
         // Send an email with fake data 
 
         $person = array(
