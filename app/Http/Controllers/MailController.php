@@ -17,6 +17,7 @@ class MailController extends Controller
     // lastname: 19
     // birthdate: 19/09/1990
     // smtp.mailtrap.io
+    // TEST
     public function sendMail()
     {
         // Send an email with fake data 
