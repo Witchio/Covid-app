@@ -12,6 +12,13 @@
 <div class="profileForm">
     <h1 id="title">Update Profile</h1>
 
+    <p>
+        <span>Username :</span> {{ Auth::user()->name }}
+    </p>
+    <p>
+        <span>Email :</span> {{ Auth::user()->email }}
+    </p>
+
     <!-- Profile forms -->
     <form action="/profile/update" method="post">
         @csrf
@@ -71,7 +78,7 @@
             <p>{{ Auth::user()->country }}</p>
             @else
             <p>
-                please enter your country
+                please enter your country of residence
             </p>
             @endif
         </div>

@@ -138,3 +138,6 @@ Route::get('/profile/update', function () {
 });
 
 /* ------------------------------------------------------------ */
+
+//* New Password Email
+Route::get('/sendmail', 'MailController@sendMail');
