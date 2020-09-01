@@ -59,6 +59,7 @@ Route::get('/post/like', function () {
 
 //* Reporting a post
 Route::get('/post/report/{id}', 'PostController@report')->name('post.report')->middleware('auth');
+Route::get('/post/reported', 'PostController@thirdReport')->middleware('auth');
 
 /* ------------------------------------------------------------ */
 
