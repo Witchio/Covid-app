@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Cov-Aid 19</title>
+    <title>Cov-Aid</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
