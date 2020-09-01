@@ -63,6 +63,12 @@ class UserSeeder extends Seeder
                 'password_hashed' => '$2y$10$vHyCg5Yts3.3gVhBYHmvJucylLwBMJhPx/trmHASf3VVhpqf7TPFq',
                 'role' => 'admin',
             ],
+            [
+                'name' => 'witchio',
+                'email' => 'mitch@gmail.com',
+                'password_hashed' => '$2y$10$3CMrFO4Usk3fN88qRkJxdu85HX8NnbXus.4G6pC/tS2oC0dspP0ai',
+                'role' => 'admin',
+            ],
         );
 
         // insert seeds
