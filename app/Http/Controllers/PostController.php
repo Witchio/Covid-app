@@ -259,12 +259,22 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::withTrashed()->find($id);
 
         if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
             $post->forceDelete();
         }
         return redirect('/posts');
+    }
+
+
+    public function destroyAdmin($id)
+    {
+        $post = Post::withTrashed()->find($id);
+        if ($post->user_id == Auth::user()->id || Auth::user()->role == "admin") {
+            $post->forceDelete();
+        }
+        return redirect('/admin/posts');
     }
 
     //* if the admin after reviewing the post deemed it safe

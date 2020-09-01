@@ -50,7 +50,7 @@
                 <p>{{ $post->content }}</p>
 
                 <button class="delete-btn btn btn-danger" value="{{$post->id}}">
-                    <a href="/post/delete/{{$posts[0]->id}}">Delete post</a>
+                    <a href="/admin/posts/delete/{{$posts[0]->id}}">Delete post</a>
                 </button>
                 <button class="restore-btn btn btn-info" value="{{$post->id}}">Restore post</button>
                 <hr>
