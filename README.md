@@ -1,3 +1,5 @@
+#Link to Website : http://cov-aid19.herokuapp.com
+
 # How to get the proyect on your pc
 - ### command : composer install , to download dependecies
 - ### copy .env file and change the db and wtv necessary
